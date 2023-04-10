@@ -1,0 +1,81 @@
+<app-navbar></app-navbar>
+<div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <form [formGroup]="signupForm" (ngSubmit)="signupUser()" novalidate>
+            <h1>Create Account Student</h1>
+            <div class="social-container">
+                <a routerLink="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a routerLink="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                <a routerLink="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            
+            <div class="form-group">
+             <input type="text" placeholder="Name" id="name" class="name" formControlName="name"/>
+             <span class="error"></span>
+          </div>
+       <!--<div class="form-group">
+            <input type="hidden" value="student" formControlName="Role"/>
+         </div>-->
+          <div class="form-group">
+             <input type="email" placeholder="Email" id="email" class="email" formControlName="email"/>
+             <span class="error"></span>
+          </div>
+          <div class="form-group">
+             <input type="password" placeholder="Password" id="password" class="pass" formControlName="password"/>
+             <span class="error"></span>
+          </div>
+          <div class="form-group">
+             <input type="password" placeholder="Confirm password" id="Conpassword" class="Conpass" formControlName="confirmpassword"/>
+             <span class="error"></span>
+          </div>
+            <button [disabled]="!signupForm.valid" type="submit" (click)="onSubmit()" >Sign Up</button>
+        </form>
+    </div>
+    <div class="form-container sign-in-container">
+        <form [formGroup]="signupForm" (ngSubmit)="signupCompany()" novalidate>
+            <h1>Create account Company</h1>
+            <div class="social-container">
+                <a routerLink="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a routerLink="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                <a routerLink="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+           
+            <div class="form-group">
+             <input type="text" placeholder="Name" id="name" class="name"  formControlName="name"/>
+             <span class="error"></span>
+          </div>
+         
+          <div class="form-group">
+             <input type="email" placeholder="Email" id="email" class="email" formControlName="email"/>
+             <span class="error"></span>
+          </div>
+          <div class="form-group">
+             <input type="password" placeholder="Password" id="password" class="pass" formControlName="password"/>
+             <span class="error"></span>
+          </div>
+          <div class="form-group">
+             <input type="password" placeholder="Confirm password" id="Conpassword" class="Conpass"  formControlName="confirmpassword"/>
+             <span class="error"></span>
+          </div>
+            <button [disabled]="!signupForm.valid" type="submit" >Sign Up</button>
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Welcome Company!</h1>
+                <p>To join us enter your informations</p>
+                <button class="ghost" id="signIn">Sign Up</button>
+                <img src="../../assets/signup.png" alt="" width="" height="50%">
+
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Hello, Student!</h1>
+                <p>Enter your personal details and start journey with us</p>
+                <button class="ghost" id="signUp">Sign Up</button>
+                <img src="../../assets/people-office-illustration.png" alt="" width="" height="50%">
+
+            </div>
+        </div>
+    </div>
+</div>
