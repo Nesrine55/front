@@ -15,8 +15,8 @@ import { ErrorHandleService } from './error-handle.service';
   providedIn: 'root'
 })
 export class AuthService {
-  private urlUser = "http://localhost:5000/auth/registerUser";
-  private urlCompany = "http://localhost:5000/auth/registerCompany";
+  private urlStudent = "http://localhost:5000/student/createStudent";
+  private urlCompany = "http://localhost:5000/entreprise/registerCompany";
 
 
 
@@ -35,9 +35,9 @@ export class AuthService {
     ) { }
 
 
-  signupUser(user: Omit<user,"id">): Observable<user>{
+  signupStudent(user: Omit<user,"id">): Observable<user>{
     return this.http
-    .post<user>(`${this.urlUser}/signup`, user,this.httpOptions)
+    .post<user>(this.urlStudent, user,this.httpOptions)
     .pipe(
       first(),
       catchError(this.errorHandlerService.handleError<user>("signup"))
@@ -46,11 +46,11 @@ export class AuthService {
   }
   signupCompany(user: Omit<user,"id">): Observable<user>{
     return this.http
-    .post<user>(`${this.urlCompany}/signup`, user,this.httpOptions)
-    .pipe(
-      first(),
-      catchError(this.errorHandlerService.handleError<user>("signup"))
-    );
+      .post<user>(this.urlCompany, user,this.httpOptions)
+      .pipe(
+        first(),
+        catchError(this.errorHandlerService.handleError<user>("signup"))
+      );
 
   }
 
