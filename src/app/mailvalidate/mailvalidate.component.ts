@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-mailvalidate',
@@ -6,6 +7,55 @@ import { Component } from '@angular/core';
   styleUrls: ['./mailvalidate.component.css']
 })
 export class MailvalidateComponent {
+  constructor(private authService: AuthService){}
+
+  code1 = '';
+  code2 = '';
+  code3 = '';
+  code4 = '';
+
+
+  verifyEmail() {
+    const code = this.code1 +''+ this.code2 + ''+ this.code3 +''+ this.code4;
+    const email = localStorage.getItem('email') || ''; // Retrieve the email from local storage or from a state management solution
+    const role= localStorage.getItem('role')||''
+    if(role === 'company'){
+      this.authService.verifycodeCompany(email, code).subscribe(
+        (response) => {
+          console.log(response); // Handle success
+        
+        },
+        (error) => {
+          console.log(error); // Handle error
+        }
+      );
+    }else{
+      this.authService.verifycodeStudent(email, code).subscribe(
+        (response) => {
+          console.log(response); // Handle success
+        
+        },
+        (error) => {
+          console.log(error); // Handle error
+        }
+      );
+    }
+
+  }
+  resendCode() {
+    const email = localStorage.getItem('email') ||''; // Retrieve the email from local storage or from a state management solution
+
+    this.authService.resendVerificationCode(email).subscribe(
+      (response) => {
+        console.log(response); // Handle success
+      },
+      (error) => {
+        console.log(error); // Handle error
+      }
+    );
+  }
+
+
   public ngOnInit(){
 
     const inputs = document.querySelectorAll("input");
@@ -50,4 +100,13 @@ window.addEventListener("load", () => (inputs[0] as HTMLInputElement).focus());
 
 
 }
+
+
+
+
+
+
+
+
+
 }

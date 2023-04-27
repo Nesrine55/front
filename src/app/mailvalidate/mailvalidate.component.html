@@ -1,19 +1,58 @@
 <app-navbar></app-navbar>
-<h1>Verify your email before connecting to the app</h1>
-<div class="container">
-    <header>
-      <i class="bx bxs-check-shield"></i>
-    </header>
-    <h4>Enter OTP Code</h4>
-    <form action="#">
-      <div class="input-field">
-        <input type="number" />
-        <input type="number" disabled />
-        <input type="number" disabled />
-        <input type="number" disabled />
-      </div>
-      <button class="btn">Verify OTP</button>
-      <button type="submit" class="link"><span>Resend</span></button>
-    </form>
-  </div>
+<!--<div class="container">
 
+  <header>
+    <i class="bx bxs-check-shield"></i>
+  </header>
+  <h2 class="fw-normal">
+    2-step verification
+    </h2>
+    <p class="mt-4 mb-1">
+      We sent a verification code to your email.
+      </p>
+      <h5>
+        Please enter the code in the field below.
+      </h5>
+  <form (ngSubmit)="verifyEmail()">
+    <div class="input-field">
+      <input type="number" [(ngModel)]="code1" [ngModelOptions]="{ standalone: true }" />
+      <input type="number" [(ngModel)]="code2" disabled [ngModelOptions]="{ standalone: true }" />
+      <input type="number" [(ngModel)]="code3" disabled [ngModelOptions]="{ standalone: true }" />
+      <input type="number" [(ngModel)]="code4" disabled [ngModelOptions]="{ standalone: true }" />
+    </div>
+    <button type="submit" class="btn">Verify my account</button>
+    <p class="text-center text-muted mt-4">
+      Didn't receive it?
+      <a class="text-decoration-none ms-2" (click)="resendCode()">Resend code</a>
+    </p>
+  </form>
+
+  
+</div>-->
+<div class="container">
+  <header>
+    <i class="bx bxs-check-shield"></i>
+  </header>
+     <h2 class="fw-normal  mt-4">
+  2-step verification
+  </h2>
+  <p class="mt-4">
+  We sent a verification code to your email.
+  </p>
+  <h5>
+  Please enter the code in the field below.
+  </h5>
+  <form (ngSubmit)="verifyEmail()">
+    <div class="input-field">
+      <input type="number" [(ngModel)]="code1" [ngModelOptions]="{ standalone: true }" />
+      <input type="number" [(ngModel)]="code2" disabled [ngModelOptions]="{ standalone: true }" />
+      <input type="number" [(ngModel)]="code3" disabled [ngModelOptions]="{ standalone: true }" />
+      <input type="number" [(ngModel)]="code4" disabled [ngModelOptions]="{ standalone: true }" />
+    </div> 
+    <button type="submit" class="btn">Verify my account</button>
+    <p class="text-center text-muted mt-4">
+      Didn't receive it?
+      <a class="text-decoration-none ms-2" (click)="resendCode()">Resend code</a>
+    </p>
+  </form>
+</div>

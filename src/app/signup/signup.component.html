@@ -28,7 +28,7 @@
              <input type="password" placeholder="Confirm password" id="Conpassword" class="Conpass" formControlName="confirmpassword"/>
              <span class="error"></span>
           </div>
-            <button [disabled]="!signupForm.valid" type="submit" (click)="onSubmit()" >Sign Up</button>
+            <button [disabled]="!signupForm.valid" type="submit" >Sign Up</button>
         </form>
     </div>
     <div class="form-container sign-in-container">
@@ -58,6 +58,10 @@
              <span class="error"></span>
           </div>
             <button [disabled]="!signupForm.valid" type="submit" >Sign Up</button>
+            <div *ngIf="errorMessage" class="error-message">
+                {{ errorMessage }}
+              </div>
+            
         </form>
     </div>
     <div class="overlay-container">
@@ -65,14 +69,14 @@
             <div class="overlay-panel overlay-left">
                 <h1>Welcome Company!</h1>
                 <p>To join us enter your informations</p>
-                <button class="ghost" id="signIn">Sign Up</button>
+                <button class="ghost" id="signIn">Sign Up Company</button>
                 <img src="../../assets/signup.png" alt="" width="" height="50%">
 
             </div>
             <div class="overlay-panel overlay-right">
                 <h1>Hello, Student!</h1>
                 <p>Enter your personal details and start journey with us</p>
-                <button class="ghost" id="signUp">Sign Up</button>
+                <button class="ghost" id="signUp">Sign Up Student</button>
                 <img src="../../assets/people-office-illustration.png" alt="" width="" height="50%">
 
             </div>

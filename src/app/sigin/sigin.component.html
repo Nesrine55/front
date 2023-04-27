@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 <div class="container" id="container">
    <div class="form-container sign-up-container">
-       <form action="#">
+     <!-- <form action="#">
            <h1>Reset password</h1>
           
            <div class="form-group">
@@ -13,27 +13,52 @@
             <span class="error"></span>
          </div>
            <button>Reset</button>
+       </form>--> 
+       <form>
+        <h2> you should verify your email first </h2>
+       <p class="para"> Enter you mail here : </p>
+        <div class="form-group">
+         <input type="email" placeholder="Email" id="email" class="email"/>
+         <span class="error"></span>
+      </div>
+     
+        <button type="submit">Verify Email</button>
        </form>
    </div>
    <div class="form-container sign-in-container">
-       <form [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+       <form  (ngSubmit)="loginStudent()" novalidate>
            <h1>Sign in</h1>
            <div class="social-container">
                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-           </div>
-           
+           </div> 
+           <div class="same">
+            <a class="buttonrole first" [ngClass]="{'selected': selectedUserType === 'user1'}" (click)="selectedUserType='user1'; changeColor($event);">Student</a>
+            <a class="buttonrole second" [ngClass]="{'selected': selectedUserType === 'user2'}" (click)="selectedUserType='user2'; changeColor($event);">Company</a>
+          </div>
+          <div class="form-group" *ngIf="selectedUserType==='user1'">
            <div class="form-group">
-            <input type="email" placeholder="Email" id="email" class="email" formControlName="email"/>
+                <input type="email" placeholder="Email" id="email" class="email" [(ngModel)]="user1.email" name="email" required />
             <span class="error"></span>
          </div>
          <div class="form-group">
-            <input type="password" placeholder="Password" id="password" class="pass" formControlName="password"/>
+                <input type="password" placeholder="Password" id="password" class="pass" [(ngModel)]="user1.password" name="password" required/>
             <span class="error"></span>
          </div>
+        </div>
+        <div class="form-group" *ngIf="selectedUserType==='user2'">
+            <div class="form-group">
+                <input type="email" placeholder="Email" id="email" class="email" [(ngModel)]="user2.email"[ngModelOptions]="{ standalone: true }"/>
+                <span class="error"></span>
+          </div>
+          <div class="form-group">
+            <input type="password" placeholder="Password" id="password" class="pass" [(ngModel)]="user2.password"[ngModelOptions]="{ standalone: true }"/>
+            <span class="error"></span>
+          </div>
+         </div>
            <a routerLink="#" id="signUp">Forgot your password?</a>
-           <button [disabled]="!loginForm.valid" type="submit">Sign In</button>
+           <button  type="submit">Sign In</button>
        </form>
    </div>
    <div class="overlay-container">

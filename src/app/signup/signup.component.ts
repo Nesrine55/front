@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 declare var $: any;
 
 @Component({
@@ -13,11 +14,13 @@ export class SignupComponent implements OnInit {
     signupForm!: FormGroup;
     Role!: string;
     Role1!: string
+
+    errorMessage = '';
     /*constructor (private http:HttpClient){
         this.http.get('http://localhost:5000/AllStudents').subscribe(data=>console.log(data))
     }*/
 
-    constructor(private authService: AuthService){}
+    constructor(private authService: AuthService, private router:Router){}
 
 
 
@@ -145,20 +148,37 @@ createFormGroup(): FormGroup{
 
 signupUser():void{
     console.log(this.signupForm.value);
+
     
     this.authService
     .signupUser(this.signupForm.value)
-    .subscribe((msg) => console.log(msg));
+    .subscribe(
+        response=>{
+            const email = localStorage.setItem('email',response.email)
+            const role = localStorage.setItem('role',response.role)
+            this.router.navigate(["/mailvalidate"]);
+            
+        },error=>{
+            console.log(error)
+            this.errorMessage = 'There was an error during sign up';
+
+        }
+    );
 
 }
 signupCompany():void{
        
     this.authService
     .signupCompany(this.signupForm.value)
-    .subscribe((msg) => console.log(msg)); 
+    .subscribe(response=>{
+        const email = localStorage.setItem('email',response.email)
+        const role = localStorage.setItem('role',response.role)
+        this.router.navigate(["/mailvalidate"]);
+    },error=>{
+        console.log(error)
+        this.errorMessage = 'There was an error during sign up';
+
+    }); 
 }
-onSubmit() {
-    console.log('Group 1 value:', this.Role);
-    console.log('Group 2 value:', this.Role1);
-      }
+
 }

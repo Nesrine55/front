@@ -26,6 +26,8 @@ import { StudentprofileComponent } from './studentprofile/studentprofile.compone
 import { StudentsettingsComponent } from './studentsettings/studentsettings.component';
 import { AdminnavbarComponent } from './adminnavbar/adminnavbar.component';
 import { MyprofilestudentsetComponent } from './myprofilestudentset/myprofilestudentset.component';
+import { FaqComponent } from './faq/faq.component';
+import { MailverifpasswordComponent } from './mailverifpassword/mailverifpassword.component';
 
 const routes: Routes = [
   {path:'inbording' , component:InbordingComponent},
@@ -54,6 +56,8 @@ const routes: Routes = [
   {path:'studentexplore' , component:StudentexplorepageComponent},
   {path:'adminnav' , component:AdminnavbarComponent},
   {path:'myprofilestudentset' , component:MyprofilestudentsetComponent},
+  {path:'faquestions' , component:FaqComponent},
+  {path:'otpforpassword' , component:MailverifpasswordComponent},
 
 
 

@@ -15,8 +15,14 @@ import { ErrorHandleService } from './error-handle.service';
   providedIn: 'root'
 })
 export class AuthService {
-  private urlUser = "http://localhost:5000/auth/registerUser";
-  private urlCompany = "http://localhost:5000/auth/registerCompany";
+  private urlUser = "http://localhost:5000/student/createStudent";
+  private urlCompany = "http://localhost:5000/entreprise/registerCompany";
+  private urlmailvalidationCompany = "http://localhost:5000/entreprise/verifyOTP1";
+  private urlmailvalidationStudent = "http://localhost:5000/student/verifyOTP";
+private resendurl ="";
+private loginstudent ="http://localhost:5000/auth/login";
+private logincompany ="http://localhost:5000/auth/login1";
+
 
 
 
@@ -35,18 +41,18 @@ export class AuthService {
     ) { }
 
 
-  signupUser(user: Omit<user,"id">): Observable<user>{
+  signupUser(user: Omit<user,"id">): Observable<any>{
     return this.http
-    .post<user>(`${this.urlUser}/signup`, user,this.httpOptions)
+    .post<user>(`${this.urlUser}`, user,this.httpOptions)
     .pipe(
       first(),
       catchError(this.errorHandlerService.handleError<user>("signup"))
     );
 
   }
-  signupCompany(user: Omit<user,"id">): Observable<user>{
+  signupCompany(user: Omit<user,"id">): Observable<any>{
     return this.http
-    .post<user>(`${this.urlCompany}/signup`, user,this.httpOptions)
+    .post<user>(`${this.urlCompany}`, user,this.httpOptions)
     .pipe(
       first(),
       catchError(this.errorHandlerService.handleError<user>("signup"))
@@ -54,23 +60,35 @@ export class AuthService {
 
   }
 
-/*
-  login(
-    email: Pick<user,"email">,
-    password: Pick<user,"password">
-    ): Observable<{ token: string; userId: Pick<user, "id">; }> {
-    return this.http
-    .post<TokenObject>(`${this.urlUser}/login`, {email,password},this.httpOptions)
-    .pipe(
-      first(),
-      tap((tokenObject: TokenObject) => {
-          this.userId = tokenObject.userId;
-          localStorage.setItem("token", tokenObject.token);
-          this.isUserLoggedIn$.next(true);
-          this.router.navigate(["posts"]);
-      }),
-      catchError(this.errorHandlerService.handleError<TokenObject>("login"))
-    );
+
+  verifycodeCompany(email: string, otp: string): Observable<any> {
+    const body = {
+      email: email,
+      OTP: otp
+    };
+    
+    return this.http.post(`${this.urlmailvalidationCompany}`, body);
   }
-*/
+  verifycodeStudent(email: string, otp: string): Observable<any> {
+    const body = {
+      email: email,
+      otp: otp
+    };
+    
+    return this.http.post(`${this.urlmailvalidationStudent}`, body);
+  }
+    
+  resendVerificationCode(email: string): Observable<any> {
+    return this.http.post(`${this.resendurl}`, { email });
+  }
+  loginStudent(email:string, password:string){
+    const body = { email: email, password: password };
+    return this.http.post(this.loginstudent, body);
+
+  }
+  loginCopmany(email:string, password:string){
+    const body = { email: email, password: password };
+    return this.http.post(this.logincompany, body);
+
+  }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 declare var $: any;
 
 @Component({
@@ -10,14 +11,25 @@ declare var $: any;
 })
 export class SiginComponent implements OnInit {
 
-  loginForm!: FormGroup;
-  constructor(private authService: AuthService){}
+  constructor(private authService: AuthService, private router: Router){}
+  user1 = { email: '', password: '' };
+  user2 = { email: '', password: '' };
+  selectedUserType = 'user1';
 
+
+  previousButton: any;
+
+  changeColor(event: any) {
+    if (this.previousButton) {
+      this.previousButton.classList.remove('selected');
+    }
+    event.target.classList.add('selected');
+    this.previousButton = event.target;
+  }
 
 
   public ngOnInit(): void{
 
-    this.loginForm = this.createFormGroup();
 
 
     const signUpButton: HTMLElement = document.getElementById('signUp')!;
@@ -81,17 +93,34 @@ export class SiginComponent implements OnInit {
   
   
   }
-  createFormGroup(): FormGroup{
-    return new FormGroup({
-        email: new FormControl("", [Validators.required, Validators.email]),
-        password: new FormControl("", [
-            Validators.required,
-            Validators.minLength(7)]),
-    }); 
+ 
+
+loginStudent(): void {
+  console.log(this.user1, this.user2);
+  if (this.selectedUserType === 'user1'){
+  this.authService.loginStudent(this.user1.email,this.user1.password).subscribe(
+    response => {
+      //localStorage.setItem('token', response.token);
+      this.router.navigate(['/inbording']);
+
+    },
+    error => {
+      console.error('Error logging in', error);
+    }
+  )}else{
+
+  this.authService.loginCopmany(this.user2.email,this.user2.password).subscribe(
+    response => {
+    //  localStorage.setItem('token', response.token);
+
+    this.router.navigate(['/company']);
+
+    },
+    error => {
+      console.error('Error logging in', error);
+    }
+  );}
 }
 
-login(){
-  console.log(123);
-}
 
 }

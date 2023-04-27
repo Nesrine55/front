@@ -1,7 +1,53 @@
+.buttonrole{
+  border: none;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  margin: 15px 3px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  margin-right: 10px;
+  border-radius: 20px;
+  background-color: white;
+  color: #008CBA;
+
+}
+.same a.selected {
+  background-color: #008CBA;
+  color: #fff;
+}
+.first { 
+  border: 2px solid #008CBA;
+  float: left;
+
+}
+.same{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.first:hover {
+  background-color: #008CBA;
+  color: #fff;
+}
+
+.second {
+  border: 2px solid #008CBA;
+  float: right;
+}
+
+.second:hover {
+  background-color: #008CBA;
+  color: #fff;
+
+}
 
 
 
-h1 {
+h2,h1 {
     font-weight: bold;
     margin: 0;
     color: #2c354a;
@@ -83,7 +129,11 @@ h1 {
   .form-group{
     width: 100%;
   }
-  
+  .para{
+    color: #072b79;
+    margin-top: 80px;
+    font-weight: 400;
+  }
   .container {
     background-color: #fff;
     border-radius: 10px;

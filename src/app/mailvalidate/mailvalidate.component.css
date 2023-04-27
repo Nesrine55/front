@@ -1,5 +1,52 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
+.mt-4 {
+  margin-top: 1.5rem!important;
+}
+.w-100 {
+  width: 100%!important;
+}
+.btn-group-lg>.btn, .btn-lg {
+  padding: 0.8rem 1.85rem;
+  font-size: 1.1rem;
+  border-radius: 0.3rem;
+}
+.btn-purple {
+  color: #fff;
+  background-color: #6672e8;
+  border-color: #6672e8;
+}
+
+.text-center {
+  text-align: center!important;
+}
+.py-4 {
+  padding-top: 1.5rem!important;
+  padding-bottom: 1.5rem!important;
+}
+.form-control-lg {
+  min-height: calc(1.5em + 1rem + 2px);
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 0.3rem;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #1e2e50;
+  background-color: #f6f9fc;
+  background-clip: padding-box;
+  border: 1px solid #dee2e6;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
 :where(.container, form, .input-field, header) {
     display: flex;
     flex-direction: column;
@@ -14,17 +61,28 @@
     text-align: center;
     font-weight: bolder;
   }
-  .container {
-    font-family: "Poppins", sans-serif;
-
-    background: #0c0c0c65;
-    padding: 20px 65px;
-    border-radius: 12px;
-    row-gap: 20px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    width: 50%;
-    margin-top: 100px;
+  h2 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    color: #fff;
   }
+  
+    .container {
+      font-family: "Poppins", sans-serif;
+  
+      background: #081441;
+      padding: 20px 65px;
+      border-radius: 12px;
+      row-gap: 20px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      width: 50%;
+      margin-top: 50px;
+    }
   .container header {
     height: 75px;
     width: 75px;
@@ -43,8 +101,8 @@
     column-gap: 10px;
   }
   .input-field input {
-    height: 45px;
-    width: 42px;
+    height: 60px;
+    width: 60px;
     border-radius: 6px;
     outline: none;
     font-size: 1.125rem;
