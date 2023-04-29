@@ -1,4 +1,3 @@
-<app-navbar></app-navbar>
 <!--<div class="container">
 
   <header>
@@ -29,7 +28,7 @@
 
   
 </div>-->
-<div class="container">
+<!--<div class="container">
   <header>
     <i class="bx bxs-check-shield"></i>
   </header>
@@ -55,4 +54,34 @@
       <a class="text-decoration-none ms-2" (click)="resendCode()">Resend code</a>
     </p>
   </form>
-</div>
+</div>-->
+
+
+<app-navbar></app-navbar>
+<div class="container">
+    <header>
+      <i class="bx bxs-check-shield"></i>
+    </header>
+       <h2 class="fw-normal  mt-4">
+    2-step verification
+    </h2>
+    <p class="mt-4">
+    We sent a verification code to your email.
+    </p>
+    <h5>
+    Please enter the code in the field below.
+    </h5>
+    <form>
+      <div class="input-field">
+        <input type="number" [(ngModel)]="code1" [ngModelOptions]="{standalone: true}"/>
+        <input type="number" disabled [(ngModel)]="code2" [ngModelOptions]="{standalone: true}"/>
+        <input type="number" disabled [(ngModel)]="code3" [ngModelOptions]="{standalone: true}"/>
+        <input type="number" disabled [(ngModel)]="code4" [ngModelOptions]="{standalone: true}"/>
+      </div> 
+      <button class="btn" (click)="verifyEmail()">Verify my account</button>
+      <p class="text-center text-muted mt-4">
+    Didn't receive it?
+    <a class="text-decoration-none ms-2" (click)="resendCode()">Resend code </a>
+    </p>
+    </form>
+  </div>

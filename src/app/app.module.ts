@@ -34,6 +34,8 @@ import { MyprofilestudentsetComponent } from './myprofilestudentset/myprofilestu
 import { FaqComponent } from './faq/faq.component';
 import { MailverifpasswordComponent } from './mailverifpassword/mailverifpassword.component';
 import { ToastrModule } from 'ngx-toastr';
+import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
+import { AuthguardService } from './guards/authguard.service';
 
 @NgModule({
   declarations: [
@@ -65,6 +67,7 @@ import { ToastrModule } from 'ngx-toastr';
     MyprofilestudentsetComponent,
     FaqComponent,
     MailverifpasswordComponent,
+    ForgetpasswordComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -78,7 +81,7 @@ import { ToastrModule } from 'ngx-toastr';
     
 
   ],
-  providers: [],
+  providers: [AuthguardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

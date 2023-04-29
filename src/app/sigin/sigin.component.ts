@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+
+
+
+
+
 declare var $: any;
 
 @Component({
@@ -10,10 +16,12 @@ declare var $: any;
   styleUrls: ['./sigin.component.css']
 })
 export class SiginComponent implements OnInit {
+  loginForm!: FormGroup
 
-  constructor(private authService: AuthService, private router: Router){}
-  user1 = { email: '', password: '' };
-  user2 = { email: '', password: '' };
+  constructor(private fb: FormBuilder,private authService: AuthService, private router: Router,private toastr: ToastrService ){
+  }
+  /*user1 = { email: '', password: '' };
+  user2 = { email: '', password: '' };*/
   selectedUserType = 'user1';
 
 
@@ -91,36 +99,122 @@ export class SiginComponent implements OnInit {
   });
   });
   
+
+
+
+  this.loginForm = this.fb.group({
+    user1: this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required]
+    }),
+    user2: this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required]
+    })
+  });
   
   }
  
 
-loginStudent(): void {
+/*loginStudentt(): void {
   console.log(this.user1, this.user2);
   if (this.selectedUserType === 'user1'){
   this.authService.loginStudent(this.user1.email,this.user1.password).subscribe(
     response => {
       //localStorage.setItem('token', response.token);
-      this.router.navigate(['/inbording']);
 
     },
     error => {
-      console.error('Error logging in', error);
+       
     }
-  )}else{
+  )}else {
 
   this.authService.loginCopmany(this.user2.email,this.user2.password).subscribe(
     response => {
-    //  localStorage.setItem('token', response.token);
-
-    this.router.navigate(['/company']);
+      //localStorage.setItem('token', response.token);
 
     },
     error => {
-      console.error('Error logging in', error);
+
+      }
+  );}*/
+
+  private isValidEmail(email: string): boolean {
+    // email validation logic
+    // return true if email is valid, false otherwise
+  
+    // simple email validation that checks for a valid format
+    const emailRegex = /\S+@\S+\.\S+/;
+    return emailRegex.test(email);
+  }
+  
+  private isValidPassword(password: string): boolean {
+    // password validation logic
+    // return true if password is valid, false otherwise
+  
+    // simple password validation that checks for a minimum length of 6 characters
+    return password.length >= 6;
+  }
+  loginStudentt(): void {
+    console.log(this.loginForm.get('user1')?.value, this.loginForm.get('user2')?.value);
+   if (this.selectedUserType === 'user1') {
+      // email validation logic
+      if (!this.isValidEmail(this.loginForm.get('user1.email')?.value)) {
+        this.toastr.error('Invalid email', 'Error', {timeOut:2000});
+        return;
+      }
+  
+      // password validation logic
+      if (!this.isValidPassword(this.loginForm.get('user1.password')?.value)) {
+        this.toastr.error('Invalid password', 'Error', {timeOut:2000});
+        return;
+      }
+  
+      // login logic
+      this.authService.loginStudent(this.loginForm.get('user1.email')?.value, this.loginForm.get('user1.password')?.value).subscribe(
+        response => {
+          //localStorage.setItem('token', response.token);
+          this.authService.role='student';
+          this.authService.isAuthenticated=true;
+          //localStorage.setItem('token', response.token);
+          this.router.navigate(['/student']);        },
+        error => {
+          // login error handling
+          this.toastr.error('Login failed', 'Error', {timeOut:2000});
+        }
+      );
+    } else {
+      // email validation logic
+      if (!this.isValidEmail(this.loginForm.get('user2.email')?.value)) {
+        this.toastr.error('Invalid email', 'Error', {timeOut:2000});
+        return;
+      }
+  
+      // password validation logic
+      if (!this.isValidPassword(this.loginForm.get('user2.password')?.value)) {
+        this.toastr.error('Invalid password', 'Error', {timeOut:2000});
+        return;
+      }
+      console.log(this.loginForm.get('user2.email')?.value);
+      console.log(this.loginForm.get('user2.password')?.value);
+      // login logic
+      this.authService.loginCopmany(this.loginForm.get('user2.email')?.value, this.loginForm.get('user2.password')?.value).subscribe(
+        response => {
+          this.authService.role='company';
+          this.authService.isAuthenticated=true;
+          //localStorage.setItem('token', response.token);
+          this.router.navigate(['/company']);
+        },
+        error => {
+          // login error handling
+          this.toastr.error('Login failed', 'Error', {timeOut:2000});
+        }
+      );
     }
-  );}
+  }
+  
+
 }
 
 
-}
+

@@ -29,7 +29,18 @@ export class SignupComponent implements OnInit {
 
     public ngOnInit(): void{
 
-        this.signupForm = this.createFormGroup();
+        this.signupForm =   
+        new FormGroup({
+            name: new FormControl("", [Validators.required, Validators.minLength(2)]),
+            email: new FormControl("", [Validators.required, Validators.email]),
+            password: new FormControl("", [
+                Validators.required,
+                Validators.minLength(7)]),
+            confirmpassword: new FormControl("", [
+                    Validators.required,
+                    Validators.minLength(7)]),
+                    
+        });
         //this.signupForm = this.createFormGroupCampagny();
         
 
@@ -113,20 +124,7 @@ export class SignupComponent implements OnInit {
 }
 
 
-createFormGroup(): FormGroup{
-    return new FormGroup({
-        name: new FormControl("", [Validators.required, Validators.minLength(2)]),
-        email: new FormControl("", [Validators.required, Validators.email]),
-        password: new FormControl("", [
-            Validators.required,
-            Validators.minLength(7)]),
-        confirmpassword: new FormControl("", [
-                Validators.required,
-                Validators.minLength(7)]),
-                
-    });
 
-}
 
   
 /*createFormGroupCampagny():FormGroup{

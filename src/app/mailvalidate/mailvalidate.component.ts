@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mailvalidate',
@@ -7,7 +8,7 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./mailvalidate.component.css']
 })
 export class MailvalidateComponent {
-  constructor(private authService: AuthService){}
+  constructor(private authService: AuthService, private router: Router){}
 
   code1 = '';
   code2 = '';
@@ -22,21 +23,23 @@ export class MailvalidateComponent {
     if(role === 'company'){
       this.authService.verifycodeCompany(email, code).subscribe(
         (response) => {
-          console.log(response); // Handle success
-        
+          console.log('OTP code verified:', response); // Handle success
+          this.router.navigate(["/signin"]);
+
         },
         (error) => {
-          console.log(error); // Handle error
+          console.log('Error verifying OTP code:', error); // Handle error
         }
       );
     }else{
       this.authService.verifycodeStudent(email, code).subscribe(
         (response) => {
-          console.log(response); // Handle success
-        
+          this.router.navigate(["/signin"]);
+
+          console.log('OTP code verified:', response); // Handle success
         },
         (error) => {
-          console.log(error); // Handle error
+          console.log('Error verifying OTP code:', error); // Handle error
         }
       );
     }
@@ -51,9 +54,9 @@ export class MailvalidateComponent {
       },
       (error) => {
         console.log(error); // Handle error
-      }
-    );
-  }
+    });
+}
+
 
 
   public ngOnInit(){

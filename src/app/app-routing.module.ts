@@ -28,9 +28,10 @@ import { AdminnavbarComponent } from './adminnavbar/adminnavbar.component';
 import { MyprofilestudentsetComponent } from './myprofilestudentset/myprofilestudentset.component';
 import { FaqComponent } from './faq/faq.component';
 import { MailverifpasswordComponent } from './mailverifpassword/mailverifpassword.component';
-
+import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
+import { AuthguardService } from './guards/authguard.service';
 const routes: Routes = [
-  {path:'inbording' , component:InbordingComponent},
+ 
   {path:'menu' , component:MenuComponent},
   {path:'nav' , component:NavComponent},
   {path:'about' , component:AboutpageComponent},
@@ -41,7 +42,7 @@ const routes: Routes = [
   {path:'' , component:HomepageComponent},
   {path:'mailvalidate' , component:MailvalidateComponent},
   {path:'signup' , component:SignupComponent},
-  {path:'company' , component:CompanydashboardComponent},
+  {path:'company' , component:CompanydashboardComponent, canActivate:[AuthguardService], data: { role: 'company' } },
   {path:'companynav' , component:CompanynavbarComponent},
   {path:'studentnav' , component:StudentnavbarComponent},
   {path:'signin' , component:SiginComponent},
@@ -58,6 +59,10 @@ const routes: Routes = [
   {path:'myprofilestudentset' , component:MyprofilestudentsetComponent},
   {path:'faquestions' , component:FaqComponent},
   {path:'otpforpassword' , component:MailverifpasswordComponent},
+  {path:'forpassword' , component:ForgetpasswordComponent},
+  {path:'student' , component:InbordingComponent, canActivate:[AuthguardService], data: { role: 'student' }},
+
+
 
 
 

@@ -14,7 +14,7 @@
          </div>
            <button>Reset</button>
        </form>--> 
-       <form>
+       <form action="#">
         <h2> you should verify your email first </h2>
        <p class="para"> Enter you mail here : </p>
         <div class="form-group">
@@ -26,7 +26,7 @@
        </form>
    </div>
    <div class="form-container sign-in-container">
-       <form  (ngSubmit)="loginStudent()" novalidate>
+       <form  (ngSubmit)="loginStudentt()" [formGroup]="loginForm" novalidate>
            <h1>Sign in</h1>
            <div class="social-container">
                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -37,24 +37,33 @@
             <a class="buttonrole first" [ngClass]="{'selected': selectedUserType === 'user1'}" (click)="selectedUserType='user1'; changeColor($event);">Student</a>
             <a class="buttonrole second" [ngClass]="{'selected': selectedUserType === 'user2'}" (click)="selectedUserType='user2'; changeColor($event);">Company</a>
           </div>
-          <div class="form-group" *ngIf="selectedUserType==='user1'">
+          <div class="form-group" *ngIf="selectedUserType==='user1'" formGroupName="user1">
            <div class="form-group">
-                <input type="email" placeholder="Email" id="email" class="email" [(ngModel)]="user1.email" name="email" required />
-            <span class="error"></span>
+                <input type="email" placeholder="Email" id="email" class="email" formControlName="email" name="email" required >
+                
+            <span class="error"  *ngIf="loginForm.get('user1.email')?.invalid && loginForm.get('user1.email')?.touched">        
+                Email is required and must be a valid email address
+            </span>
          </div>
          <div class="form-group">
-                <input type="password" placeholder="Password" id="password" class="pass" [(ngModel)]="user1.password" name="password" required/>
-            <span class="error"></span>
+                <input type="password" placeholder="Password" id="password" class="pass" formControlName="password" name="password" required />
+            <span class="error" *ngIf="loginForm.get('user1.password')?.invalid && loginForm.get('user1.password')?.touched">
+                Password is required
+            </span>
          </div>
         </div>
-        <div class="form-group" *ngIf="selectedUserType==='user2'">
+        <div class="form-group" *ngIf="selectedUserType==='user2'" formGroupName="user2">
             <div class="form-group">
-                <input type="email" placeholder="Email" id="email" class="email" [(ngModel)]="user2.email"[ngModelOptions]="{ standalone: true }"/>
-                <span class="error"></span>
+                <input type="email" placeholder="Email" id="email" class="email"formControlName="email" required/>
+                <span class="error" *ngIf="loginForm.get('user2.email')?.invalid && loginForm.get('user2.email')?.touched">
+                    Email is required and must be a valid email address
+                </span>
           </div>
           <div class="form-group">
-            <input type="password" placeholder="Password" id="password" class="pass" [(ngModel)]="user2.password"[ngModelOptions]="{ standalone: true }"/>
-            <span class="error"></span>
+            <input type="password" placeholder="Password" id="password" class="pass" formControlName="password" required/>
+            <span class="error" *ngIf="loginForm.get('user2.password')?.invalid && loginForm.get('user2.password')?.touched">
+                Password is required
+            </span>
           </div>
          </div>
            <a routerLink="#" id="signUp">Forgot your password?</a>

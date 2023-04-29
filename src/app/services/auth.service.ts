@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 
+import { throwError } from 'rxjs';
 
 import {  Observable,BehaviorSubject } from 'rxjs';
 import { first,catchError, tap } from 'rxjs/operators';
@@ -15,13 +16,17 @@ import { ErrorHandleService } from './error-handle.service';
   providedIn: 'root'
 })
 export class AuthService {
+  [x: string]: any;
+  public role='';
+  public isAuthenticated = false;
+  
   private urlUser = "http://localhost:5000/student/createStudent";
   private urlCompany = "http://localhost:5000/entreprise/registerCompany";
   private urlmailvalidationCompany = "http://localhost:5000/entreprise/verifyOTP1";
   private urlmailvalidationStudent = "http://localhost:5000/student/verifyOTP";
-private resendurl ="";
-private loginstudent ="http://localhost:5000/auth/login";
-private logincompany ="http://localhost:5000/auth/login1";
+  private resendurl ="";
+  private loginstudent ="http://localhost:5000/auth/login";
+  private logincompany ="http://localhost:5000/auth/login1";
 
 
 
@@ -61,7 +66,7 @@ private logincompany ="http://localhost:5000/auth/login1";
   }
 
 
-  verifycodeCompany(email: string, otp: string): Observable<any> {
+ verifycodeCompany(email: string, otp: string): Observable<any> {
     const body = {
       email: email,
       OTP: otp
@@ -72,7 +77,7 @@ private logincompany ="http://localhost:5000/auth/login1";
   verifycodeStudent(email: string, otp: string): Observable<any> {
     const body = {
       email: email,
-      otp: otp
+      OTP: otp
     };
     
     return this.http.post(`${this.urlmailvalidationStudent}`, body);
@@ -81,6 +86,13 @@ private logincompany ="http://localhost:5000/auth/login1";
   resendVerificationCode(email: string): Observable<any> {
     return this.http.post(`${this.resendurl}`, { email });
   }
+
+
+  getUserRole(): string{
+   return this.role;
+
+  }
+
   loginStudent(email:string, password:string){
     const body = { email: email, password: password };
     return this.http.post(this.loginstudent, body);
@@ -89,6 +101,35 @@ private logincompany ="http://localhost:5000/auth/login1";
   loginCopmany(email:string, password:string){
     const body = { email: email, password: password };
     return this.http.post(this.logincompany, body);
-
   }
+  public getisAuthenticated(): boolean {
+    return this.isAuthenticated;
+  }
+  /*loginCopmany(email: string, password: string){
+    return this.http.post(`${this.logincompany}`, { email, password }).subscribe(
+      (_response) => {
+        console.error('User found');
+        this.isAuthenticated = true;
+        // Navigate the user to their dashboard based on their role
+      },
+      (error) => {
+        if (error.status === 404) {
+          // handle user not found error
+          console.error('User not found');
+        } else if (error.status === 401) {
+          // handle incorrect password error
+          console.error('Incorrect password');
+        } else {
+          // handle other errors
+          console.error('An error occurred:', error.message);
+        }
+      }
+    );
+  }
+  */
+
+
+
+  
+
 }
