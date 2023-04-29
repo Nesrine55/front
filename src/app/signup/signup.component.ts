@@ -152,8 +152,9 @@ signupUser():void{
     .signupUser(this.signupForm.value)
     .subscribe(
         response=>{
-            const email = localStorage.setItem('email',response.email)
-            const role = localStorage.setItem('role',response.role)
+            console.log(response);
+           // const email = localStorage.setItem('email',response.email)
+            //const role = localStorage.setItem('role',response.role)
             this.router.navigate(["/mailvalidate"]);
             
         },error=>{
