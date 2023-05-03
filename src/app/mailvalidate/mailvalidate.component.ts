@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-mailvalidate',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./mailvalidate.component.css']
 })
 export class MailvalidateComponent {
-  constructor(private authService: AuthService, private router: Router){}
+  constructor(private authService: AuthService, private router: Router,private toastr: ToastrService){}
 
   code1 = '';
   code2 = '';
@@ -20,42 +21,82 @@ export class MailvalidateComponent {
     const code = this.code1 +''+ this.code2 + ''+ this.code3 +''+ this.code4;
     const email = localStorage.getItem('email') || ''; // Retrieve the email from local storage or from a state management solution
     const role= localStorage.getItem('role')||''
+    console.log(email);
+    console.log(role);
+
     if(role === 'company'){
       this.authService.verifycodeCompany(email, code).subscribe(
         (response) => {
           console.log('OTP code verified:', response); // Handle success
+          this.toastr.success('OTP has been sent successfully');
+          //this.toastr.success(response?.message, "Success", { timeOut: 2000 })
           this.router.navigate(["/signin"]);
 
         },
         (error) => {
-          console.log('Error verifying OTP code:', error); // Handle error
+          console.log(error)
+          this.toastr.error(error.error.message, "Error", { timeOut: 2000 });
+
         }
       );
     }else{
+      
       this.authService.verifycodeStudent(email, code).subscribe(
         (response) => {
+          this.toastr.success('OTP has been sent successfully');
+          //this.toastr.success(response?.message, "Success", { timeOut: 2000 })
+
+         console.log('OTP code verified:', response); // Handle success
           this.router.navigate(["/signin"]);
 
-          console.log('OTP code verified:', response); // Handle success
         },
         (error) => {
-          console.log('Error verifying OTP code:', error); // Handle error
-        }
+          console.log(error)
+          this.toastr.error(error.error.message, "Error", { timeOut: 2000 });        }
       );
     }
 
   }
-  resendCode() {
-    const email = localStorage.getItem('email') ||''; // Retrieve the email from local storage or from a state management solution
 
-    this.authService.resendVerificationCode(email).subscribe(
-      (response) => {
-        console.log(response); // Handle success
-      },
-      (error) => {
-        console.log(error); // Handle error
-    });
+
+resendCode() {
+  const email = localStorage.getItem('email') || '';
+const role = localStorage.getItem('role') || '';
+if (role === 'company') {
+  this.authService.resendVerificationCodePassC(email).subscribe(
+    (response) => {
+      console.log(response); // Handle success
+      this.toastr.success('OTP has been resent successfully');
+      //this.toastr.success(response?.message, "Success", { timeOut: 2000 })
+
+    },
+    (error) => {
+      console.log(error); // Handle error
+      this.toastr.error('Failed to resend OTP');
+      //this.toastr.error(error.error.message, "Error", { timeOut: 2000 })
+
+    }
+  );
+} else {
+  this.authService.resendVerificationCodePassS(email).subscribe(
+    (response) => {
+      console.log(response); // Handle success
+      this.toastr.success('OTP has been resent successfully');
+      //this.toastr.success(response?.message, "Success", { timeOut: 2000 })
+
+    },
+    (error) => {
+      console.log(error); // Handle error
+      this.toastr.error('Failed to resend OTP student');
+      //this.toastr.error(error.error.message, "Error", { timeOut: 2000 })
+
+    }
+  );
 }
+  
+}
+
+
 
 
 

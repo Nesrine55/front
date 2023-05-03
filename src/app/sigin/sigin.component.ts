@@ -123,28 +123,6 @@ export class SiginComponent implements OnInit {
   }
 
 
-  /*loginStudentt(): void {
-    console.log(this.user1, this.user2);
-    if (this.selectedUserType === 'user1'){
-    this.authService.loginStudent(this.user1.email,this.user1.password).subscribe(
-      response => {
-        //localStorage.setItem('token', response.token);
-  
-      },
-      error => {
-         
-      }
-    )}else {
-  
-    this.authService.loginCopmany(this.user2.email,this.user2.password).subscribe(
-      response => {
-        //localStorage.setItem('token', response.token);
-  
-      },
-      error => {
-  
-        }
-    );}*/
 
   private isValidEmail(email: string): boolean {
     // email validation logic
@@ -162,12 +140,17 @@ export class SiginComponent implements OnInit {
     // simple password validation that checks for a minimum length of 6 characters
     return password.length >= 6;
   }
+
+
+
   loginStudentt(): void {
     console.log(this.loginForm.get('user1')?.value, this.loginForm.get('user2')?.value);
     if (this.selectedUserType === 'user1') {
       // email validation logic
       if (!this.isValidEmail(this.loginForm.get('user1.email')?.value)) {
-        this.toastr.error('Invalid email', 'Error', { timeOut: 2000 });
+      
+       this.toastr.error('Invalid email', 'Error', { timeOut: 2000 });
+
         return;
       }
 
@@ -180,14 +163,17 @@ export class SiginComponent implements OnInit {
       // login logic
       this.authService.loginStudent(this.loginForm.get('user1.email')?.value, this.loginForm.get('user1.password')?.value).subscribe(
         response => {
-          //localStorage.setItem('token', response.token);
+          localStorage.setItem('data', JSON.stringify(response.data));
+          localStorage.setItem('token', response.token);
           this.authService.role = 'student';
           this.authService.isAuthenticated = true;
-          //localStorage.setItem('token', response.token);
           this.router.navigate(['/student']);
         },
         error => {
           // login error handling
+          console.log(error)
+          //this.toastr.error(error.error.message, "Error", { timeOut: 2000 })
+
           this.toastr.error('Login failed', 'Error', { timeOut: 2000 });
         }
       );
@@ -208,13 +194,16 @@ export class SiginComponent implements OnInit {
       // login logic
       this.authService.loginCopmany(this.loginForm.get('user2.email')?.value, this.loginForm.get('user2.password')?.value).subscribe(
         response => {
+          localStorage.setItem('data', JSON.stringify(response.data));
+          localStorage.setItem('token', response.token);
           this.authService.role = 'company';
           this.authService.isAuthenticated = true;
-          //localStorage.setItem('token', response.token);
           this.router.navigate(['/company']);
         },
         error => {
           // login error handling
+          console.log(error)
+          //this.toastr.error(error.error.message, "Error", { timeOut: 2000 })
           this.toastr.error('Login failed', 'Error', { timeOut: 2000 });
         }
       );
@@ -224,14 +213,22 @@ export class SiginComponent implements OnInit {
   // enter email for reset password
 
   resetMail() {
+
+    console.log(this.resetForm.get('email')?.value);
+    console.log(this.resetForm.get('type')?.value);
     if (this.resetForm.get('type')?.value == 'student') {
       this.authService.forgetPasswordStudent(this.resetForm.get('email')?.value).subscribe(
         response => {
+          //this.toastr.success(response?.message, "Success", { timeOut: 2000 })
+          localStorage.setItem('email',this.resetForm.get('email')?.value)
+          localStorage.setItem('role',this.resetForm.get('type')?.value)
           console.log(response);
           this.router.navigate(['/otpforpassword']);
         },
         error => {
-          this.toastr.error('this email is not found', 'Error', { timeOut: 2000 });
+          console.log(error)
+          this.toastr.error(error.error.message, "Error", { timeOut: 2000 })
+          //this.toastr.error('this email is not found', 'Error', { timeOut: 2000 });
         }
 
       );
@@ -241,10 +238,14 @@ export class SiginComponent implements OnInit {
       this.authService.forgetPasswordCompany(this.resetForm.get('email')?.value).subscribe(
         response => {
           console.log(response);
+          localStorage.setItem('email',this.resetForm.get('email')?.value)
+          localStorage.setItem('role',this.resetForm.get('type')?.value)
           this.router.navigate(['/otpforpassword']);
         },
         error => {
-          this.toastr.error('this email is not found', 'Error', { timeOut: 2000 });
+          console.log(error)
+          this.toastr.error(error.error.message, "Error", { timeOut: 2000 })
+          //this.toastr.error('this email is not found', 'Error', { timeOut: 2000 });
         }
 
       );

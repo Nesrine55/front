@@ -18,6 +18,10 @@
     padding-left: 10px;
     width: 70%;
 }
+.logout{
+    text-decoration: none;
+    color: white;
+}
 
 .search__title {
     font-size: 22px;

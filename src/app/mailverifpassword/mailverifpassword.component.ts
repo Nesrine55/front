@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-mailverifpassword',
   templateUrl: './mailverifpassword.component.html',
   styleUrls: ['./mailverifpassword.component.css']
 })
 export class MailverifpasswordComponent {
-  constructor(private authService: AuthService){}
+  constructor(private authService: AuthService,private router: Router, private toastr: ToastrService){}
 
   code1 = '';
   code2 = '';
@@ -14,46 +17,79 @@ export class MailverifpasswordComponent {
   code4 = '';
 
 
- /* verifyEmail() {
+  verifyEmailforpassword(){
     const code = this.code1 +''+ this.code2 + ''+ this.code3 +''+ this.code4;
     const email = localStorage.getItem('email') || ''; // Retrieve the email from local storage or from a state management solution
     const role= localStorage.getItem('role')||''
     if(role === 'company'){
-      this.authService.verifycodeCompany(email, code).subscribe(
+      this.authService.verifyOTPCompanyPassword(email, code).subscribe(
         (response) => {
-          console.log(response); // Handle success
-        
+         // console.log(response); // Handle success
+         this.toastr.success(response?.message, "Success", { timeOut: 2000 })
+          localStorage.setItem("resetPasswordToken", response.resetPasswordToken)
+          this.router.navigate(["/forpassword"]);
+
         },
         (error) => {
           console.log(error); // Handle error
+          this.toastr.error(error.error.message, "Error", { timeOut: 2000 })
+
         }
       );
     }else{
-      this.authService.verifycodeStudent(email, code).subscribe(
+      this.authService.verifyOTPStudentPassword(email, code).subscribe(
         (response) => {
-          console.log(response); // Handle success
-        
+          //console.log(response); // Handle success
+          this.toastr.success(response?.message, "Success", { timeOut: 2000 })
+          localStorage.setItem("resetPasswordToken", response.resetPasswordToken)
+          this.router.navigate(["/forpassword"]);
         },
         (error) => {
           console.log(error); // Handle error
+          this.toastr.error(error.error.message, "Error", { timeOut: 2000 })
+
         }
       );
     }
 
   }
-  resendCode() {
-    const email = localStorage.getItem('email') ||''; // Retrieve the email from local storage or from a state management solution
 
-    this.authService.resendVerificationCode(email).subscribe(
+  resendCode() {
+    const email = localStorage.getItem('email') || '';
+  const role = localStorage.getItem('role') || '';
+  if (role === 'company') {
+    this.authService.resendVerificationCodePassC(email).subscribe(
       (response) => {
         console.log(response); // Handle success
+        this.toastr.success('OTP has been resent successfully');
+       // this.toastr.success(response?.message, "Success", { timeOut: 2000 })
+
       },
       (error) => {
         console.log(error); // Handle error
-      }
-    );
-  }
-*/
+        //this.toastr.error(error.error.message, "Error", { timeOut: 2000 })
+        this.toastr.error('Failed to resend OTP');
+      }
+    );
+  } else {
+    this.authService.resendVerificationCodePassS(email).subscribe(
+      (response) => {
+        console.log(response); // Handle success
+        this.toastr.success('OTP has been resent successfully');
+        //this.toastr.success(response?.message, "Success", { timeOut: 2000 })
+
+      },
+      (error) => {
+        console.log(error); // Handle error
+        this.toastr.error('Failed to resend OTP student');
+        //this.toastr.error(error.error.message, "Error", { timeOut: 2000 })
+
+      }
+    );
+  }
+    
+  }
+  
 
   public ngOnInit(){
 

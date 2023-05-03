@@ -18,7 +18,9 @@
          </div>-->
           <div class="form-group">
              <input type="email" placeholder="Email" id="email" class="email" formControlName="email"/>
-             <span class="error"></span>
+             <span class="error"  *ngIf="signupForm.invalid">        
+                Email is required and must be a valid email address
+            </span>
           </div>
           <div class="form-group">
              <input type="password" placeholder="Password" id="password" class="pass" formControlName="password"/>

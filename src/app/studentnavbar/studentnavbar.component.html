@@ -206,7 +206,7 @@
                     </div>
                   </li>
                   <li class="nav-item dropdown">
-                    <a class="nav-link" id="profileDropdown" routerLink="/studentprofile" data-toggle="dropdown">
+                    <a class="nav-link" id="profileDropdown"  data-toggle="dropdown">
                       <div class="navbar-profile">
                         <img class="img-xs rounded-circle" src="../../assets/mypic.jpg" alt="">
                         <p class="mb-0 d-none d-sm-block navbar-profile-name">Nesrine Zarrouk</p>
@@ -234,7 +234,7 @@
                           </div>
                         </div>
                         <div class="preview-item-content">
-                          <p class="preview-subject mb-1">Log out</p>
+                          <a  (click)="logout()" class="logout preview-subject mb-1">Log out</a>
                         </div>
                       </a>
                       <div class="dropdown-divider"></div>
