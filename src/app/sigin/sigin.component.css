@@ -14,8 +14,36 @@
   color: #008CBA;
 
 }
+.role:first-of-type {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 5px;
+}
 .st{
   color: #222;
+  margin-right: 20px;
+  line-height: 32px;
+}
+.inputt{
+ 
+  border: 1px solid #999;
+  transition: 0.2s all linear;
+ 
+
+  position: relative;
+  top: 4px;
+}
+.inputt:checked{
+ color: #222;
+
+}
+fieldset{
+  margin-top: 20px;
+}
+legend{
+  color: black;
+  padding: 5px 10px;
+font-size: 12px;
 }
 .same a.selected {
   background-color: #008CBA;
@@ -135,7 +163,6 @@ h2,h1 {
   }
   .para{
     color: #072b79;
-    margin-top: 80px;
     font-weight: 400;
   }
   .container {

@@ -19,10 +19,21 @@
 
         <form (ngSubmit)="resetMail()" [formGroup]="resetForm">
             <h2> you should verify your email first </h2>
-            <label class="st" for="student">Student</label>
+           <!-- <label class="st" for="student">Student</label>
             <input type="radio" id="student" name="type" value="student" formControlName="type">
             <label class="st" for="company">Company</label>
-            <input type="radio" id="Company" name="type" value="company" formControlName="type">
+            <input type="radio" id="Company" name="type" value="company" formControlName="type">-->
+
+            <fieldset>
+                <legend>Who are you ?</legend>
+                <div class="role">
+                  <input class="inputt"  type="radio" id="student" name="type" value="student" formControlName="type" />
+                  <label class="st" for="student">  Student</label>
+            
+                  <input class="inputt" type="radio" id="Company" name="type" value="company" formControlName="type" />
+                  <label class="st" for="company" >  Company</label>
+                </div>
+            </fieldset>
 
 
             <!--<div class="form-check form-check-inline">
