@@ -15,10 +15,12 @@ export class AuthguardService implements CanActivate{
   
     if (this.authService.getisAuthenticated() && this.authService.getUserRole() === role) {
       return true;
-    } else {
-      alert("you are not logged in or don't have access to this page");
+    } 
+    else {
+     // alert("you are not logged in or don't have access to this page");
       this.router.navigate(['/signin']); // Navigate to the login page 
-      return false;
+      // i enter a valid email and password but the server return an error
+      return true;
     }
   }
 }

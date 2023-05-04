@@ -34,7 +34,7 @@ export class MailvalidateComponent {
 
         },
         (error) => {
-          console.log(error)
+          console.log(error.error.message)
           this.toastr.error(error.error.message, "Error", { timeOut: 2000 });
 
         }
@@ -51,7 +51,7 @@ export class MailvalidateComponent {
 
         },
         (error) => {
-          console.log(error)
+          console.log(error.error.message)
           this.toastr.error(error.error.message, "Error", { timeOut: 2000 });        }
       );
     }
