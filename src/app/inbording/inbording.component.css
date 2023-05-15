@@ -1,3 +1,4 @@
+
 .content-wrapper{
     background-color: rgb(177, 177, 200);
 }
@@ -5,9 +6,160 @@
 .card{
     background-color: aliceblue;
 }
- h5, h6{
+ h5, h6, .h4{
     color: rgb(144, 99, 186);
 }
 h2{
     color: rgb(51, 51, 51);
+}
+body{margin-top:20px;}
+.shadow {
+    box-shadow: 0 0 3px rgb(53 64 78 / 20%) !important;
+}
+.rounded {
+    border-radius: 5px !important;
+}
+.bg-light {
+    background-color: #f7f8fa !important;
+}
+.bg-primary, .btn-primary, .btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active, .btn-outline-primary.active, .btn-outline-primary.focus, .btn-outline-primary:not(:disabled):not(.disabled):active, .badge-primary, .nav-pills .nav-link.active, .pagination .active a, .custom-control-input:checked ~ .custom-control-label:before, #preloader #status .spinner > div, .social-icon li a:hover, .back-to-top:hover, .back-to-home a, ::selection, #topnav .navbar-toggle.open span:hover, .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots.clickable .owl-dot:hover span, .watch-video a .play-icon-circle, .sidebar .widget .tagcloud > a:hover, .flatpickr-day.selected, .flatpickr-day.selected:hover, .tns-nav button.tns-nav-active, .form-check-input.form-check-input:checked {
+    background-color: #6dc77a !important;
+}
+.text-success{
+    float: right;
+}
+
+.badge {
+    padding: 5px 8px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+    float: left;
+    margin-right: 10px;
+}
+.badge1 {
+    padding: 3px 8px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+    margin-right: 10px;
+    font-weight: bold;
+    background-color: rgb(34, 118, 198) !important;
+}
+.badge2{
+    padding: 3px 8px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+    float: left;
+    margin-right: 10px;
+    font-weight: bold;
+margin-bottom: 10px;
+background-color: rgb(100, 100, 109) !important;
+}
+.sub{
+    margin-top: 35px;
+    margin-bottom: 20px;
+
+}
+.profile-pic{
+    margin-bottom: 10px;
+}
+.btn-primary, .btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active, .btn-outline-primary.active, .btn-outline-primary.focus, .btn-outline-primary:not(:disabled):not(.disabled):active {
+    box-shadow: 0 3px 7px rgb(109 199 122 / 50%) !important;
+}
+.btn-primary, .btn-outline-primary, .btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active, .btn-outline-primary.active, .btn-outline-primary.focus, .btn-outline-primary:not(:disabled):not(.disabled):active, .bg-soft-primary .border, .alert-primary, .alert-outline-primary, .badge-outline-primary, .nav-pills .nav-link.active, .pagination .active a, .form-group .form-control:focus, .form-group .form-control.active, .custom-control-input:checked ~ .custom-control-label:before, .custom-control-input:focus ~ .custom-control-label::before, .form-control:focus, .social-icon li a:hover, #topnav .has-submenu.active.active .menu-arrow, #topnav.scroll .navigation-menu > li:hover > .menu-arrow, #topnav.scroll .navigation-menu > li.active > .menu-arrow, #topnav .navigation-menu > li:hover > .menu-arrow, .flatpickr-day.selected, .flatpickr-day.selected:hover, .form-check-input:focus, .form-check-input.form-check-input:checked, .container-filter li.active, .container-filter li:hover {
+    border-color: #6dc77a !important;
+}
+.bg-primary, .btn-primary, .btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active, .btn-outline-primary.active, .btn-outline-primary.focus, .btn-outline-primary:not(:disabled):not(.disabled):active, .badge-primary, .nav-pills .nav-link.active, .pagination .active a, .custom-control-input:checked ~ .custom-control-label:before, #preloader #status .spinner > div, .social-icon li a:hover, .back-to-top:hover, .back-to-home a, ::selection, #topnav .navbar-toggle.open span:hover, .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots.clickable .owl-dot:hover span, .watch-video a .play-icon-circle, .sidebar .widget .tagcloud > a:hover, .flatpickr-day.selected, .flatpickr-day.selected:hover, .tns-nav button.tns-nav-active, .form-check-input.form-check-input:checked {
+    background-color: #6dc77a !important;
+}
+.btn {
+    padding: 8px 20px;
+    outline: none;
+    text-decoration: none;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+    font-weight: 600;
+    border-radius: 5px;
+}
+.btn-primary {
+    background-color: #6dc77a !important;
+    border: 1px solid #6dc77a !important;
+    color: #fff !important;
+    box-shadow: 0 3px 7px rgb(109 199 122 / 50%);
+}
+.btn-color{
+    background-color: #362b79 !important;
+    border: 1px solid #362b79 !important;
+    color: #fff !important;
+    box-shadow: 0 3px 7px rgba(68, 49, 138, 0.5);
+margin-left: 100px;
+}
+
+a {
+text-decoration:none;    
+}
+
+
+/**/
+
+body{
+    background:#eee;
+}
+
+.card {
+    box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid rgba(0,0,0,.125);
+    border-radius: 1rem;
+}
+
+.card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.5rem 1.5rem;
+}
+.avatar-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    font-weight: 700;
+}
+
+.avatar {
+    width: 3rem;
+    height: 3rem;
+}
+.rounded-3 {
+    border-radius: 0.5rem!important;
+}
+.mb-2 {
+    margin-bottom: 0.5rem!important;
+}
+.me-4 {
+    margin-right: 1.5rem!important;
+}
+
+.h5{
+    color: #000;
 }

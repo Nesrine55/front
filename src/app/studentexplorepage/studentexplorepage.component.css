@@ -1,6 +1,6 @@
 
 .content-wrapper,.main-panel{
-background-color: #bcc1dc;
+background-color: rgb(223, 223, 229);
 }
 
 /* Tr Job Post */
@@ -10,8 +10,10 @@ background-color: #fff;
 }
 
 .job-tab .nav-tabs {
-margin-bottom: 60px;
 border-bottom: 0;
+}
+.pg{
+    background-color: #ffffff;
 }
 
 .job-tab .nav-tabs>li {
@@ -188,7 +190,7 @@ left: 0;
 width: 100%;
 height: 100%;
 border-radius: 5px;
-background-color: #008def;
+background-color: #3c454b;
 color: #fff;
 opacity: 0;
 -webkit-transition: all 800ms;

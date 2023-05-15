@@ -30,6 +30,8 @@ import { FaqComponent } from './faq/faq.component';
 import { MailverifpasswordComponent } from './mailverifpassword/mailverifpassword.component';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 import { AuthguardService } from './guards/authguard.service';
+import { HomeuserComponent } from './homeuser/homeuser.component';
+import { ExploreforcompanyComponent } from './exploreforcompany/exploreforcompany.component';
 const routes: Routes = [
  
   {path:'menu' , component:MenuComponent},
@@ -49,7 +51,7 @@ const routes: Routes = [
   {path:'studentsettings' , component:StudentsettingsComponent},
   {path:'studentprofile' , component:StudentprofileComponent},
   {path:'navbar' , component:NavbarComponent},
-  {path:'internreview' , component:InternsreviewsComponent},
+  {path:'studentInfo' , component:InternsreviewsComponent},
   {path:'adminpage' , component:AdmindashboardComponent},
   {path:'offer' , component:CreateoffreComponent},
   {path:'offerdetails' , component:OffredetailsComponent},
@@ -60,7 +62,11 @@ const routes: Routes = [
   {path:'faquestions' , component:FaqComponent},
   {path:'otpforpassword' , component:MailverifpasswordComponent},
   {path:'forpassword' , component:ForgetpasswordComponent},
-  {path:'student' , component:InbordingComponent, canActivate:[AuthguardService], data: { role: 'student' }},
+  {path:'student' , component:InbordingComponent}, //canActivate:[AuthguardService], data: { role: 'student' }},
+  {path:'userhome' , component:HomeuserComponent},
+  {path:'companyexplore' , component:ExploreforcompanyComponent},
+
+
 
 
 

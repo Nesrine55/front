@@ -2,12 +2,12 @@
     background-color: aliceblue;
 }
 #sidebar{
-    background: linear-gradient(rgb(160, 160, 234), rgb(248, 201, 209));
+    background: rgb(48, 48, 62);
 
 }
 
 .sidebar-brand-wrapper, .navbar{
-    background-color:rgb(160, 160, 234) ;
+    background-color:rgb(48, 48, 62);
 }
 
 .dropdown-menu{

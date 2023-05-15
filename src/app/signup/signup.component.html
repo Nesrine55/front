@@ -13,9 +13,7 @@
              <input type="text" placeholder="Name" id="name" class="name" formControlName="name"/>
              <span class="error"></span>
           </div>
-       <!--<div class="form-group">
-            <input type="hidden" value="student" formControlName="Role"/>
-         </div>-->
+     
           <div class="form-group">
              <input type="email" placeholder="Email" id="email" class="email" formControlName="email"/>
              <span class="error"  *ngIf="signupForm.invalid">        
@@ -31,6 +29,10 @@
              <span class="error"></span>
           </div>
             <button [disabled]="!signupForm.valid" type="submit" >Sign Up</button>
+            <p class="text-center text-muted mt-4">
+                You have an account ?
+                <a routerLink="/signin" class="text-decoration-none ms-2">Sign In</a>
+              </p>
         </form>
     </div>
     <div class="form-container sign-in-container">
@@ -63,7 +65,10 @@
             <div *ngIf="errorMessage" class="error-message">
                 {{ errorMessage }}
               </div>
-            
+              <p class="text-center text-muted mt-4">
+                You have an account ?
+                <a routerLink="/signin" class="text-decoration-none ms-2">Sign In</a>
+              </p>
         </form>
     </div>
     <div class="overlay-container">

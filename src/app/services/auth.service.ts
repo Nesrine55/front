@@ -222,8 +222,16 @@ console.log(email);
 
 
 
-  
-
+  //get user information from local storage
+  /*getCurrentUser(){
+    const userString = localStorage.getItem('data');
+    if (userString) {
+      const currentUser = JSON.parse(userString) as user;
+      return currentUser.id;
+    } else {
+      return null;
+    }
+  }*/
 
 
 }
