@@ -69,7 +69,9 @@ export class AuthService {
     private http: HttpClient,
     private errorHandlerService: ErrorHandleService,
     private router: Router
-  ) { }
+  ) {
+   
+   }
 
 
   // sign up users

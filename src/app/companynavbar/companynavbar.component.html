@@ -58,20 +58,13 @@
               </a>
             </li>
             <li class="nav-item menu-items">
-              <a class="nav-link" data-toggle="collapse"  aria-expanded="false" aria-controls="ui-basic">
+              <a class="nav-link" data-toggle="collapse"  aria-expanded="false" aria-controls="ui-basic" routerLink="/companyexplore">
                 <span class="menu-icon">
                   <i class="mdi mdi-compass-outline"></i>
                 </span>
                 <span class="menu-title">Explore</span>
-                <i class="menu-arrow"></i>
               </a>
-              <div class="collapse" id="ui-basic">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" routerLink="#">Developpement web</a></li>
-                  <li class="nav-item"> <a class="nav-link" routerLink="#">Marketing</a></li>
-                  <li class="nav-item"> <a class="nav-link" routerLink="#">Data science</a></li>
-                </ul>
-              </div>
+           
             </li>
             <li class="nav-item menu-items">
               <a class="nav-link" >
@@ -128,7 +121,7 @@
               </ul>
               <ul class="navbar-nav navbar-nav-right">
                 <li class="nav-item dropdown d-none d-lg-block">
-                    <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" data-toggle="dropdown" aria-expanded="false" routerLink="#">+ Create New offre</a>
+                    <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" data-toggle="dropdown" aria-expanded="false" routerLink="/offer">+ Create New offre</a>
                    
                   </li>
                   <li class="nav-item dropdown border-left">
@@ -231,7 +224,7 @@
                           </div>
                         </div>
                         <div class="preview-item-content">
-                          <p class="preview-subject mb-1">Settings</p>
+                          <a routerLink="/companyprofile" class="logout preview-subject mb-1">Settings</a>
                         </div>
                       </a>
                       <div class="dropdown-divider"></div>

@@ -7,8 +7,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserSettingsServiceService {
-  private urlgetstudentInfo ='http://localhost:5000/student/profile';
+  private urlgetstudentInfo ='http://localhost:5000/student/getProfile';
   private urlputStudentInfo ='http://localhost:5000/student/updateUser';
+//settings Company
+  private urlgetcompanyInfo ='http://localhost:5000/entreprise/getEntreprise';
+  private urlputcompanyInfo ='http://localhost:5000/entreprise/updateCompny';
 
 
 
@@ -27,6 +30,18 @@ export class UserSettingsServiceService {
   }
 
 
+  //Company
+  getCompanyById(id: string): Observable<user> {
+    return this.http.get<user>(`${this.urlgetcompanyInfo}/${id}`);
+  }
+
+
+
+  updateCompany(user: user, id:any): Observable<user> {
+    return this.http.put<user>(`${this.urlputcompanyInfo}/${id}`, user);
+  }
+
+ 
  /* updateData(userId: string,formData: any): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'

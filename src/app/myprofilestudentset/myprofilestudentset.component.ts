@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { UserSettingsServiceService } from '../services/user-settings-service.service';
 import { user } from '../models/user';
+import { ToastrService } from 'ngx-toastr';
 
 
 
@@ -16,7 +17,7 @@ import { user } from '../models/user';
 
 
 export class MyprofilestudentsetComponent implements OnInit {
-
+  student!: any;
   profileForm!: FormGroup;
   id: any;
 
@@ -24,10 +25,11 @@ export class MyprofilestudentsetComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private authService: AuthService,
-    private userService: UserSettingsServiceService
+    private userService: UserSettingsServiceService,
+    private toastr: ToastrService
   ) { }
 
-
+  
 
   ngOnInit(): void {
     this.profileForm = this.formBuilder.group({
@@ -42,11 +44,15 @@ export class MyprofilestudentsetComponent implements OnInit {
       streetAdress: ['', Validators.required],
       city: ['', Validators.required],
       state: ['', Validators.required],
-      Postal: ['', Validators.required]
+      Postal: ['', Validators.required],
+      Fb: ['', Validators.required],
+      Number: ['', Validators.required],
+      LinkedIn: ['', Validators.required],
+      WhatsApp: ['', Validators.required],
+      GitHub: ['', Validators.required]
 
-
-      // other form controls for any other user profile data
     });
+    
 
 
     const data = JSON.parse(localStorage.getItem('data')!);
@@ -59,6 +65,7 @@ export class MyprofilestudentsetComponent implements OnInit {
     this.userService.getUserById(this.id).subscribe(user => {
       console.log(user)
       this.profileForm.patchValue(user);
+      this.student=user;
     },
       err => console.log(err));
   }
@@ -68,28 +75,15 @@ export class MyprofilestudentsetComponent implements OnInit {
 
     const updatedUser: user = this.profileForm.value;
     this.userService.updateUser(updatedUser, this.id).subscribe((res) => {
-      console.log(res)
-      this.getUser()
-    }, (err) => {
-      console.log(err)
-    });
+      console.log(res);
+      this.toastr.success('your informations has been updated successfully');
 
-
-
-
-    /*const userId ='21';
-    const formValue = this.profileForm.value;
-
-    this.userService.updateData(userId,formValue)
-      .subscribe(
-        data => {
-          console.log('Data updated successfully');
-        },
-        error => {
-          console.error('Error updating data: ', error);
-        }
-      );
-  }*/
+      this.getUser();
+    }, 
+    (err) => {
+      console.log(err);
+    }
+    );
   }
 
 }

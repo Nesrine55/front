@@ -62,7 +62,7 @@ const routes: Routes = [
   {path:'faquestions' , component:FaqComponent},
   {path:'otpforpassword' , component:MailverifpasswordComponent},
   {path:'forpassword' , component:ForgetpasswordComponent},
-  {path:'student' , component:InbordingComponent}, //canActivate:[AuthguardService], data: { role: 'student' }},
+  {path:'student' , component:InbordingComponent,canActivate:[AuthguardService], data: { role: 'student' }},
   {path:'userhome' , component:HomeuserComponent},
   {path:'companyexplore' , component:ExploreforcompanyComponent},
 

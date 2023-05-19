@@ -12,15 +12,12 @@ export class AuthguardService implements CanActivate{
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     const role = route.data['role'];
-  
-    if (this.authService.getisAuthenticated() && this.authService.getUserRole() === role) {
-      return true;
-    } 
-    else {
-     // alert("you are not logged in or don't have access to this page");
-      this.router.navigate(['/signin']); // Navigate to the login page 
-      // i enter a valid email and password but the server return an error
+    console.log(this.authService.getUserRole() === role)
+    console.log(this.authService.getisAuthenticated())
+    if (localStorage.getItem('token')) {
       return true;
     }
+    this.router.navigate(['/signin']); // Navigate to the login page 
+    return false;
   }
 }

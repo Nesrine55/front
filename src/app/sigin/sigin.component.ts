@@ -165,6 +165,7 @@ export class SiginComponent implements OnInit {
         response => {
           localStorage.setItem('data', JSON.stringify(response.data));
           localStorage.setItem('token', response.token);
+          localStorage.setItem('role','student');
           this.authService.role = 'student';
           this.authService.isAuthenticated = true;
           this.router.navigate(['/student']);
@@ -196,6 +197,7 @@ export class SiginComponent implements OnInit {
         response => {
           localStorage.setItem('data', JSON.stringify(response.data));
           localStorage.setItem('token', response.token);
+          localStorage.setItem('role','company');
           this.authService.role = 'company';
           this.authService.isAuthenticated = true;
           this.router.navigate(['/company']);

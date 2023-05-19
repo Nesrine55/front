@@ -12,7 +12,7 @@
                         <ul class="nav nav-tabs justify-content-center" role="tablist">
                             <li role="presentation" class="active">
                                 <a class="active show" href="#hot-jobs" aria-controls="hot-jobs" role="tab"
-                                    data-toggle="tab" aria-selected="true">Best internships</a>
+                                    data-toggle="tab" aria-selected="true">All internships</a>
                             </li>
                             <li role="presentation"><a href="#recent-jobs" aria-controls="recent-jobs" role="tab"
                                     data-toggle="tab" class="" aria-selected="false">Recent internships</a></li>
@@ -67,7 +67,7 @@
                                         <div class="job-item">
                                             <div class="item-overlay">
                                                 <div class="job-info">
-                                                    <a routerLink="#" class="btn btn-primary">Full Time</a>
+                                                    <a routerLink="#" class="btn btn-primary">{{ offer.type }}</a>
                                                     <span class="tr-title">
                                                         <a routerLink="#">{{ offer.title }}</a>
                                                         <span><a routerLink="#">{{offer.technology}}</a></span>
@@ -75,10 +75,9 @@
                                                     <ul class="tr-list job-meta">
                                                         <li><i class="fa fa-map-signs" aria-hidden="true"></i>{{offer.location}}
                                                         </li>
-                                                        <li><i class="fa fa-briefcase" aria-hidden="true"></i>Mid Level
+                                                        <li><i class="fa fa-briefcase" aria-hidden="true"></i>{{offer.internship_level}}
                                                         </li>
-                                                        <li><i class="mdi mdi-timer" aria-hidden="true"></i>duration : 6
-                                                            months</li>
+                                                        <li><i class="mdi mdi-timer" aria-hidden="true"></i>{{offer.duration}}</li>
                                                     </ul>
                                                     <ul class="job-social tr-list">
                                                         <li><a routerLink="#"><i class="mdi mdi-heart-outline"
@@ -106,12 +105,12 @@
                                                     <li><span><i class="fa fa-map-signs"
                                                                 aria-hidden="true"></i></span>{{offer.location}}</li>
                                                     <li><span><i class="fa fa-briefcase"
-                                                                aria-hidden="true"></i></span>Mid Level</li>
+                                                                aria-hidden="true"></i></span>{{offer.internship_level}}</li>
                                                     <li><span><i class="mdi mdi-timer"
-                                                                aria-hidden="true"></i></span>duration : 6 months</li>
+                                                                aria-hidden="true"></i></span>{{offer.duration}}</li>
                                                 </ul>
                                                 <div class="time">
-                                                    <a routerLink="#"><span>Full Time</span></a>
+                                                    <a routerLink="#"><span>{{ offer.type }}</span></a>
                                                     <span class="pull-right">Posted 23 hours ago</span>
                                                 </div>
                                             </div>
@@ -121,22 +120,21 @@
                             </div>
                             <div role="tabpanel" class="tab-pane fade in" id="recent-jobs">
                                 <div class="row">
-                                    <div class="col-md-6 col-lg-3">
+                                    <div class="col-md-6 col-lg-3" *ngFor="let offer of offers">
                                         <div class="job-item">
                                             <div class="item-overlay">
                                                 <div class="job-info">
-                                                    <a routerLink="#" class="btn btn-primary">Part Time</a>
+                                                    <a routerLink="#" class="btn btn-primary">{{ offer.type }}</a>
                                                     <span class="tr-title">
-                                                        <a routerLink="#">Design Associate</a>
-                                                        <span><a routerLink="#">Loop</a></span>
+                                                        <a routerLink="#">{{ offer.title }}</a>
+                                                        <span><a routerLink="#">{{offer.technology}}</a></span>
                                                     </span>
                                                     <ul class="tr-list job-meta">
-                                                        <li><i class="fa fa-map-signs" aria-hidden="true"></i>San
-                                                            Francisco, CA, US</li>
-                                                        <li><i class="fa fa-briefcase" aria-hidden="true"></i>Mid Level
+                                                        <li><i class="fa fa-map-signs" aria-hidden="true"></i>{{offer.location}}
                                                         </li>
-                                                        <li><i class="fa fa-money" aria-hidden="true"></i>$5,000 -
-                                                            $6,000</li>
+                                                        <li><i class="fa fa-briefcase" aria-hidden="true"></i>{{offer.internship_level}}
+                                                        </li>
+                                                        <li><i class="mdi mdi-timer" aria-hidden="true"></i>{{offer.duration}}</li>
                                                     </ul>
                                                     <ul class="job-social tr-list">
                                                         <li><a routerLink="#"><i class="mdi mdi-heart-outline"
@@ -152,403 +150,25 @@
                                             </div>
                                             <div class="job-info">
                                                 <div class="company-logo">
-                                                    <h4>company name</h4>
+                                                    <h4>{{ offer.company_name }}</h4>
                                                     <img src="../../assets/images/faces/microsoftCompany.png"
                                                         alt="images" class="img-fluid" height="60px" width="60px">
                                                 </div>
                                                 <span class="tr-title">
-                                                    <a routerLink="#">Design Associate</a>
-                                                    <span><a routerLink="#">Loop</a></span>
+                                                    <a routerLink="#">{{ offer.title }}</a>
+                                                    <span><a routerLink="#">{{offer.technology}}</a></span>
                                                 </span>
                                                 <ul class="tr-list job-meta">
                                                     <li><span><i class="fa fa-map-signs"
-                                                                aria-hidden="true"></i></span>San Francisco, CA, US</li>
+                                                                aria-hidden="true"></i></span>{{offer.location}}</li>
                                                     <li><span><i class="fa fa-briefcase"
-                                                                aria-hidden="true"></i></span>Mid Level</li>
-                                                    <li><span><i class="fa fa-money"
-                                                                aria-hidden="true"></i></span>$5,000 - $6,000</li>
+                                                                aria-hidden="true"></i></span>{{offer.internship_level}}</li>
+                                                    <li><span><i class="mdi mdi-timer"
+                                                                aria-hidden="true"></i></span>{{offer.duration}}</li>
                                                 </ul>
                                                 <div class="time">
-                                                    <a routerLink="#"><span class="part-time">Part Time</span></a>
-                                                    <span class="pull-right">Posted 1 day ago</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-3">
-                                        <div class="job-item">
-                                            <div class="item-overlay">
-                                                <div class="job-info">
-                                                    <a routerLink="#" class="btn btn-primary">Full Time</a>
-                                                    <span class="tr-title">
-                                                        <a routerLink="#">Project Manager</a>
-                                                        <span><a routerLink="#">Dig File</a></span>
-                                                    </span>
-                                                    <ul class="tr-list job-meta">
-                                                        <li><i class="fa fa-map-signs" aria-hidden="true"></i>San
-                                                            Francisco, CA, US</li>
-                                                        <li><i class="fa fa-briefcase" aria-hidden="true"></i>Mid Level
-                                                        </li>
-                                                        <li><i class="fa fa-money" aria-hidden="true"></i>$5,000 -
-                                                            $6,000</li>
-                                                    </ul>
-                                                    <ul class="job-social tr-list">
-                                                        <li><a routerLink="#"><i class="mdi mdi-heart-outline"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-expand"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-file-outline"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-right"
-                                                                    aria-hidden="true"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="job-info">
-                                                <div class="company-logo">
-                                                    <h4>company name</h4>
-                                                    <img src="../../assets/images/faces/microsoftCompany.png"
-                                                        alt="images" class="img-fluid" height="60px" width="60px">
-                                                </div>
-                                                <span class="tr-title">
-                                                    <a routerLink="#">Project Manager</a>
-                                                    <span><a routerLink="#">Dig File</a></span>
-                                                </span>
-                                                <ul class="tr-list job-meta">
-                                                    <li><span><i class="fa fa-map-signs"
-                                                                aria-hidden="true"></i></span>San Francisco, CA, US</li>
-                                                    <li><span><i class="fa fa-briefcase"
-                                                                aria-hidden="true"></i></span>Mid Level</li>
-                                                    <li><span><i class="fa fa-money"
-                                                                aria-hidden="true"></i></span>$5,000 - $6,000</li>
-                                                </ul>
-                                                <div class="time">
-                                                    <a routerLink="#"><span>Full Time</span></a>
+                                                    <a routerLink="#"><span>{{ offer.type }}</span></a>
                                                     <span class="pull-right">Posted 23 hours ago</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-3">
-                                        <div class="job-item">
-                                            <div class="item-overlay">
-                                                <div class="job-info">
-                                                    <a routerLink="#" class="btn btn-primary">Part Time</a>
-                                                    <span class="tr-title">
-                                                        <a routerLink="#">Design Consultant</a>
-                                                        <span><a routerLink="#">Families</a></span>
-                                                    </span>
-                                                    <ul class="tr-list job-meta">
-                                                        <li><i class="fa fa-map-signs" aria-hidden="true"></i>San
-                                                            Francisco, CA, US</li>
-                                                        <li><i class="fa fa-briefcase" aria-hidden="true"></i>Mid Level
-                                                        </li>
-                                                        <li><i class="fa fa-money" aria-hidden="true"></i>$5,000 -
-                                                            $6,000</li>
-                                                    </ul>
-                                                    <ul class="job-social tr-list">
-                                                        <li><a routerLink="#"><i class="mdi mdi-heart-outline"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-expand"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-file-outline"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-right"
-                                                                    aria-hidden="true"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="job-info">
-                                                <div class="company-logo">
-                                                    <h4>company name</h4>
-                                                    <img src="../../assets/images/faces/microsoftCompany.png"
-                                                        alt="images" class="img-fluid" height="60px" width="60px">
-                                                </div>
-                                                <span class="tr-title">
-                                                    <a routerLink="#">Design Consultant</a>
-                                                    <span><a routerLink="#">Families</a></span>
-                                                </span>
-                                                <ul class="tr-list job-meta">
-                                                    <li><span><i class="fa fa-map-signs"
-                                                                aria-hidden="true"></i></span>San Francisco, CA, US</li>
-                                                    <li><span><i class="fa fa-briefcase"
-                                                                aria-hidden="true"></i></span>Mid Level</li>
-                                                    <li><span><i class="fa fa-money"
-                                                                aria-hidden="true"></i></span>$5,000 - $6,000</li>
-                                                </ul>
-                                                <div class="time">
-                                                    <a routerLink="#"><span class="part-time">Part Time</span></a>
-                                                    <span class="pull-right">Posted Oct 09, 2017</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-3">
-                                        <div class="job-item">
-                                            <div class="item-overlay">
-                                                <div class="job-info">
-                                                    <a routerLink="#" class="btn btn-primary">Freelance</a>
-                                                    <span class="tr-title">
-                                                        <a routerLink="#">Graphic Designer</a>
-                                                        <span><a routerLink="#">Humanity Creative</a></span>
-                                                    </span>
-                                                    <ul class="tr-list job-meta">
-                                                        <li><i class="fa fa-map-signs" aria-hidden="true"></i>San
-                                                            Francisco, CA, US</li>
-                                                        <li><i class="fa fa-briefcase" aria-hidden="true"></i>Mid Level
-                                                        </li>
-                                                        <li><i class="fa fa-money" aria-hidden="true"></i>$5,000 -
-                                                            $6,000</li>
-                                                    </ul>
-                                                    <ul class="job-social tr-list">
-                                                        <li><a routerLink="#"><i class="mdi mdi-heart-outline"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-expand"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-file-outline"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-right"
-                                                                    aria-hidden="true"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="job-info">
-                                                <div class="company-logo">
-                                                    <h4>company name</h4>
-                                                    <img src="../../assets/images/faces/microsoftCompany.png"
-                                                        alt="images" class="img-fluid" height="60px" width="60px">
-                                                </div>
-                                                <span class="tr-title">
-                                                    <a routerLink="#">Graphic Designer</a>
-                                                    <span><a routerLink="#">Humanity Creative</a></span>
-                                                </span>
-                                                <ul class="tr-list job-meta">
-                                                    <li><span><i class="fa fa-map-signs"
-                                                                aria-hidden="true"></i></span>San Francisco, CA, US</li>
-                                                    <li><span><i class="fa fa-briefcase"
-                                                                aria-hidden="true"></i></span>Mid Level</li>
-                                                    <li><span><i class="fa fa-money"
-                                                                aria-hidden="true"></i></span>$5,000 - $6,000</li>
-                                                </ul>
-                                                <div class="time">
-                                                    <a routerLink="#"><span class="freelance">Freelance</span></a>
-                                                    <span class="pull-right">Posted 10 day ago</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-3">
-                                        <div class="job-item">
-                                            <div class="item-overlay">
-                                                <div class="job-info">
-                                                    <a routerLink="#" class="btn btn-primary">Full Time</a>
-                                                    <span class="tr-title">
-                                                        <a routerLink="#">Design Associate</a>
-                                                        <span><a routerLink="#">Pencil</a></span>
-                                                    </span>
-                                                    <ul class="tr-list job-meta">
-                                                        <li><i class="fa fa-map-signs" aria-hidden="true"></i>San
-                                                            Francisco, CA, US</li>
-                                                        <li><i class="fa fa-briefcase" aria-hidden="true"></i>Mid Level
-                                                        </li>
-                                                        <li><i class="fa fa-money" aria-hidden="true"></i>$5,000 -
-                                                            $6,000</li>
-                                                    </ul>
-                                                    <ul class="job-social tr-list">
-                                                        <li><a routerLink="#"><i class="mdi mdi-heart-outline"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-expand"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-file-outline"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-right"
-                                                                    aria-hidden="true"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="job-info">
-                                                <div class="company-logo">
-                                                    <h4>company name</h4>
-                                                    <img src="../../assets/images/faces/microsoftCompany.png"
-                                                        alt="images" class="img-fluid" height="60px" width="60px">
-                                                </div>
-                                                <span class="tr-title">
-                                                    <a routerLink="#">Design Associate</a>
-                                                    <span><a routerLink="#">Pencil</a></span>
-                                                </span>
-                                                <ul class="tr-list job-meta">
-                                                    <li><span><i class="fa fa-map-signs"
-                                                                aria-hidden="true"></i></span>San Francisco, CA, US</li>
-                                                    <li><span><i class="fa fa-briefcase"
-                                                                aria-hidden="true"></i></span>Mid Level</li>
-                                                    <li><span><i class="fa fa-money"
-                                                                aria-hidden="true"></i></span>$5,000 - $6,000</li>
-                                                </ul>
-                                                <div class="time">
-                                                    <a routerLink="#"><span>Full Time</span></a>
-                                                    <span class="pull-right">Posted 23 hours ago</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-3">
-                                        <div class="job-item">
-                                            <div class="item-overlay">
-                                                <div class="job-info">
-                                                    <a routerLink="#" class="btn btn-primary">Freelance</a>
-                                                    <span class="tr-title">
-                                                        <a routerLink="#">Project Manager</a>
-                                                        <span><a routerLink="#">Sky Creative</a></span>
-                                                    </span>
-                                                    <ul class="tr-list job-meta">
-                                                        <li><i class="fa fa-map-signs" aria-hidden="true"></i>San
-                                                            Francisco, CA, US</li>
-                                                        <li><i class="fa fa-briefcase" aria-hidden="true"></i>Mid Level
-                                                        </li>
-                                                        <li><i class="fa fa-money" aria-hidden="true"></i>$5,000 -
-                                                            $6,000</li>
-                                                    </ul>
-                                                    <ul class="job-social tr-list">
-                                                        <li><a routerLink="#"><i class="mdi mdi-heart-outline"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-expand"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-file-outline"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-right"
-                                                                    aria-hidden="true"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="job-info">
-                                                <div class="company-logo">
-                                                    <h4>company name</h4>
-                                                    <img src="../../assets/images/faces/microsoftCompany.png"
-                                                        alt="images" class="img-fluid" height="60px" width="60px">
-                                                </div>
-                                                <span class="tr-title">
-                                                    <a routerLink="#">Project Manager</a>
-                                                    <span><a routerLink="#">Sky Creative</a></span>
-                                                </span>
-                                                <ul class="tr-list job-meta">
-                                                    <li><span><i class="fa fa-map-signs"
-                                                                aria-hidden="true"></i></span>San Francisco, CA, US</li>
-                                                    <li><span><i class="fa fa-briefcase"
-                                                                aria-hidden="true"></i></span>Mid Level</li>
-                                                    <li><span><i class="fa fa-money"
-                                                                aria-hidden="true"></i></span>$5,000 - $6,000</li>
-                                                </ul>
-                                                <div class="time">
-                                                    <a routerLink="#"><span class="freelance">Freelance</span></a>
-                                                    <span class="pull-right">Posted 1 day ago</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-3">
-                                        <div class="job-item">
-                                            <div class="item-overlay">
-                                                <div class="job-info">
-                                                    <a routerLink="#" class="btn btn-primary">Part Time</a>
-                                                    <span class="tr-title">
-                                                        <a routerLink="#">Design Consultant</a>
-                                                        <span><a routerLink="#">Owl</a></span>
-                                                    </span>
-                                                    <ul class="tr-list job-meta">
-                                                        <li><i class="fa fa-map-signs" aria-hidden="true"></i>San
-                                                            Francisco, CA, US</li>
-                                                        <li><i class="fa fa-briefcase" aria-hidden="true"></i>Mid Level
-                                                        </li>
-                                                        <li><i class="fa fa-money" aria-hidden="true"></i>$5,000 -
-                                                            $6,000</li>
-                                                    </ul>
-                                                    <ul class="job-social tr-list">
-                                                        <li><a routerLink="#"><i class="mdi mdi-heart-outline"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-expand"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-file-outline"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-right"
-                                                                    aria-hidden="true"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="job-info">
-                                                <div class="company-logo">
-                                                    <h4>company name</h4>
-                                                    <img src="../../assets/images/faces/microsoftCompany.png"
-                                                        alt="images" class="img-fluid" height="60px" width="60px">
-                                                </div>
-                                                <span class="tr-title">
-                                                    <a routerLink="#">Design Consultant</a>
-                                                    <span><a routerLink="#">Owl</a></span>
-                                                </span>
-                                                <ul class="tr-list job-meta">
-                                                    <li><span><i class="fa fa-map-signs"
-                                                                aria-hidden="true"></i></span>San Francisco, CA, US</li>
-                                                    <li><span><i class="fa fa-briefcase"
-                                                                aria-hidden="true"></i></span>Mid Level</li>
-                                                    <li><span><i class="fa fa-money"
-                                                                aria-hidden="true"></i></span>$5,000 - $6,000</li>
-                                                </ul>
-                                                <div class="time">
-                                                    <a routerLink="#"><span class="part-time">Part Time</span></a>
-                                                    <span class="pull-right">Posted 10 day ago</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-3">
-                                        <div class="job-item">
-                                            <div class="item-overlay">
-                                                <div class="job-info">
-                                                    <a routerLink="#" class="btn btn-primary">Full Time</a>
-                                                    <span class="tr-title">
-                                                        <a routerLink="#">Graphic Designer</a>
-                                                        <span><a routerLink="#">Fox</a></span>
-                                                    </span>
-                                                    <ul class="tr-list job-meta">
-                                                        <li><i class="fa fa-map-signs" aria-hidden="true"></i>San
-                                                            Francisco, CA, US</li>
-                                                        <li><i class="fa fa-briefcase" aria-hidden="true"></i>Mid Level
-                                                        </li>
-                                                        <li><i class="fa fa-money" aria-hidden="true"></i>$5,000 -
-                                                            $6,000</li>
-                                                    </ul>
-                                                    <ul class="job-social tr-list">
-                                                        <li><a routerLink="#"><i class="mdi mdi-heart-outline"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-expand"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-file-outline"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-right"
-                                                                    aria-hidden="true"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="job-info">
-                                                <div class="company-logo">
-                                                    <h4>company name</h4>
-                                                    <img src="../../assets/images/faces/microsoftCompany.png"
-                                                        alt="images" class="img-fluid" height="60px" width="60px">
-                                                </div>
-                                                <span class="tr-title">
-                                                    <a routerLink="#">Graphic Designer</a>
-                                                    <span><a routerLink="#">Fox</a></span>
-                                                </span>
-                                                <ul class="tr-list job-meta">
-                                                    <li><span><i class="fa fa-map-signs"
-                                                                aria-hidden="true"></i></span>San Francisco, CA, US</li>
-                                                    <li><span><i class="fa fa-briefcase"
-                                                                aria-hidden="true"></i></span>Mid Level</li>
-                                                    <li><span><i class="fa fa-money"
-                                                                aria-hidden="true"></i></span>$5,000 - $6,000</li>
-                                                </ul>
-                                                <div class="time">
-                                                    <a routerLink="#"><span>Full Time</span></a>
-                                                    <span class="pull-right">Posted Oct 09, 2017</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -557,22 +177,21 @@
                             </div>
                             <div role="tabpanel" class="tab-pane fade in" id="popular-jobs">
                                 <div class="row">
-                                    <div class="col-md-6 col-lg-3">
+                                    <div class="col-md-6 col-lg-3" *ngFor="let offer of offers">
                                         <div class="job-item">
                                             <div class="item-overlay">
                                                 <div class="job-info">
-                                                    <a routerLink="#" class="btn btn-primary">Full Time</a>
+                                                    <a routerLink="#" class="btn btn-primary">{{ offer.type }}</a>
                                                     <span class="tr-title">
-                                                        <a routerLink="#">Graphic Designer</a>
-                                                        <span><a routerLink="#">Fox</a></span>
+                                                        <a routerLink="#">{{ offer.title }}</a>
+                                                        <span><a routerLink="#">{{offer.technology}}</a></span>
                                                     </span>
                                                     <ul class="tr-list job-meta">
-                                                        <li><i class="fa fa-map-signs" aria-hidden="true"></i>San
-                                                            Francisco, CA, US</li>
-                                                        <li><i class="fa fa-briefcase" aria-hidden="true"></i>Mid Level
+                                                        <li><i class="fa fa-map-signs" aria-hidden="true"></i>{{offer.location}}
                                                         </li>
-                                                        <li><i class="fa fa-money" aria-hidden="true"></i>$5,000 -
-                                                            $6,000</li>
+                                                        <li><i class="fa fa-briefcase" aria-hidden="true"></i>{{offer.internship_level}}
+                                                        </li>
+                                                        <li><i class="mdi mdi-timer" aria-hidden="true"></i>{{offer.duration}}</li>
                                                     </ul>
                                                     <ul class="job-social tr-list">
                                                         <li><a routerLink="#"><i class="mdi mdi-heart-outline"
@@ -588,407 +207,30 @@
                                             </div>
                                             <div class="job-info">
                                                 <div class="company-logo">
-                                                    <h4>company name</h4>
+                                                    <h4>{{ offer.company_name }}</h4>
                                                     <img src="../../assets/images/faces/microsoftCompany.png"
                                                         alt="images" class="img-fluid" height="60px" width="60px">
                                                 </div>
                                                 <span class="tr-title">
-                                                    <a routerLink="#">Graphic Designer</a>
-                                                    <span><a routerLink="#">Fox</a></span>
+                                                    <a routerLink="#">{{ offer.title }}</a>
+                                                    <span><a routerLink="#">{{offer.technology}}</a></span>
                                                 </span>
                                                 <ul class="tr-list job-meta">
                                                     <li><span><i class="fa fa-map-signs"
-                                                                aria-hidden="true"></i></span>San Francisco, CA, US</li>
+                                                                aria-hidden="true"></i></span>{{offer.location}}</li>
                                                     <li><span><i class="fa fa-briefcase"
-                                                                aria-hidden="true"></i></span>Mid Level</li>
-                                                    <li><span><i class="fa fa-money"
-                                                                aria-hidden="true"></i></span>$5,000 - $6,000</li>
+                                                                aria-hidden="true"></i></span>{{offer.internship_level}}</li>
+                                                    <li><span><i class="mdi mdi-timer"
+                                                                aria-hidden="true"></i></span>{{offer.duration}}</li>
                                                 </ul>
                                                 <div class="time">
-                                                    <a routerLink="#"><span>Full Time</span></a>
-                                                    <span class="pull-right">Posted Oct 09, 2017</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-3">
-                                        <div class="job-item">
-                                            <div class="item-overlay">
-                                                <div class="job-info">
-                                                    <a routerLink="#" class="btn btn-primary">Part Time</a>
-                                                    <span class="tr-title">
-                                                        <a routerLink="#">Design Associate</a>
-                                                        <span><a routerLink="#">Loop</a></span>
-                                                    </span>
-                                                    <ul class="tr-list job-meta">
-                                                        <li><i class="fa fa-map-signs" aria-hidden="true"></i>San
-                                                            Francisco, CA, US</li>
-                                                        <li><i class="fa fa-briefcase" aria-hidden="true"></i>Mid Level
-                                                        </li>
-                                                        <li><i class="fa fa-money" aria-hidden="true"></i>$5,000 -
-                                                            $6,000</li>
-                                                    </ul>
-                                                    <ul class="job-social tr-list">
-                                                        <li><a routerLink="#"><i class="mdi mdi-heart-outline"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-expand"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-file-outline"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-right"
-                                                                    aria-hidden="true"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="job-info">
-                                                <div class="company-logo">
-                                                    <h4>company name</h4>
-                                                    <img src="../../assets/images/faces/microsoftCompany.png"
-                                                        alt="images" class="img-fluid" height="60px" width="60px">
-                                                </div>
-                                                <span class="tr-title">
-                                                    <a routerLink="#">Design Associate</a>
-                                                    <span><a routerLink="#">Loop</a></span>
-                                                </span>
-                                                <ul class="tr-list job-meta">
-                                                    <li><span><i class="fa fa-map-signs"
-                                                                aria-hidden="true"></i></span>San Francisco, CA, US</li>
-                                                    <li><span><i class="fa fa-briefcase"
-                                                                aria-hidden="true"></i></span>Mid Level</li>
-                                                    <li><span><i class="fa fa-money"
-                                                                aria-hidden="true"></i></span>$5,000 - $6,000</li>
-                                                </ul>
-                                                <div class="time">
-                                                    <a routerLink="#"><span class="part-time">Part Time</span></a>
-                                                    <span class="pull-right">Posted 1 day ago</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-3">
-                                        <div class="job-item">
-                                            <div class="item-overlay">
-                                                <div class="job-info">
-                                                    <a routerLink="#" class="btn btn-primary">Full Time</a>
-                                                    <span class="tr-title">
-                                                        <a routerLink="#">Project Manager</a>
-                                                        <span><a routerLink="#">Dig File</a></span>
-                                                    </span>
-                                                    <ul class="tr-list job-meta">
-                                                        <li><i class="fa fa-map-signs" aria-hidden="true"></i>San
-                                                            Francisco, CA, US</li>
-                                                        <li><i class="fa fa-briefcase" aria-hidden="true"></i>Mid Level
-                                                        </li>
-                                                        <li><i class="fa fa-money" aria-hidden="true"></i>$5,000 -
-                                                            $6,000</li>
-                                                    </ul>
-                                                    <ul class="job-social tr-list">
-                                                        <li><a routerLink="#"><i class="mdi mdi-heart-outline"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-expand"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-file-outline"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-right"
-                                                                    aria-hidden="true"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="job-info">
-                                                <div class="company-logo">
-                                                    <h4>company name</h4>
-                                                    <img src="../../assets/images/faces/microsoftCompany.png"
-                                                        alt="images" class="img-fluid" height="60px" width="60px">
-                                                </div>
-                                                <span class="tr-title">
-                                                    <a routerLink="#">Project Manager</a>
-                                                    <span><a routerLink="#">Dig File</a></span>
-                                                </span>
-                                                <ul class="tr-list job-meta">
-                                                    <li><span><i class="fa fa-map-signs"
-                                                                aria-hidden="true"></i></span>San Francisco, CA, US</li>
-                                                    <li><span><i class="fa fa-briefcase"
-                                                                aria-hidden="true"></i></span>Mid Level</li>
-                                                    <li><span><i class="fa fa-money"
-                                                                aria-hidden="true"></i></span>$5,000 - $6,000</li>
-                                                </ul>
-                                                <div class="time">
-                                                    <a routerLink="#"><span>Full Time</span></a>
+                                                    <a routerLink="#"><span>{{ offer.type }}</span></a>
                                                     <span class="pull-right">Posted 23 hours ago</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-lg-3">
-                                        <div class="job-item">
-                                            <div class="item-overlay">
-                                                <div class="job-info">
-                                                    <a routerLink="#" class="btn btn-primary">Freelance</a>
-                                                    <span class="tr-title">
-                                                        <a routerLink="#">Graphic Designer</a>
-                                                        <span><a routerLink="#">Humanity Creative</a></span>
-                                                    </span>
-                                                    <ul class="tr-list job-meta">
-                                                        <li><i class="fa fa-map-signs" aria-hidden="true"></i>San
-                                                            Francisco, CA, US</li>
-                                                        <li><i class="fa fa-briefcase" aria-hidden="true"></i>Mid Level
-                                                        </li>
-                                                        <li><i class="fa fa-money" aria-hidden="true"></i>$5,000 -
-                                                            $6,000</li>
-                                                    </ul>
-                                                    <ul class="job-social tr-list">
-                                                        <li><a routerLink="#"><i class="mdi mdi-heart-outline"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-expand"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-file-outline"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-right"
-                                                                    aria-hidden="true"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="job-info">
-                                                <div class="company-logo">
-                                                    <h4>company name</h4>
-                                                    <img src="../../assets/images/faces/microsoftCompany.png"
-                                                        alt="images" class="img-fluid" height="60px" width="60px">
-                                                </div>
-                                                <span class="tr-title">
-                                                    <a routerLink="#">Graphic Designer</a>
-                                                    <span><a routerLink="#">Humanity Creative</a></span>
-                                                </span>
-                                                <ul class="tr-list job-meta">
-                                                    <li><span><i class="fa fa-map-signs"
-                                                                aria-hidden="true"></i></span>San Francisco, CA, US</li>
-                                                    <li><span><i class="fa fa-briefcase"
-                                                                aria-hidden="true"></i></span>Mid Level</li>
-                                                    <li><span><i class="fa fa-money"
-                                                                aria-hidden="true"></i></span>$5,000 - $6,000</li>
-                                                </ul>
-                                                <div class="time">
-                                                    <a routerLink="#"><span class="freelance">Freelance</span></a>
-                                                    <span class="pull-right">Posted 10 day ago</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-3">
-                                        <div class="job-item">
-                                            <div class="item-overlay">
-                                                <div class="job-info">
-                                                    <a routerLink="#" class="btn btn-primary">Full Time</a>
-                                                    <span class="tr-title">
-                                                        <a routerLink="#">Design Consultant</a>
-                                                        <span><a routerLink="#">Families</a></span>
-                                                    </span>
-                                                    <ul class="tr-list job-meta">
-                                                        <li><i class="fa fa-map-signs" aria-hidden="true"></i>San
-                                                            Francisco, CA, US</li>
-                                                        <li><i class="fa fa-briefcase" aria-hidden="true"></i>Mid Level
-                                                        </li>
-                                                        <li><i class="fa fa-money" aria-hidden="true"></i>$5,000 -
-                                                            $6,000</li>
-                                                    </ul>
-                                                    <ul class="job-social tr-list">
-                                                        <li><a routerLink="#"><i class="mdi mdi-heart-outline"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-expand"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-file-outline"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-right"
-                                                                    aria-hidden="true"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="job-info">
-                                                <div class="company-logo">
-                                                    <h4>company name</h4>
-                                                    <img src="../../assets/images/faces/microsoftCompany.png"
-                                                        alt="images" class="img-fluid" height="60px" width="60px">
-                                                </div>
-                                                <span class="tr-title">
-                                                    <a routerLink="#">Design Consultant</a>
-                                                    <span><a routerLink="#">Families</a></span>
-                                                </span>
-                                                <ul class="tr-list job-meta">
-                                                    <li><span><i class="fa fa-map-signs"
-                                                                aria-hidden="true"></i></span>San Francisco, CA, US</li>
-                                                    <li><span><i class="fa fa-briefcase"
-                                                                aria-hidden="true"></i></span>Mid Level</li>
-                                                    <li><span><i class="fa fa-money"
-                                                                aria-hidden="true"></i></span>$5,000 - $6,000</li>
-                                                </ul>
-                                                <div class="time">
-                                                    <a routerLink="#"><span>Full Time</span></a>
-                                                    <span class="pull-right">Posted Oct 09, 2017</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-3">
-                                        <div class="job-item">
-                                            <div class="item-overlay">
-                                                <div class="job-info">
-                                                    <a routerLink="#" class="btn btn-primary">Freelance</a>
-                                                    <span class="tr-title">
-                                                        <a routerLink="#">Design Associate</a>
-                                                        <span><a routerLink="#">Pencil</a></span>
-                                                    </span>
-                                                    <ul class="tr-list job-meta">
-                                                        <li><i class="fa fa-map-signs" aria-hidden="true"></i>San
-                                                            Francisco, CA, US</li>
-                                                        <li><i class="fa fa-briefcase" aria-hidden="true"></i>Mid Level
-                                                        </li>
-                                                        <li><i class="fa fa-money" aria-hidden="true"></i>$5,000 -
-                                                            $6,000</li>
-                                                    </ul>
-                                                    <ul class="job-social tr-list">
-                                                        <li><a routerLink="#"><i class="mdi mdi-heart-outline"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-expand"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-file-outline"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-right"
-                                                                    aria-hidden="true"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="job-info">
-                                                <div class="company-logo">
-                                                    <h4>company name</h4>
-                                                    <img src="../../assets/images/faces/microsoftCompany.png"
-                                                        alt="images" class="img-fluid" height="60px" width="60px">
-                                                </div>
-                                                <span class="tr-title">
-                                                    <a routerLink="#">Design Associate</a>
-                                                    <span><a routerLink="#">Pencil</a></span>
-                                                </span>
-                                                <ul class="tr-list job-meta">
-                                                    <li><span><i class="fa fa-map-signs"
-                                                                aria-hidden="true"></i></span>San Francisco, CA, US</li>
-                                                    <li><span><i class="fa fa-briefcase"
-                                                                aria-hidden="true"></i></span>Mid Level</li>
-                                                    <li><span><i class="fa fa-money"
-                                                                aria-hidden="true"></i></span>$5,000 - $6,000</li>
-                                                </ul>
-                                                <div class="time">
-                                                    <a routerLink="#"><span class="freelance">Freelance</span></a>
-                                                    <span class="pull-right">Posted 23 hours ago</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-3">
-                                        <div class="job-item">
-                                            <div class="item-overlay">
-                                                <div class="job-info">
-                                                    <a routerLink="#" class="btn btn-primary">Part Time</a>
-                                                    <span class="tr-title">
-                                                        <a routerLink="#">Design Consultant</a>
-                                                        <span><a routerLink="#">Owl</a></span>
-                                                    </span>
-                                                    <ul class="tr-list job-meta">
-                                                        <li><i class="fa fa-map-signs" aria-hidden="true"></i>San
-                                                            Francisco, CA, US</li>
-                                                        <li><i class="fa fa-briefcase" aria-hidden="true"></i>Mid Level
-                                                        </li>
-                                                        <li><i class="fa fa-money" aria-hidden="true"></i>$5,000 -
-                                                            $6,000</li>
-                                                    </ul>
-                                                    <ul class="job-social tr-list">
-                                                        <li><a routerLink="#"><i class="mdi mdi-heart-outline"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-expand"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-file-outline"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-right"
-                                                                    aria-hidden="true"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="job-info">
-                                                <div class="company-logo">
-                                                    <h4>company name</h4>
-                                                    <img src="../../assets/images/faces/microsoftCompany.png"
-                                                        alt="images" class="img-fluid" height="60px" width="60px">
-                                                </div>
-                                                <span class="tr-title">
-                                                    <a routerLink="#">Design Consultant</a>
-                                                    <span><a routerLink="#">Owl</a></span>
-                                                </span>
-                                                <ul class="tr-list job-meta">
-                                                    <li><span><i class="fa fa-map-signs"
-                                                                aria-hidden="true"></i></span>San Francisco, CA, US</li>
-                                                    <li><span><i class="fa fa-briefcase"
-                                                                aria-hidden="true"></i></span>Mid Level</li>
-                                                    <li><span><i class="fa fa-money"
-                                                                aria-hidden="true"></i></span>$5,000 - $6,000</li>
-                                                </ul>
-                                                <div class="time">
-                                                    <a routerLink="#"><span class="part-time">Part Time</span></a>
-                                                    <span class="pull-right">Posted 10 day ago</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-3">
-                                        <div class="job-item">
-                                            <div class="item-overlay">
-                                                <div class="job-info">
-                                                    <a routerLink="#" class="btn btn-primary">Full Time</a>
-                                                    <span class="tr-title">
-                                                        <a routerLink="#">Project Manager</a>
-                                                        <span><a routerLink="#">Sky Creative</a></span>
-                                                    </span>
-                                                    <ul class="tr-list job-meta">
-                                                        <li><i class="fa fa-map-signs" aria-hidden="true"></i>San
-                                                            Francisco, CA, US</li>
-                                                        <li><i class="fa fa-briefcase" aria-hidden="true"></i>Mid Level
-                                                        </li>
-                                                        <li><i class="fa fa-money" aria-hidden="true"></i>$5,000 -
-                                                            $6,000</li>
-                                                    </ul>
-                                                    <ul class="job-social tr-list">
-                                                        <li><a routerLink="#"><i class="mdi mdi-heart-outline"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-expand"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-file-outline"
-                                                                    aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-right"
-                                                                    aria-hidden="true"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="job-info">
-                                                <div class="company-logo">
-                                                    <h4>company name</h4>
-                                                    <img src="../../assets/images/faces/microsoftCompany.png"
-                                                        alt="images" class="img-fluid" height="60px" width="60px">
-                                                </div>
-                                                <span class="tr-title">
-                                                    <a routerLink="#">Project Manager</a>
-                                                    <span><a routerLink="#">Sky Creative</a></span>
-                                                </span>
-                                                <ul class="tr-list job-meta">
-                                                    <li><span><i class="fa fa-map-signs"
-                                                                aria-hidden="true"></i></span>San Francisco, CA, US</li>
-                                                    <li><span><i class="fa fa-briefcase"
-                                                                aria-hidden="true"></i></span>Mid Level</li>
-                                                    <li><span><i class="fa fa-money"
-                                                                aria-hidden="true"></i></span>$5,000 - $6,000</li>
-                                                </ul>
-                                                <div class="time">
-                                                    <a routerLink="#"><span>Full Time</span></a>
-                                                    <span class="pull-right">Posted 1 day ago</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                  
                                 </div>
                             </div>
                         </div>
@@ -996,13 +238,13 @@
                             <div class="float-sm-end">
                                 <ul class="pagination mb-sm-0">
                                     <li class="page-item disabled">
-                                        <a href="#" class="page-link"><i class="mdi mdi-chevron-left"></i></a>
+                                        <a  class="page-link"><i class="mdi mdi-chevron-left"></i></a>
                                     </li>
-                                    <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                                    <li class="page-item"><a href="#" class="page-link pg">2</a></li>
-                                    <li class="page-item"><a href="#" class="page-link pg">3</a></li>
-                                    <li class="page-item"><a href="#" class="page-link pg">4</a></li>
-                                    <li class="page-item"><a href="#" class="page-link pg">5</a></li>
+                                    <li class="page-item active"><a  class="page-link">1</a></li>
+                                    <li class="page-item"><a  class="page-link pg">2</a></li>
+                                    <li class="page-item"><a  class="page-link pg">3</a></li>
+                                    <li class="page-item"><a  class="page-link pg">4</a></li>
+                                    <li class="page-item"><a  class="page-link pg">5</a></li>
                                     <li class="page-item">
                                         <a href="#" class="page-link pg"><i class="mdi mdi-chevron-right"></i></a>
                                     </li>

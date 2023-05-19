@@ -2,201 +2,226 @@
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container-scroller">
-    <app-companynavbar></app-companynavbar>
-<div class="main-panel">
+  <app-companynavbar></app-companynavbar>
+  <div class="main-panel">
     <div class="content-wrapper">
-        <div class="container">
-            <div class="row">
-            <div class="col-lg-3 col-md-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-4">
             <div class="text-center card-box">
-            <div class="member-card">
-            <div class="thumb-xl member-thumb m-b-10 center-block">
-            <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="img-circle img-thumbnail" alt="profile-image">
-            </div>
-            <div class="">
-            <h4 class="m-b-5">WhiteCape</h4>
-            <p class="text-muted">Software Enginnering & Nearshore</p>
-            <div class="d-flex align-items-center justify-content-center mb-3">
-              <i class="fas fa-star text-info"></i>
-              <i class="fas fa-star text-info"></i>
-              <i class="fas fa-star text-info"></i>
-              <i class="fas fa-star text-info"></i>
-              <i class="fas fa-star text-info"></i>
+              <div class="member-card">
+                <div class="thumb-xl member-thumb m-b-10 center-block">
+                  <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="img-circle img-thumbnail"
+                    alt="profile-image" width="180px" height="180px">
+                </div>
+                <div class="">
+                  <h4 class="m-b-5">{{company.name}}</h4>
+                  <p class="text-muted">{{company.domain}}</p>
+                  <div class="d-flex align-items-center justify-content-center mb-3">
+                    <i class="fas fa-star text-info"></i>
+                    <i class="fas fa-star text-info"></i>
+                    <i class="fas fa-star text-info"></i>
+                    <i class="fas fa-star text-info"></i>
+                    <i class="fas fa-star text-info"></i>
+                  </div>
+                </div>
+                <!--<button type="button" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">Follow</button>
+            <button type="button" class="btn btn-danger btn-sm w-sm waves-effect m-t-10 waves-light">Message</button>-->
+                <div class="text-left m-t-40">
+
+                  <p class="text-muted font-13"><strong>Mobile :</strong><span class="m-l-15">{{company.Mobile}}</span></p>
+                  <p class="text-muted font-13"><strong>Email:</strong> <br><span class="m-l-15">
+                    <a class="__cf_email__" data-cfemail="81ebeee9efe5eee4c1e3eeeef5e5e4f8afe2eeec">{{company.email}}</a></span></p>
+                  <p class="text-muted font-13"><strong>Location :</strong> <span class="m-l-15">{{company.location}}</span></p>
+                </div>
+              
+                <ul class="social-list list-inline mt-3 mb-0">
+                  <li class="list-inline-item">
+                    <a href="javascript: void(0);" class="social-list-item border-purple text-purple"><i
+                        class="fab fa-facebook"></i></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="javascript: void(0);" class="social-list-item border-danger text-danger"><i
+                        class="fab fa-google"></i></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="javascript: void(0);" class="social-list-item border-info text-info"><i
+                        class="fab fa-twitter"></i></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="javascript: void(0);" class="social-list-item border-secondary text-secondary"><i
+                        class="fab fa-github"></i></a>
+                  </li>
+                </ul>
               </div>
             </div>
-            <!--<button type="button" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">Follow</button>
-            <button type="button" class="btn btn-danger btn-sm w-sm waves-effect m-t-10 waves-light">Message</button>-->
-            <div class="text-left m-t-40">
-            
-            <p class="text-muted font-13"><strong>Mobile :</strong><span class="m-l-15">(123) 123 1234</span></p>
-            <p class="text-muted font-13"><strong>Email :</strong> <span class="m-l-15"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="81ebeee9efe5eee4c1e3eeeef5e5e4f8afe2eeec">[email&#160;protected]</a></span></p>
-            <p class="text-muted font-13"><strong>Location :</strong> <span class="m-l-15">Sousse</span></p>
-            </div>
-            <ul class="social-links list-inline m-t-30">
-            <li>
-            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>
-            </li>
-            <li>
-            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a>
-            </li>
-            <li>
-            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Skype"><i class="fa fa-skype"></i></a>
-            </li>
-            </ul>
-            </div>
-            </div> 
-            
-            </div> 
-            <div class="col-md-8 col-lg-9">
+
+          </div>
+          <div class="col-md-8 col-lg-9">
             <div class="">
-            <div class="">
-            <ul class="nav nav-tabs navtab-custom">
-            <li class="active">
-            <a href="#home" data-toggle="tab" aria-expanded="true">
-            <span class="visible-xs"><i class="fa fa-user"></i></span>
-            <span class="hidden-xs">ABOUT ME</span>
-            </a>
-            </li>
-            <li class="">
-            <a href="#profile" data-toggle="tab" aria-expanded="false">
-            <span class="visible-xs"><i class="fa fa-photo"></i></span>
-            <span class="hidden-xs">MY OFFERS</span>
-            </a>
-            </li>
-            <li class="">
-            <a href="#settings" data-toggle="tab" aria-expanded="false">
-            <span class="visible-xs"><i class="fa fa-cog"></i></span>
-            <span class="hidden-xs">SETTINGS</span>
-            </a>
-            </li>
-            </ul>
-            <div class="tab-content">
-              
-            <div class="tab-pane active" id="home">
-              <h4>About me</h4>
-            
-            <p class="m-b-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-              sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <div class="m-t-30">
-            <h4>Services</h4>
-            <div class=" p-t-10">
-            <h5 class="text-primary m-b-5">Project Management</h5>
-            <h5 class="text-primary m-b-5">web Development</h5>
-            <h5 class="text-primary m-b-5">CMS integration</h5>
-            <h5 class="text-primary m-b-5">graphic design</h5>
-            </div>
-            <hr>
-            <div class="">
-              <h4>Our Team</h4>
-              <div class="image-box mt-4 mb-4">
-                <a href="#" class="mr-2" data-toggle="tooltip" data-placement="top" title data-original-title="Simmons"><img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle" width="45" alt="user"></a>
-                <a href="#" class="mr-2" data-toggle="tooltip" data-placement="top" title data-original-title="Fitz"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="rounded-circle" width="45" alt="user"></a>
-                <a href="#" class="mr-2" data-toggle="tooltip" data-placement="top" title data-original-title="Phil"><img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="rounded-circle" width="45" alt="user"></a>
-                <a href="#" class="mr-2" data-toggle="tooltip" data-placement="top" title data-original-title="Melinda"><img src="https://bootdey.com/img/Content/avatar/avatar4.png" class="rounded-circle" width="45" alt="user"></a>
+              <div class="">
+                <ul class="nav nav-tabs navtab-custom">
+                  <li class="active">
+                    <a href="#home" data-toggle="tab" aria-expanded="true">
+                      <span class="visible-xs"><i class="fa fa-user"></i></span>
+                      <span class="hidden-xs">ABOUT ME</span>
+                    </a>
+                  </li>
+                  <li class="">
+                    <a href="#profile" data-toggle="tab" aria-expanded="false">
+                      <span class="visible-xs"><i class="fa fa-photo"></i></span>
+                      <span class="hidden-xs">MY OFFERS</span>
+                    </a>
+                  </li>
+                  <li class="">
+                    <a href="#settings" data-toggle="tab" aria-expanded="false">
+                      <span class="visible-xs"><i class="fa fa-cog"></i></span>
+                      <span class="hidden-xs">SETTINGS</span>
+                    </a>
+                  </li>
+                </ul>
+                <div class="tab-content">
+
+                  <div class="tab-pane active" id="home">
+                    <h4>About me</h4>
+
+                    <p class="m-b-5">{{company.description}}</p>
+                    <div class="m-t-30">
+                      <h4>Services</h4>
+                      <div class=" p-t-10">
+                        <h5 class="text-primary m-b-5">{{company.service1}}</h5>
+                        <h5 class="text-primary m-b-5">{{company.service2}}</h5>
+                        <h5 class="text-primary m-b-5">{{company.service3}}</h5>
+                        <h5 class="text-primary m-b-5">{{company.service4}}</h5>
+                      </div>
+                      <hr>
+                      <div class="">
+                        <h4>Our Team</h4>
+                        <div class="image-box mt-4 mb-4">
+                          <a href="#" class="mr-2" data-toggle="tooltip" data-placement="top" title
+                            data-original-title="Simmons"><img src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                              class="rounded-circle" width="45" alt="user"></a>
+                          <a href="#" class="mr-2" data-toggle="tooltip" data-placement="top" title
+                            data-original-title="Fitz"><img src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                              class="rounded-circle" width="45" alt="user"></a>
+                          <a href="#" class="mr-2" data-toggle="tooltip" data-placement="top" title
+                            data-original-title="Phil"><img src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                              class="rounded-circle" width="45" alt="user"></a>
+                          <a href="#" class="mr-2" data-toggle="tooltip" data-placement="top" title
+                            data-original-title="Melinda"><img src="https://bootdey.com/img/Content/avatar/avatar4.png"
+                              class="rounded-circle" width="45" alt="user"></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="profile">
+                    <div class="row">
+                      <div class="col-sm-6 col-lg-4 m-15px-tb" *ngFor="let offer of offers">
+                        <div class="media box-shadow-only-hover hover-top border-all-1 border-color-gray p-15px">
+                          <a class="overlay-link" href="#"></a>
+                          <div class="icon-50 theme-bg white-color border-radius-50 d-inline-block">
+                            <i class="number">LD</i>
+                          </div>
+                          <div class="p-20px-l media-body">
+                            <span class="theme2nd-bg white-color p-0px-tb p-10px-lr font-small border-radius-15">{{ offer.type }}</span>
+                            <h6 class="m-5px-tb">{{ offer.title }}</h6>
+                            <p class="m-0px font-small">{{offer.location}}</p>
+                          </div>
+                        </div>
+                      </div>
+                    
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="settings">
+                    <form role="form"  [formGroup]="profileCompanyForm" (ngSubmit)="onSubmit()">
+                      
+                      <div class="form-group">
+                        <label for="Email">Email</label>
+                        <input type="email" id="Email" class="form-control" formControlName="email">
+                      </div>
+                      <div class="form-group">
+                        <label for="Username">Username</label>
+                        <input type="text" id="Username" class="form-control" formControlName="name">
+                      </div>
+                      <div class="form-group">
+                        <label for="Mobile">Mobile</label>
+                        <input type="text" id="Mobile" class="form-control" formControlName="Mobile">
+                      </div>
+                      <div class="form-group">
+                        <label for="Password">Domain</label>
+                        <input type="text" id="Username" class="form-control" formControlName="domain">
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="social-fb">Services </label>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">1</span>
+                              </div>
+                              <input type="text" class="form-control" id="social-fb" placeholder="Service 1"
+                                formControlName="service1">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="social-tw"></label>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">2</span>
+                              </div>
+                              <input type="text" class="form-control" id="social-tw" placeholder="Service 2"
+                                formControlName="service2">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="social-sky"></label>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">3</span>
+                              </div>
+                              <input type="text" class="form-control" id="social-sky" placeholder="Service 3"
+                                formControlName="service3">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="social-gh"></label>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">4</span>
+                              </div>
+                              <input type="text" class="form-control" id="social-gh" placeholder="Service 4"
+                                formControlName="service4">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="RePassword">Location</label>
+                        <input type="text" id="Username" class="form-control" formControlName="location">
+                      </div>
+                      <div class="form-group">
+                        <label for="AboutMe">About Me</label>
+                        <textarea style="height: 125px" id="AboutMe" class="form-control" formControlName="description"></textarea>
+                      </div>
+                      <button class="btn btn-primary waves-effect waves-light w-md" type="submit">Save</button>
+                    </form>
+                  </div>
                 </div>
+              </div>
             </div>
-            </div>
-            </div>
-            <div class="tab-pane" id="profile">
-            <div class="row">
-            <div class="col-sm-4">
-            <div class="gal-detail thumb">
-            <a href="#" class="image-popup" title="Screenshot-2">
-            <img src="https://www.bootdey.com/image/400x300/008B8B/00000" class="thumb-img" alt="work-thumbnail">
-            </a>
-            <h4 class="text-center">Gallary Image</h4>
-            <div class="ga-border"></div>
-            <p class="text-muted text-center"><small>Photography</small></p>
-            </div>
-            </div>
-            <div class="col-sm-4">
-            <div class="gal-detail thumb">
-            <a href="#" class="image-popup" title="Screenshot-2">
-            <img src="https://www.bootdey.com/image/400x300/FF7F50/00000" class="thumb-img" alt="work-thumbnail">
-            </a>
-            <h4 class="text-center">Gallary Image</h4>
-            <div class="ga-border"></div>
-            <p class="text-muted text-center"><small>Photography</small></p>
-            </div>
-            </div>
-            <div class="col-sm-4">
-            <div class="gal-detail thumb">
-            <a href="#" class="image-popup" title="Screenshot-2">
-            <img src="https://www.bootdey.com/image/400x300/6495ED/00000" class="thumb-img" alt="work-thumbnail">
-            </a>
-            <h4 class="text-center">Gallary Image</h4>
-            <div class="ga-border"></div>
-            <p class="text-muted text-center"><small>Photography</small></p>
-            </div>
-            </div>
-            <div class="col-sm-4">
-            <div class="gal-detail thumb">
-            <a href="#" class="image-popup" title="Screenshot-2">
-            <img src="https://www.bootdey.com/image/400x300/4169E1/00000" class="thumb-img" alt="work-thumbnail">
-            </a>
-            <h4 class="text-center">Gallary Image</h4>
-            <div class="ga-border"></div>
-            <p class="text-muted text-center"><small>Photography</small></p>
-            </div>
-            </div>
-            <div class="col-sm-4">
-            <div class="gal-detail thumb">
-            <a href="#" class="image-popup" title="Screenshot-2">
-             <img src="https://www.bootdey.com/image/400x300/B0E0E6/00000" class="thumb-img" alt="work-thumbnail">
-            </a>
-            <h4 class="text-center">Gallary Image</h4>
-            <div class="ga-border"></div>
-            <p class="text-muted text-center"><small>Photography</small></p>
-            </div>
-            </div>
-            <div class="col-sm-4">
-            <div class="gal-detail thumb">
-            <a href="#" class="image-popup" title="Screenshot-2">
-            <img src="https://www.bootdey.com/image/400x300/4169E1/00000" class="thumb-img" alt="work-thumbnail">
-            </a>
-            <h4 class="text-center">Gallary Image</h4>
-            <div class="ga-border"></div>
-            <p class="text-muted text-center"><small>Photography</small></p>
-            </div>
-            </div>
-            </div>
-            </div>
-            <div class="tab-pane" id="settings">
-            <form role="form">
-            <div class="form-group">
-            <label for="FullName">Full Name</label>
-            <input type="text"  id="FullName" class="form-control">
-            </div>
-            <div class="form-group">
-            <label for="Email">Email</label>
-            <input type="email"  id="Email" class="form-control">
-            </div>
-            <div class="form-group">
-            <label for="Username">Username</label>
-            <input type="text"  id="Username" class="form-control">
-            </div>
-            <div class="form-group">
-            <label for="Password">Password</label>
-            <input type="password" placeholder="6 - 15 Characters" id="Password" class="form-control">
-            </div>
-            <div class="form-group">
-            <label for="RePassword">Re-Password</label>
-            <input type="password" placeholder="6 - 15 Characters" id="RePassword" class="form-control">
-            </div>
-            <div class="form-group">
-            <label for="AboutMe">About Me</label>
-            <textarea style="height: 125px" id="AboutMe" class="form-control"></textarea>
-            </div>
-            <button class="btn btn-primary waves-effect waves-light w-md" type="submit">Save</button>
-            </form>
-            </div>
-            </div>
-            </div>
-            </div>
-            </div> 
-            </div>
-            
-            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-</div>
+  </div>
 </div>

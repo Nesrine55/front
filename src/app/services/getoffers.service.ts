@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
 })
 export class GetoffersService {
   private getOffer ='http://localhost:5000/offer/getOffers';
-  private createOffer ='http://localhost:5000/offer/addOffer';
+  private createoffer ='http://localhost:5000/offer/addOffer';
+  private getOfferCompany ='http://localhost:5000/offer/getOffersByCompanyId';
 
 
   constructor(private http: HttpClient) { }
@@ -15,5 +16,13 @@ export class GetoffersService {
     return this.http.get<any>(this.getOffer);
   }
 
+  getOfferscompany(id: string): Observable<any> {
+    return this.http.get<any>(`${this.getOfferCompany}/${id}`);
+  }
+
 // create offer
+createOffer(formData: any): Observable<any> {
+  return this.http.post<any>(this.createoffer, formData);
+}
+
 }

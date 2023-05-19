@@ -30,4 +30,11 @@ export class HomeusernavbarComponent {
     });
   }
 
+
+  myDashboard(){
+    if(localStorage.getItem('token')){
+      this.router.navigateByUrl(`/${localStorage.getItem('role')}`)
+    }
+  }
+
 }

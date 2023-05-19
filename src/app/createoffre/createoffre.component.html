@@ -5,84 +5,96 @@
 
             <section class="container">
                 <header>Create Internship Offer</header>
-                <form action="#" class="form">
+                <form [formGroup]="createofferform" (ngSubmit)="createoffer()" novalidate class="form">
                     <div class="input-box">
-                        <label>Title</label>
-                        <input type="text" placeholder="Enter offer title" required />
+                      <label>Title</label>
+                      <input type="text" placeholder="Enter offer title" formControlName="title" required />
                     </div>
-
+                  
                     <div class="input-box">
-                        <label>Internship Technology </label>
-                        <input type="text" placeholder="Enter Technology" required />
+                      <label>Internship Technology</label>
+                      <input type="text" placeholder="Enter Technology" formControlName="technology" required />
                     </div>
-
+                    <div class="input-box">
+                        <label>Internship Domain</label>
+                        <input type="text" placeholder="Enter domain" formControlName="domain" required />
+                      </div>
+                    <div class="input-box">
+                        <label>Internship Description</label>
+                        <textarea type="text" rows="4" placeholder="Enter you internship description" formControlName="description" required ></textarea>
+                      </div>
+                      <div class="input-box">
+                        <label>Duration</label>
+                        <input type="text" placeholder="Enter you internship Duration" formControlName="duration" required />
+                      </div>
                     <div class="column">
-                        <div class="input-box">
-                            <label>Start Date</label>
-                            <input type="date" placeholder="Enter start date" required />
-                        </div>
-                        <div class="input-box">
-                            <label>End Date</label>
-                            <input type="date" placeholder="Enter end date" required />
-                        </div>
+                      <div class="input-box">
+                        <label>Start Date</label>
+                        <input type="date" placeholder="Enter start date" formControlName="start_date" required />
+                      </div>
+                      <div class="input-box">
+                        <label>End Date</label>
+                        <input type="date" placeholder="Enter end date" formControlName="end_date" required />
+                      </div>
                     </div>
+                  
                     <div class="gender-box">
-                        <h3>Type</h3>
-                        <div class="gender-option">
-                            <div class="gender">
-                                <input type="radio" id="check-male" name="gender" checked />
-                                <label for="check-male">Full-time</label>
-                            </div>
-                            <div class="gender">
-                                <input type="radio" id="check-female" name="gender" />
-                                <label for="check-female">Part-time</label>
-                            </div>
-                            <div class="gender">
-                                <input type="radio" id="check-other" name="gender" />
-                                <label for="check-other">Remote</label>
-                            </div>
+                      <h3>Type</h3>
+                      <div class="gender-option">
+                        <div class="gender">
+                          <input type="radio" id="check-male" name="type" value="Full-time" formControlName="type" checked />
+                          <label for="check-male">Full-time</label>
                         </div>
-                        
+                        <div class="gender">
+                          <input type="radio" id="check-female" name="type" value="Part-time" formControlName="type" />
+                          <label for="check-female">Part-time</label>
+                        </div>
+                        <div class="gender">
+                          <input type="radio" id="check-other" name="type" value="Remote" formControlName="type" />
+                          <label for="check-other">Remote</label>
+                        </div>
+                      </div>
                     </div>
+                  
                     <div class="gender-box1">
-                        <h3>Internship Level</h3>
-                        <div class="gender-option2">
-                            <div class="gender1">
-                                <input type="radio" id="check-male1" name="gender1" checked />
-                                <label for="check-male1">Mid-Level</label>
-                            </div>
-                            <div class="gender1">
-                                <input type="radio" id="check-female1" name="gender1" />
-                                <label for="check-female1">High-Level</label>
-                            </div>
-                            <div class="gender1">
-                                <input type="radio" id="check-other1" name="gender1" />
-                                <label for="check-other1">Beginner</label>
-                            </div>
+                      <h3>Internship Level</h3>
+                      <div class="gender-option2">
+                        <div class="gender1">
+                          <input type="radio" id="check-male1" name="internship_level" value="Mid-Level" formControlName="internship_level" checked />
+                          <label for="check-male1">Mid-Level</label>
                         </div>
-                        
+                        <div class="gender1">
+                          <input type="radio" id="check-female1" name="internship_level" value="High-Level" formControlName="internship_level" />
+                  
+                          <label for="check-female1">High-Level</label>
+                        </div>
+                        <div class="gender1">
+                          <input type="radio" id="check-other1" name="internship_level" value="Beginner" formControlName="internship_level" />
+                          <label for="check-other1">Beginner</label>
+                        </div>
+                      </div>
                     </div>
+                  
                     <div class="input-box address">
-                        <label>Location</label>
-                        
-                        <div class="select-box">
-                            <select>
-                                <option hidden>Select location </option>
-                                <option>Nabeul</option>
-                                <option>La Marsa</option>
-                                <option>Sousse</option>
-                                <option>Monastir</option>
-                            </select>
-                        </div>
-                        <input type="text" placeholder="Enter Specific Address" required />
-                        <div class="input-box">
-                            <label>Add Pictures</label>
-                            <input type="file" placeholder="Enter end date" required />
-                        </div>
-                      
+                      <label>Location</label>
+                      <div class="select-box">
+                        <select formControlName="location" required>
+                          <option hidden>Select location</option>
+                          <option>Nabeul</option>
+                          <option>La Marsa</option>
+                          <option>Sousse</option>
+                          <option>Monastir</option>
+                        </select>
+                      </div>
+                      <input type="text" placeholder="Enter Specific Address" formControlName="specificAddress" required />
+                      <div class="input-box">
+                        <label>Add Pictures</label>
+                        <input type="file" formControlName="pictures" required />
+                      </div>
                     </div>
-                    <button>Submit</button>
-                </form>
+                  
+                    <button type="submit">Submit</button>
+                  </form>
             </section>
         </div>
     </div>
