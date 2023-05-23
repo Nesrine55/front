@@ -20,7 +20,6 @@ import { CompanynavbarComponent } from './companynavbar/companynavbar.component'
 import { StudentnavbarComponent } from './studentnavbar/studentnavbar.component';
 import { StudentprofileComponent } from './studentprofile/studentprofile.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { InternsreviewsComponent } from './internsreviews/internsreviews.component';
 import { CreateoffreComponent } from './createoffre/createoffre.component';
 import { OffredetailsComponent } from './offredetails/offredetails.component';
@@ -29,7 +28,6 @@ import { StudentexplorepageComponent } from './studentexplorepage/studentexplore
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
-import { AdminnavbarComponent } from './adminnavbar/adminnavbar.component';
 import { MyprofilestudentsetComponent } from './myprofilestudentset/myprofilestudentset.component';
 import { FaqComponent } from './faq/faq.component';
 import { MailverifpasswordComponent } from './mailverifpassword/mailverifpassword.component';
@@ -40,6 +38,7 @@ import { HomeuserComponent } from './homeuser/homeuser.component';
 import { HomeusernavbarComponent } from './homeusernavbar/homeusernavbar.component';
 import { AuthInterceptor } from './services/auth.interceptor';
 import { ExploreforcompanyComponent } from './exploreforcompany/exploreforcompany.component';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -61,13 +60,11 @@ import { ExploreforcompanyComponent } from './exploreforcompany/exploreforcompan
     StudentnavbarComponent,
     StudentprofileComponent,
     NavbarComponent,
-    AdmindashboardComponent,
     InternsreviewsComponent,
     CreateoffreComponent,
     OffredetailsComponent,
     CompanyprofileComponent,
     StudentexplorepageComponent,
-    AdminnavbarComponent,
     MyprofilestudentsetComponent,
     FaqComponent,
     MailverifpasswordComponent,
@@ -83,7 +80,7 @@ import { ExploreforcompanyComponent } from './exploreforcompany/exploreforcompan
     ReactiveFormsModule,
     FormsModule,
     ToastrModule.forRoot(), // ToastrModule added
-    BrowserAnimationsModule, // required animations module
+    BrowserAnimationsModule, AdminModule, // required animations module
 
     
 

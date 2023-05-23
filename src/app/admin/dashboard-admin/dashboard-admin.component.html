@@ -1,0 +1,279 @@
+<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div class="container-scroller">
+    <app-adminnavbar></app-adminnavbar>
+
+    <div class="main-panel">
+        <div class="content-wrapper">
+
+            <!-- NAVBAR -->
+            <section id="content">
+                <!-- NAVBAR -->
+                <nav>
+                    <i class='bx bx-menu toggle-sidebar'></i>
+                    <form action="#">
+                        <div class="form-group">
+                            <input type="text" placeholder="Search...">
+                            <i class='bx bx-search icon'></i>
+                        </div>
+                    </form>
+                    <a class="nav-link">
+                        <i class='bx bxs-bell icon'></i>
+                        <span class="badge">5</span>
+                    </a>
+                    <a class="nav-link">
+                        <i class='bx bxs-message-square-dots icon'></i>
+                        <span class="badge">8</span>
+                    </a>
+                    <span class="divider"></span>
+                    <!-- <div class="profile">
+				<img src="../../assets/user.png" alt="">
+				<ul class="profile-link">
+					<li><a ><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
+					<li><a ><i class='bx bxs-cog' ></i> Settings</a></li>
+					<li><a><i class='bx bxs-log-out-circle' ></i> Logout</a></li>
+				</ul>
+			</div> -->
+                </nav>
+                <!-- NAVBAR -->
+
+                <!-- MAIN -->
+                <main>
+                    <!-- <h1 class="title">Admin Dashboard</h1> -->
+                    <!-- <ul class="breadcrumbs">
+				<li><a routerLink="#">Home</a></li>
+				<li class="divider">/</li>
+				<li><a routerLink="#" class="active">Dashboard</a></li>
+			</ul> -->
+                    <div class="info-data">
+                        <div class="card">
+                            <div class="head">
+                                <div>
+                                    <h2>1500</h2>
+                                    <p>Users</p>
+                                </div>
+                                <i class='bx bx-trending-up icon'></i>
+                            </div>
+                            <span class="progress" data-value="40%"></span>
+                            <span class="label">40%</span>
+                        </div>
+                        <div class="card">
+                            <div class="head">
+                                <div>
+                                    <h2>234</h2>
+                                    <p>Applications to offers</p>
+                                </div>
+                                <i class='bx bx-trending-down icon down'></i>
+                            </div>
+                            <span class="progress" data-value="60%"></span>
+                            <span class="label">60%</span>
+                        </div>
+                        <div class="card">
+                            <div class="head">
+                                <div>
+                                    <h2>465</h2>
+                                    <p>Pageviews</p>
+                                </div>
+                                <i class='bx bx-trending-up icon'></i>
+                            </div>
+                            <span class="progress" data-value="30%"></span>
+                            <span class="label">30%</span>
+                        </div>
+                        <div class="card">
+                            <div class="head">
+                                <div>
+                                    <h2>235</h2>
+                                    <p>Visitors</p>
+                                </div>
+                                <i class='bx bx-trending-up icon'></i>
+                            </div>
+                            <span class="progress" data-value="80%"></span>
+                            <span class="label">80%</span>
+                        </div>
+                    </div>
+                    <div class="data">
+                        <div class="content-data">
+                            <div class="head">
+                                <h3>Users Interactions Report</h3>
+                                <!-- <div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a routerLink="#">Edit</a></li>
+								<li><a routerLink="#">Save</a></li>
+								<li><a routerLink="#">Remove</a></li>
+							</ul>
+						</div> -->
+                            </div>
+                            <div class="chart">
+                                <div id="chart"></div>
+                            </div>
+                        </div>
+                        <div class="content-data">
+                            <!-- <div class="head">
+						<h3>Chatbox</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a routerLink="#">Edit</a></li>
+								<li><a routerLink="#">Save</a></li>
+								<li><a routerLink="#">Remove</a></li>
+							</ul>
+						</div>
+					</div> -->
+                            <!-- <div class="chat-box">
+						<p class="day"><span>Today</span></p>
+						<div class="msg">
+							<img src="../../assets/user.png" alt="">
+							<div class="chat">
+								<div class="profile">
+									<span class="username">ryma</span>
+									<span class="time">18:30</span>
+								</div>
+								<p>Hello</p>
+							</div>
+						</div>
+						<div class="msg me">
+							<div class="chat">
+								<div class="profile">
+									<span class="time">18:30</span>
+								</div>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatum eos quam dolores eligendi exercitationem animi nobis reprehenderit laborum! Nulla.</p>
+							</div>
+						</div>
+						<div class="msg me">
+							<div class="chat">
+								<div class="profile">
+									<span class="time">18:30</span>
+								</div>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, architecto!</p>
+							</div>
+						</div>
+						<div class="msg me">
+							<div class="chat">
+								<div class="profile">
+									<span class="time">18:30</span>
+								</div>
+								<p>Lorem ipsum, dolor sit amet.</p>
+							</div>
+						</div>
+					</div> -->
+                            <!-- <form action="#">
+						<div class="form-group">
+							<input type="text" placeholder="Type...">
+							<button type="submit" class="btn-send"><i class='bx bxs-send' ></i></button>
+						</div>
+					</form> -->
+
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="main-box clearfix">
+                                            <div class="table-responsive">
+                                                <table class="table user-list">
+                                                    <thead>
+                                                        <tr>
+                                                            <th><span>User</span></th>
+                                                            <th><span>Created</span></th>
+                                                            <th class="text-center"><span>Status</span></th>
+                                                            <th><span>Email</span></th>
+                                                            <th>&nbsp;</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                                                                    alt="">
+                                                                <a href="#" class="user-link">Mila Kunis</a>
+                                                                <span class="user-subhead">Admin</span>
+                                                            </td>
+                                                            <td>
+                                                                2013/08/08
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <span class="label label-default">Inactive</span>
+                                                            </td>
+                                                            <td>
+                                                                <a href="#"><span class="__cf_email__"
+                                                                        data-cfemail="9df0f4f1fcddf6e8f3f4eeb3fef2f0">[email&#160;protected]</span></a>
+                                                            </td>
+                                                            <td style="">
+                                                                <div class="form-check form-switch">
+                                                                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                                                                    <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+                                                                  </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                                                    alt="">
+                                                                <a href="#" class="user-link">George Clooney</a>
+                                                                <span class="user-subhead">Member</span>
+                                                            </td>
+                                                            <td>
+                                                                2013/08/12
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <span class="label label-success">Active</span>
+                                                            </td>
+                                                            <td>
+                                                                <a href="#"><span class="__cf_email__"
+                                                                        data-cfemail="167b77647a7978567464777872793875797b">[email&#160;protected]</span></a>
+                                                            </td>
+                                                            <td style="width: 20%;">
+                                                                <a href="#" class="table-link">
+                                                                    <span class="fa-stack">
+                                                                        <i class="fa fa-square fa-stack-2x"></i>
+                                                                        <i
+                                                                            class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                                                                    </span>
+                                                                </a>
+                                                                <a href="#" class="table-link">
+                                                                    <span class="fa-stack">
+                                                                        <i class="fa fa-square fa-stack-2x"></i>
+                                                                        <i
+                                                                            class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                                                    </span>
+                                                                </a>
+                                                                <a href="#" class="table-link danger">
+                                                                    <span class="fa-stack">
+                                                                        <i class="fa fa-square fa-stack-2x"></i>
+                                                                        <i
+                                                                            class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                                                    </span>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                       
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <ul class="pagination pull-right">
+                                                <li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
+                                                <li><a href="#">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </main>
+                <!-- MAIN -->
+            </section>
+            <!-- NAVBAR -->
+
+            <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+            <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+        </div>
+    </div>
+</div>

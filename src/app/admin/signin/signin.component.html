@@ -1,0 +1,31 @@
+
+<header class="header">
+    <nav class="nav">
+      <a href="#" class="nav_logo">Eas4Trainee .</a>
+
+   
+      <!-- <h1>My Admin Dashboard</h1> -->
+
+    </nav>
+  </header>
+  <div class="center">
+    <h1>Admin Login</h1>
+    <form (ngSubmit)="loginAdmin()" [formGroup]="adminloginForm" novalidate>
+      <div class="txt_field">
+        <input type="email" formControlName="email" name="email" required />
+        <span class="error"  *ngIf="adminloginForm.get('email')?.invalid && adminloginForm.get('email')?.touched">        
+          Email is required and must be a valid email address
+      </span>
+        <label>Email</label>
+      </div>
+      <div class="txt_field">
+        <input type="password" formControlName="password" name="password" required />
+        <span class="error" *ngIf="adminloginForm.get('password')?.invalid && adminloginForm.get('password')?.touched">
+          Password is required
+      </span>        
+      <label>Password</label>
+      </div>
+      <input type="submit" value="Login" />
+      <div class="signup_link"></div>
+    </form>
+  </div>

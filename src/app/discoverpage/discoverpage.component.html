@@ -1,3 +1,150 @@
-<app-navbar></app-navbar>
 
-<p>discoverpage works!</p>
+
+<app-navbar></app-navbar>
+<!-- 
+<div class="jobs-list-container">
+    <h2>Our Popular Internship Offers</h2>
+
+
+    <div class="jobs">
+      <div class="job">
+        <img src="../../assets/images/faces/microsoftCompany.png" alt="Software Engineer" class="card-image">
+        <h3 class="job-title">Software Engineer</h3>
+        <p class="details">Responsible for designing, developing and maintaining software systems and applications.</p>
+        <p class="open-positions">Open Positions: 2</p>
+        <a class="details-btn"href="#">Apply Now</a>
+      </div>
+    
+       <div class="job">
+        <img src="../../assets/images/faces/microsoftCompany.png" alt="Software Engineer" class="card-image">
+        <h3 class="job-title">Software Engineer</h3>
+        <p class="details">Responsible for designing, developing and maintaining software systems and applications.</p>
+        <p class="open-positions">Open Positions: 2</p>
+        <a class="details-btn"href="#">Apply Now</a>
+      </div>
+        <div class="job">
+            <img src="../../assets/images/faces/microsoftCompany.png" alt="Software Engineer" class="card-image">
+            <h3 class="job-title">Software Engineer</h3>
+        <p class="details">Responsible for designing, developing and maintaining software systems and applications.</p>
+        <p class="open-positions">Open Positions: 2</p>
+        <a class="details-btn"href="#">Apply Now</a>
+      </div>
+    
+    <div class="job">
+        <img src="../../assets/images/faces/microsoftCompany.png" alt="Software Engineer" class="card-image">
+        <h3 class="job-title">Software Engineer</h3>
+        <p class="details">Responsible for designing, developing and maintaining software systems and applications.</p>
+        <p class="open-positions">Open Positions: 2</p>
+        <a class="details-btn"href="#">Apply Now</a>
+      </div>
+      <div class="job">
+        <img src="../../assets/images/faces/microsoftCompany.png" alt="Software Engineer" class="card-image">
+        <h3 class="job-title">Software Engineer</h3>
+        <p class="details">Responsible for designing, developing and maintaining software systems and applications.</p>
+        <p class="open-positions">Open Positions: 2</p>
+        <a class="details-btn"href="#">Apply Now</a>
+      </div>
+       <div class="job">
+        <img src="../../assets/images/faces/microsoftCompany.png" alt="Software Engineer" class="card-image">
+        <h3 class="job-title">Software Engineer</h3>
+        <p class="details">Responsible for designing, developing and maintaining software systems and applications.</p>
+        <p class="open-positions">Open Positions: 2</p>
+        <a class="details-btn"href="#">Apply Now</a>
+      </div>
+    </div>
+  </div> -->
+
+  <section class="info">
+    <h1>Our Popular Internship Offers</h1>
+  </section>
+  <section class="cards-wrapper">
+    <div class="card-grid-space" *ngFor="let offer of offers | slice:0:6">
+      <a class="card" href="https://codetheweb.blog/2017/10/06/html-syntax/" style="--bg-img: url(https://www.hult.edu/blog/media/uploads/2018/07/HNews-Internship.png)">
+        <div>
+            <h1>{{offer.title}}</h1>
+            <p>{{offer.description}}</p>
+            <div class="tags">
+              <div class="tag">{{offer.domain}}</div>
+            </div>
+  
+          </div>
+          <a class="details-btn"href="#">View details <i class="mdi mdi-arrow-right-bold"></i></a>
+      </a>
+      
+
+    </div>
+    <!-- <div class="card-grid-space">
+      <a class="card" href="https://codetheweb.blog/2017/10/09/basic-types-of-html-tags/" style="--bg-img: url('https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/basic-types-of-html-tags/cover.jpg')">
+        <div>
+          <h1>PFE internship offer</h1>
+          <p>Responsible for designing, developing and maintaining software systems and applications.</p>
+          <div class="tags">
+            <div class="tag">Marketing industry</div>
+          </div>
+
+        </div>
+        <a class="details-btn"href="#">View details <i class="mdi mdi-arrow-right-bold"></i></a>
+
+      </a>
+    </div>
+    <div class="card-grid-space">
+      <a class="card" href="https://codetheweb.blog/2017/10/14/links-images-about-file-paths/" style="--bg-img: url('https://www.irm.kit.edu/img/intern/kitbilder/20180122-CN-01-087_1280.jpg')">
+        <div>
+            <h1>PFE internship offer</h1>
+            <p>Responsible for designing, developing and maintaining software systems and applications.</p>
+            <div class="tags">
+              <div class="tag">Marketing industry</div>
+            </div>
+  
+          </div>
+          <a class="details-btn"href="#">View details <i class="mdi mdi-arrow-right-bold"></i></a>
+  
+      </a>
+    </div>
+    <div class="card-grid-space">
+        <a class="card" href="https://codetheweb.blog/2017/10/06/html-syntax/" style="--bg-img: url(https://www.theforage.com/blog/wp-content/uploads/2023/04/how-long-does-an-internship-last.png)">
+          <div>
+              <h1>PFE internship offer</h1>
+              <p>Responsible for designing, developing and maintaining software systems and applications.</p>
+              <div class="tags">
+                <div class="tag">Marketing industry</div>
+              </div>
+    
+            </div>
+            <a class="details-btn"href="#">View details <i class="mdi mdi-arrow-right-bold"></i></a>
+    
+        </a>
+    </div>
+    <div class="card-grid-space">
+        <a class="card" href="https://codetheweb.blog/2017/10/09/basic-types-of-html-tags/" style="--bg-img: url('https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/basic-types-of-html-tags/cover.jpg')">
+          <div>
+            <h1>PFE internship offer</h1>
+            <p>Responsible for designing, developing and maintaining software systems and applications.</p>
+            <div class="tags">
+              <div class="tag">Marketing industry</div>
+            </div>
+  
+          </div>
+          <a class="details-btn"href="#">View details <i class="mdi mdi-arrow-right-bold"></i></a>
+  
+        </a>
+    </div>
+    <div class="card-grid-space">
+        <a class="card" href="https://codetheweb.blog/2017/10/14/links-images-about-file-paths/" style="--bg-img: url('https://www.irm.kit.edu/img/intern/kitbilder/20180122-CN-01-087_1280.jpg')">
+          <div>
+              <h1>PFE internship offer</h1>
+              <p>Responsible for designing, developing and maintaining software systems and applications.</p>
+              <div class="tags">
+                <div class="tag">Marketing industry</div>
+              </div>
+    
+            </div>
+            <a class="details-btn"href="#">View details <i class="mdi mdi-arrow-right-bold"></i></a>
+    
+        </a>
+    </div> -->
+  </section>
+    
+
+ 
+    

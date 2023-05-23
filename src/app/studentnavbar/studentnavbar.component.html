@@ -16,8 +16,8 @@
                     <span class="count bg-success"></span>
                   </div>
                   <div class="profile-name">
-                    <h5 class="mb-0 font-weight-normal">Nesrine Zarrouk</h5>
-                    <span>Student, web developer</span>
+                    <h5 class="mb-0 font-weight-normal">{{student.name}}</h5>
+                    <span>{{student.role}}</span>
                   </div>
                 </div>
                 <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
@@ -209,7 +209,7 @@
                     <a class="nav-link" id="profileDropdown"  data-toggle="dropdown">
                       <div class="navbar-profile">
                         <img class="img-xs rounded-circle" src="../../assets/mypic.jpg" alt="">
-                        <p class="mb-0 d-none d-sm-block navbar-profile-name">Nesrine Zarrouk</p>
+                        <p class="mb-0 d-none d-sm-block navbar-profile-name">{{student.name}}</p>
                         <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                       </div>
                     </a>
@@ -238,7 +238,6 @@
                         </div>
                       </a>
                       <div class="dropdown-divider"></div>
-                      <p class="p-3 mb-0 text-center">Advanced settings</p>
                     </div>
                   </li>
                 </ul>

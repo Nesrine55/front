@@ -1,27 +1,54 @@
-
-      <div class="container-scroller">
+    <!-- SIDEBAR -->
+	<!-- <section id="sidebar">
+		<a routerLink="#" class="brand"><i class='bx bxs-smile icon'></i> Eas4trainee .</a>
+		<ul class="side-menu">
+			<li><a routerLink="#" class="active"><i class='bx bxs-dashboard icon' ></i> Admin Dashboard</a></li>
+			<li class="divider" data-text="main">Main</li>
+			<li>
+				<a routerLink="#"><i class='bx bxs-inbox icon' ></i> Elements <i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a routerLink="#">management</a></li>
+					<li><a routerLink="#">Badges</a></li>
+					<li><a routerLink="#">help</a></li>
+				</ul>
+			</li>
+			<li><a routerLink="#"><i class='bx bxs-chart icon' ></i> Charts</a></li>
+			<li><a routerLink="#"><i class='bx bxs-widget icon' ></i> pages</a></li>
+			<li class="divider" data-text="fonctionalities">offers</li>
+			<li><a routerLink="#"><i class='bx bxs-user-rectangle icon'></i> profiles</a></li>
+			<li>
+				<a routerLink="#"><i class='bx bxs-notepad icon' ></i> offers </a>
+				
+			</li>
+		</ul>
+		
+	</section> -->
+	<!-- SIDEBAR -->
+    
+  
+    <div class="container-scroller">
         <!-- partial:partials/_sidebar.html -->
-        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <nav class="sidebar sidebar-offcanvas " id="sidebar">
           <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-            <a routerLink="/userhome" class="sidebar-brand brand-logo"  id="aa">Ease4Trainne .</a>
-            <a class="sidebar-brand brand-logo-mini">E.</a>
+            <a class="sidebar-brand brand-logo" routerLink="/userhome" id="aa">Ease4Trainne .</a>
+            <a class="sidebar-brand brand-logo-mini" href="index.html">E.</a>
           </div>
           <ul class="nav">
             <li class="nav-item profile">
               <div class="profile-desc">
                 <div class="profile-pic">
                   <div class="count-indicator">
-                    <img class="img-xs rounded-circle " src="../../assets/images/faces/microsoftCompany.png" alt="">
+                    <img class="img-xs rounded-circle " src="../../assets/mypic.jpg" alt="">
                     <span class="count bg-success"></span>
                   </div>
                   <div class="profile-name">
-                    <h5 class="mb-0 font-weight-normal">{{company.name}}</h5>
-                    <span>{{company.domain}}</span>
+                    <h5 class="mb-0 font-weight-normal">aaaaaa</h5>
+                    <span>aaaaaa</span>
                   </div>
                 </div>
-                <a routerLink="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
+                <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
                 <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
-                  <a routerLink="#" class="dropdown-item preview-item">
+                  <a href="#" class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
                       <div class="preview-icon bg-dark rounded-circle">
                         <i class="mdi mdi-settings text-primary"></i>
@@ -32,7 +59,7 @@
                     </div>
                   </a>
                   <div class="dropdown-divider"></div>
-                  <a routerLink="#" class="dropdown-item preview-item">
+                  <a href="#" class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
                       <div class="preview-icon bg-dark rounded-circle">
                         <i class="mdi mdi-onepassword  text-info"></i>
@@ -50,7 +77,7 @@
               <span class="nav-link">Navigation</span>
             </li>
             <li class="nav-item menu-items">
-              <a class="nav-link" routerLink="/company">
+              <a class="nav-link" routerLink="/inbording">
                 <span class="menu-icon">
                   <i class="mdi mdi-home"></i>
                 </span>
@@ -58,16 +85,16 @@
               </a>
             </li>
             <li class="nav-item menu-items">
-              <a class="nav-link" data-toggle="collapse"  aria-expanded="false" aria-controls="ui-basic" routerLink="/companyexplore">
+              <a class="nav-link" data-toggle="collapse" routerLink="/studentexplore"  aria-expanded="false" aria-controls="ui-basic">
                 <span class="menu-icon">
                   <i class="mdi mdi-compass-outline"></i>
                 </span>
                 <span class="menu-title">Explore</span>
               </a>
-           
+             
             </li>
             <li class="nav-item menu-items">
-              <a class="nav-link" >
+              <a class="nav-link" href="pages/forms/basic_elements.html">
                 <span class="menu-icon">
                   <i class="mdi mdi-heart-outline"></i>
                 </span>
@@ -75,7 +102,7 @@
               </a>
             </li>
             <li class="nav-item menu-items">
-              <a class="nav-link" >
+              <a class="nav-link" href="pages/tables/basic-table.html">
                 <span class="menu-icon">
                   <i class="mdi mdi-file-outline"></i>
                 </span>
@@ -83,7 +110,7 @@
               </a>
             </li>
             <li class="nav-item menu-items">
-              <a class="nav-link" routerLink="pages/charts/chartjs.html">
+              <a class="nav-link" href="pages/charts/chartjs.html">
                 <span class="menu-icon">
                   <i class="mdi mdi-chart-bar"></i>
                 </span>
@@ -91,7 +118,7 @@
               </a>
             </li>
             <li class="nav-item menu-items">
-              <a class="nav-link" routerLink="pages/icons/mdi.html">
+              <a class="nav-link" href="pages/icons/mdi.html">
                 <span class="menu-icon">
                   <i class="mdi mdi-history"></i>
                 </span>
@@ -107,25 +134,17 @@
           <!-- partial:partials/_navbar.html -->
           <nav class="navbar p-0 fixed-top d-flex flex-row">
             <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-              <a class="sidebar-brand brand-logo-mini" routerLink="/homepage">E.</a>
+              <a class="sidebar-brand brand-logo-mini" href="index.html">E.</a>
           </div>
             <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
               <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
                 <span class="mdi mdi-menu"></span>
               </button>
-              <ul class="navbar-nav w-100">
-                <div class="search__container">
-
-                  <input class="search__input" type="text" placeholder="Search">
-              </div>
-              </ul>
+              
               <ul class="navbar-nav navbar-nav-right">
-                <li class="nav-item dropdown d-none d-lg-block">
-                    <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" data-toggle="dropdown" aria-expanded="false" routerLink="/offer">+ Create New offre</a>
-                   
-                  </li>
+                  
                   <li class="nav-item dropdown border-left">
-                    <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" routerLink="#" data-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                       <i class="mdi mdi-email"></i>
                       <span class="count bg-success"></span>
                     </a>
@@ -134,30 +153,30 @@
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item preview-item">
                         <div class="preview-thumbnail">
-                          <img src="../../assets/user.png" alt="image" class="rounded-circle profile-pic">
+                          <img src="../../assets/images/faces/microsoftCompany.png" alt="image" class="rounded-circle profile-pic">
                         </div>
                         <div class="preview-item-content">
-                          <p class="preview-subject ellipsis mb-1">student 1 send you a message</p>
+                          <p class="preview-subject ellipsis mb-1">Company 1 send you a message</p>
                           <p class="text-muted mb-0"> 1 Minutes ago </p>
                         </div>
                       </a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item preview-item">
                         <div class="preview-thumbnail">
-                          <img src="../../assets/user.png" alt="image" class="rounded-circle profile-pic">
+                          <img src="../../assets/images/faces/microsoftCompany.png" alt="image" class="rounded-circle profile-pic">
                         </div>
                         <div class="preview-item-content">
-                          <p class="preview-subject ellipsis mb-1">student 2 send you a message</p>
+                          <p class="preview-subject ellipsis mb-1">Company 2 send you a message</p>
                           <p class="text-muted mb-0"> 15 Minutes ago </p>
                         </div>
                       </a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item preview-item">
                         <div class="preview-thumbnail">
-                          <img src="../../assets/user.png" alt="image" class="rounded-circle profile-pic">
+                          <img src="../../assets/images/faces/microsoftCompany.png" alt="image" class="rounded-circle profile-pic">
                         </div>
                         <div class="preview-item-content">
-                          <p class="preview-subject ellipsis mb-1">student 3 send you a message</p>
+                          <p class="preview-subject ellipsis mb-1">Company 3 send you a message</p>
                           <p class="text-muted mb-0"> 18 Minutes ago </p>
                         </div>
                       </a>
@@ -166,7 +185,7 @@
                     </div>
                   </li>
                   <li class="nav-item dropdown border-left">
-                    <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" routerLink="#" data-toggle="dropdown">
+                    <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
                       <i class="mdi mdi-bell"></i>
                       <span class="count bg-danger"></span>
                     </a>
@@ -175,30 +194,30 @@
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item preview-item">
                           <div class="preview-thumbnail">
-                            <img src="../../assets/user.png" alt="image" class="rounded-circle profile-pic">
+                            <img src="../../assets/images/faces/microsoftCompany.png" alt="image" class="rounded-circle profile-pic">
                           </div>
                           <div class="preview-item-content">
-                            <p class="preview-subject ellipsis mb-1">student 1 à abonné à votre compte</p>
+                            <p class="preview-subject ellipsis mb-1">Company 1 added new offer</p>
                             <p class="text-muted mb-0"> 18 Minutes ago </p>
                           </div>
                         </a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item preview-item">
                           <div class="preview-thumbnail">
-                            <img src="../../assets/user.png" alt="image" class="rounded-circle profile-pic">
+                            <img src="../../assets/images/faces/microsoftCompany.png" alt="image" class="rounded-circle profile-pic">
                           </div>
                           <div class="preview-item-content">
-                            <p class="preview-subject ellipsis mb-1">student 2 à abonné à votre compte</p>
+                            <p class="preview-subject ellipsis mb-1">Company 2 added new offer</p>
                             <p class="text-muted mb-0"> 18 Minutes ago </p>
                           </div>
                         </a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item preview-item">
                           <div class="preview-thumbnail">
-                            <img src="../../assets/user.png" alt="image" class="rounded-circle profile-pic">
+                            <img src="../../assets/images/faces/microsoftCompany.png" alt="image" class="rounded-circle profile-pic">
                           </div>
                           <div class="preview-item-content">
-                            <p class="preview-subject ellipsis mb-1">student 3 à abonné à votre compte</p>
+                            <p class="preview-subject ellipsis mb-1">Company 3 added new offer</p>
                             <p class="text-muted mb-0"> 18 Minutes ago </p>
                           </div>
                         </a>
@@ -207,10 +226,10 @@
                     </div>
                   </li>
                   <li class="nav-item dropdown">
-                    <a class="nav-link" id="profileDropdown" routerLink="#" data-toggle="dropdown">
+                    <a class="nav-link" id="profileDropdown"  data-toggle="dropdown">
                       <div class="navbar-profile">
-                        <img class="img-xs rounded-circle" src="../../assets/images/faces/microsoftCompany.png" alt="">
-                        <p class="mb-0 d-none d-sm-block navbar-profile-name">{{company.name}}</p>
+                        <img class="img-xs rounded-circle" src="../../assets/mypic.jpg" alt="">
+                        <p class="mb-0 d-none d-sm-block navbar-profile-name">aaaaaa</p>
                         <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                       </div>
                     </a>
@@ -224,7 +243,7 @@
                           </div>
                         </div>
                         <div class="preview-item-content">
-                          <a routerLink="/companyprofile" class="logout preview-subject mb-1">Settings</a>
+                          <a routerLink="/myprofilestudentset" class="logout preview-subject mb-1">Settings</a>
                         </div>
                       </a>
                       <div class="dropdown-divider"></div>
@@ -235,7 +254,7 @@
                           </div>
                         </div>
                         <div class="preview-item-content">
-                          <a  (click)="logout()" class="logout preview-subject mb-1">Log out</a>
+                          <a   class="logout preview-subject mb-1">Log out</a>
                         </div>
                       </a>
                       <div class="dropdown-divider"></div>
@@ -253,3 +272,4 @@
       </div>
    
   
+    

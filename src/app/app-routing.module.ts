@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutpageComponent } from './aboutpage/aboutpage.component';
-import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { CompanydashboardComponent } from './companydashboard/companydashboard.component';
 import { CompanynavbarComponent } from './companynavbar/companynavbar.component';
 import { CompanyprofileComponent } from './companyprofile/companyprofile.component';
@@ -24,7 +23,6 @@ import { StudentexplorepageComponent } from './studentexplorepage/studentexplore
 import { StudentnavbarComponent } from './studentnavbar/studentnavbar.component';
 import { StudentprofileComponent } from './studentprofile/studentprofile.component';
 import { StudentsettingsComponent } from './studentsettings/studentsettings.component';
-import { AdminnavbarComponent } from './adminnavbar/adminnavbar.component';
 import { MyprofilestudentsetComponent } from './myprofilestudentset/myprofilestudentset.component';
 import { FaqComponent } from './faq/faq.component';
 import { MailverifpasswordComponent } from './mailverifpassword/mailverifpassword.component';
@@ -51,13 +49,11 @@ const routes: Routes = [
   {path:'studentsettings' , component:StudentsettingsComponent},
   {path:'studentprofile' , component:StudentprofileComponent},
   {path:'navbar' , component:NavbarComponent},
-  {path:'studentInfo' , component:InternsreviewsComponent},
-  {path:'adminpage' , component:AdmindashboardComponent},
+  {path:'studentprofiledetails/:id' , component:InternsreviewsComponent},
   {path:'offer' , component:CreateoffreComponent},
   {path:'offerdetails' , component:OffredetailsComponent},
   {path:'companyprofile' , component:CompanyprofileComponent},
   {path:'studentexplore' , component:StudentexplorepageComponent},
-  {path:'adminnav' , component:AdminnavbarComponent},
   {path:'myprofilestudentset' , component:MyprofilestudentsetComponent},
   {path:'faquestions' , component:FaqComponent},
   {path:'otpforpassword' , component:MailverifpasswordComponent},
@@ -65,12 +61,9 @@ const routes: Routes = [
   {path:'student' , component:InbordingComponent,canActivate:[AuthguardService], data: { role: 'student' }},
   {path:'userhome' , component:HomeuserComponent},
   {path:'companyexplore' , component:ExploreforcompanyComponent},
-
-
-
-
-
-
+  {path:'admin' , loadChildren:()=> import('./admin/admin.module').then((m)=>m.AdminModule)},
+  
+  
 
 
 ];
