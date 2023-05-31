@@ -28,22 +28,25 @@
                                 </div>
 
                             </form>
-                            <h4 class="mb-0">{{student.name}}</h4>
-                            <p class="text-muted">{{student.role}}</p>
+                            <h4 class="mb-0">{{student?.name}}</h4>
+                            <p class="text-muted">{{student?.role}}</p>
                             <!--<button type="button" class="btn btn-success btn-xs waves-effect mb-2 waves-light">Follow</button>
         <button type="button" class="btn btn-danger btn-xs waves-effect mb-2 waves-light">Message</button>-->
                             <div class="text-left mt-3">
                                 <h4 class="font-13 text-uppercase">About Me :</h4>
                                 <p class="text-muted font-13 mb-3">
-                                    {{student.bio}}
+                                    {{student?.bio}}
                                 </p>
-                                <p class="text-muted mb-2 font-13"><strong>Full Name :</strong> <span class="ml-2">{{student.firstname}} {{student.LastName}}</span></p>
-                                <p class="text-muted mb-2 font-13"><strong>Mobile :</strong><span class="ml-2">{{student.Number}}</span></p>
-                                <p class="text-muted mb-2 font-13"><strong>Email :</strong> <span class="ml-2 "><a class="__cf_email__"
-                                            data-cfemail="a9dcdaccdbe9ccc4c8c0c587cdc6c4c8c0c7">{{student.email}}</a></span>
+                                <p class="text-muted mb-2 font-13"><strong>Full Name :</strong> <span
+                                        class="ml-2">{{student?.firstname}} {{student?.LastName}}</span></p>
+                                <p class="text-muted mb-2 font-13"><strong>Mobile :</strong><span
+                                        class="ml-2">{{student?.Number}}</span></p>
+                                <p class="text-muted mb-2 font-13"><strong>Email :</strong> <span class="ml-2 "><a
+                                            class="__cf_email__"
+                                            data-cfemail="a9dcdaccdbe9ccc4c8c0c587cdc6c4c8c0c7">{{student?.email}}</a></span>
                                 </p>
                                 <p class="text-muted mb-1 font-13"><strong>Location :</strong> <span
-                                        class="ml-2">{{student.city}}</span></p>
+                                        class="ml-2">{{student?.city}}</span></p>
                             </div>
                             <ul class="social-list list-inline mt-3 mb-0">
                                 <li class="list-inline-item">
@@ -65,8 +68,52 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="card-box">
-                            <h4 class="header-title">Skills</h4>
+                        <!-- <div class="card-box">
+                            <div class="tab-pane" id="Skills">
+                                <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    
+                                    <h5 class="mb-3 text-uppercase bg-light p-2"><i class="mdi mdi-account-circle mr-1"></i>
+                                        Add New Experience</h5>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="TitreExperience">TitreExperience</label>
+                                                <input type="text" class="form-control" id="TitreExperience"
+                                                    formControlName="TitreExperience" placeholder="Enter you experience">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="PlaceExperience">Place</label>
+                                                <input type="email" class="form-control" id="PlaceExperience"
+                                                    formControlName="PlaceExperience" placeholder="Enter the place">
+                                            </div>
+                                        </div>
+                                    </div>
+    
+    
+                                    <div class="sub d-flex flex-row justify-content-between">
+                                        <a href="#Skills" data-toggle="tab" aria-expanded="true"
+                                            class="nav-link ml-0 active">
+                                            <i class="mdi mdi-arrow-left  mr-1"></i>Back
+                                        </a>
+    
+                                        <button type="submit" class="btn btn-success waves-effect waves-light mt-2"><i
+                                                class="mdi mdi-content-save"></i> Save</button>
+    
+                                    </div>
+                                </form>
+    
+                            </div>
+
+                            <div class="sub d-flex flex-row justify-content-between">
+                                <h4 class="header-title">Skills</h4>
+
+                                <a href="#Skills" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                    Add Skills <i class="mdi mdi-plus" style="font-size: 24px;"></i>
+                                </a>
+
+                            </div>
                             <p class="mb-3">Everyone realizes why a new common language would be desirable</p>
                             <div class="pt-1">
                                 <h6 class="text-uppercase mt-0">HTML5 <span class="float-right">90%</span></h6>
@@ -77,10 +124,11 @@
                                     </div>
                                 </div>
                             </div>
-                            
-                            
-                          
+
+
+
                         </div>
+                         -->
                         <div class="down">
                             <button type="submit" class="btn btn-download  waves-effect waves-light mt-2"><i
                                     class="mdi mdi-cloud-download"></i> Download profile as CV</button>
@@ -100,79 +148,88 @@
                                         <i class="mdi mdi-settings-outline mr-1"></i>Settings
                                     </a>
                                 </li>
-                                <!--<li class="nav-item">
-            <a href="#Following" data-toggle="tab" aria-expanded="false" class="nav-link">
-            <i class="mdi mdi-settings-outline mr-1"></i>Following
-            </a>
-            </li>-->
+
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane show active" id="about-me">
-                                    <h5 class="mb-4 text-uppercase"><i class="mdi mdi-briefcase mr-1"></i>
-                                        Experience</h5>
-                                    <ul class="list-unstyled timeline-sm">
-                                        <li class="timeline-sm-item">
-                                            <span class="timeline-sm-date">2015 - 19</span>
-                                            <h5 class="mt-0 mb-1">Lead designer / Developer</h5>
-                                            <p>websitename.com</p>
-                                            <p class="text-muted mt-2">Lorem ipsum dolor sit amet, consectetur
-                                                adipiscing elit. Mauris nunc arcu, dignissim sit amet sollicitudin
-                                                iaculis, vehicula id urna. Sed luctus urna nunc. Donec fermentum, magna
-                                                sit amet rutrum pretium, turpis dolor molestie diam, ut lacinia diam
-                                                risus eleifend sapien. Curabitur ac nibh nulla. Maecenas nec augue
-                                                placerat, viverra tellus non, pulvinar risus.</p>
-                                        </li>
-                                        
+                                    <div class="sub d-flex flex-row justify-content-between">
+                                        <h5 class="mb-4 text-uppercase"><i class="mdi mdi-cube-outline mr-1"></i>Skills</h5>
+
+                                        <a href="#Skills" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                            Add Skills <i class="mdi mdi-plus" style="font-size: 24px;"></i>
+                                        </a>
+
+                                    </div>
+                                 <!-- show skill -->
+                                    <ul class="list-unstyled ">
+                                        <div class="pt-1" *ngFor="let studentSkill of studentSkills">
+                                            <h6 class="text-uppercase mt-0">{{studentSkill?.Skill.nameskill}}  
+                                                <span class="float-right">{{studentSkill?.percentage}}%</span>
+                                            </h6>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-purple" role="progressbar"
+                                                   aria-valuemin="0" aria-valuemax="100"
+                                                    [style.width]="studentSkill.percentage">
+                                                    <span class="sr-only">{{studentSkill.percentage}}% Complete</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </ul>
-                                    <h5 class="mb-3 mt-4 text-uppercase"><i class="mdi mdi-cards-variant mr-1"></i>
-                                        Projects</h5>
+
+                                    <div class="sub d-flex flex-row justify-content-between">
+                                        <h5 class="mb-4 text-uppercase"><i class="mdi mdi-briefcase mr-1"></i>Experience
+                                        </h5>
+
+                                        <a href="#Experience" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                            Add Experience <i class="mdi mdi-plus" style="font-size: 24px;"></i>
+                                        </a>
+
+                                    </div>
+
+                                    <!-- show experience -->
+                                    <ul class="list-unstyled timeline-sm">
+                                        <li class="timeline-sm-item"  *ngFor="let studentExperience of studentExperiences">
+                                            <span class="timeline-sm-date">{{studentExperience?.DateExperience}}</span>
+                                            <h5 class="mt-0 mb-1">{{studentExperience?.TitreExperience}}</h5>
+                                            <p>{{studentExperience?.PlaceExperience}}</p>
+                                            <p class="text-muted mt-2">{{studentExperience?.descriptionExperience}}</p>
+                                        </li>
+
+                                    </ul>
+                                    <div class="sub d-flex flex-row justify-content-between">
+                                        <h5 class="mb-3 mt-4 text-uppercase"><i class="mdi mdi-cards-variant mr-1"></i>
+                                            Projects</h5>
+
+                                        <a href="#Project" data-toggle="tab" aria-expanded="false" class="nav-link">
+                                            Add Project <i class="mdi mdi-plus" style="font-size: 24px;"></i>
+                                        </a>
+
+                                    </div>
+
+                                    <!-- show project -->
+
                                     <div class="table-responsive">
                                         <table class="table table-borderless mb-0">
                                             <thead class="thead-light">
                                                 <tr>
-                                                    <th>#</th>
+
                                                     <th>Project Name</th>
                                                     <th>Start Date</th>
                                                     <th>Due Date</th>
                                                     <th>Status</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>App design and development</td>
-                                                    <td>01/01/2022</td>
-                                                    <td>10/15/2023</td>
-                                                    <td><span class="badge badge-info">Work in Progress</span></td>
+                                            <tbody *ngFor="let studentProject of studentProjects">
+                                                <tr  >
+
+                                                    <td>{{studentProject?.projectName}}</td>
+                                                    <td>{{studentProject?.startDate}}</td>
+                                                    <td>{{studentProject?.finDate}}</td>
+                                                    <td><span class="badge badge-info">{{studentProject?.projectStatus}}</span>
+                                                    </td>
                                                 </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>Coffee detail page - Main Page</td>
-                                                    <td>01/01/2022</td>
-                                                    <td>10/15/2023</td>
-                                                    <td><span class="badge badge-success">Pending</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3</td>
-                                                    <td>Poster illustation design</td>
-                                                    <td>10/15/2023</td>
-                                                    <td>01/01/2022</td>
-                                                    <td><span class="badge badge-pink">Done</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>4</td>
-                                                    <td>Drinking bottle graphics</td>
-                                                    <td>02/10/2017</td>
-                                                    <td>07/05/2018</td>
-                                                    <td><span class="badge badge-purple">Work in Progress</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>5</td>
-                                                    <td>Landing page design - Home</td>
-                                                    <td>17/01/2017</td>
-                                                    <td>25/05/2021</td>
-                                                    <td><span class="badge badge-warning">Coming soon</span></td>
-                                                </tr>
+                                                
                                             </tbody>
                                         </table>
                                     </div>
@@ -292,7 +349,8 @@
                                                             <span class="input-group-text"><i
                                                                     class="fab fa-facebook-square"></i></span>
                                                         </div>
-                                                        <input type="text" class="form-control" id="social-fb" placeholder="Url" formControlName="Fb">
+                                                        <input type="text" class="form-control" id="social-fb"
+                                                            placeholder="Url" formControlName="Fb">
                                                     </div>
                                                 </div>
                                             </div>
@@ -301,15 +359,16 @@
                                                     <label for="social-tw">Phone Number</label>
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text"><i class="mdi mdi-phone"></i></span>
+                                                            <span class="input-group-text"><i
+                                                                    class="mdi mdi-phone"></i></span>
                                                         </div>
                                                         <input type="text" class="form-control" id="social-tw"
-                                                            placeholder="Phone number" formControlName="Number" >
+                                                            placeholder="Phone number" formControlName="Number">
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                       
+
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
@@ -320,7 +379,7 @@
                                                                     class="fab fa-skype"></i></span>
                                                         </div>
                                                         <input type="text" class="form-control" id="social-sky"
-                                                            placeholder="@username" formControlName="WhatsApp" >
+                                                            placeholder="@username" formControlName="WhatsApp">
                                                     </div>
                                                 </div>
                                             </div>
@@ -339,7 +398,7 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                         
+
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="social-lin">Linkedin</label>
@@ -362,86 +421,169 @@
                                         </div>
                                     </form>
                                 </div>
-                                <!-- <div class="tab-pane" id="Following">
-            <form>
-            <h5 class="mb-3 text-uppercase bg-light p-2"><i class="mdi mdi-account-circle mr-1"></i> Companies profiles</h5>
- 
+                                <div class="tab-pane" id="Experience">
+                                    <form [formGroup]="profileForm" (ngSubmit)="AddExperience()">
 
+                                        <h5 class="mb-3 text-uppercase bg-light p-2"><i
+                                                class="mdi mdi-account-circle mr-1"></i> Add New Experience</h5>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="TitreExperience">TitreExperience</label>
+                                                    <input type="text" class="form-control" id="TitreExperience"
+                                                        formControlName="TitreExperience"
+                                                        placeholder="Enter you experience">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="PlaceExperience">Place</label>
+                                                    <input type="email" class="form-control" id="PlaceExperience"
+                                                        formControlName="PlaceExperience" placeholder="Enter the place">
+                                                </div>
+                                            </div>
+                                        </div>
 
-                <div class="card-box ribbon-box">
-                <div class="clearfix"></div>
-                <div class="inbox-widget">
-                <a href="#">
-                <div class="inbox-item">
-                <div class="inbox-item-img"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="rounded-circle" alt></div>
-                <p class="inbox-item-author">Company 1</p>
-                <p class="inbox-item-date">
-                <button type="button" class="btn2 btn-icon btn-sm waves-effect waves-light btn-success">UnFollow</button>
-                </p>    
-                </div>
-                </a>
-                <a href="#">
-                <div class="inbox-item">
-                <div class="inbox-item-img"><img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="rounded-circle" alt></div>
-                <p class="inbox-item-author">Company 2</p>
-                <p class="inbox-item-date">
-                <button type="button" class="btn2 btn-icon btn-sm waves-effect waves-light btn-success">UnFollow</button>
-                </p> 
-                </div>
-                </a>
-                <a href="#">
-                <div class="inbox-item">
-                <div class="inbox-item-img"><img src="https://bootdey.com/img/Content/avatar/avatar4.png" class="rounded-circle" alt></div>
-                <p class="inbox-item-author">Company 3</p>
-                <p class="inbox-item-date">
-                    <button type="button" class="btn2 btn-icon btn-sm waves-effect waves-light btn-success">UnFollow</button>
-                    </p> 
-                </div>
-                </a>
-                <a href="#">
-                <div class="inbox-item">
-                <div class="inbox-item-img"><img src="https://bootdey.com/img/Content/avatar/avatar5.png" class="rounded-circle" alt></div>
-                <p class="inbox-item-author">Company 4</p>
-                <p class="inbox-item-date">
-                    <button type="button" class="btn2 btn-icon btn-sm waves-effect waves-light btn-success">UnFollow</button>
-                    </p> 
-                </div>
-                </a>
-                <a href="#">
-                <div class="inbox-item">
-                <div class="inbox-item-img"><img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="rounded-circle" alt></div>
-                <p class="inbox-item-author">Company 5</p>
-                <p class="inbox-item-date">
-                    <button type="button" class="btn2 btn-icon btn-sm waves-effect waves-light btn-success">UnFollow</button>
-                    </p> 
-                </div>
-                </a>
-                <a href="#">
-                <div class="inbox-item">
-                <div class="inbox-item-img"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="rounded-circle" alt></div>
-                <p class="inbox-item-author">Company 6</p>
-                <p class="inbox-item-date">
-                    <button type="button" class="btn2 btn-icon btn-sm waves-effect waves-light btn-success">UnFollow</button>
-                    </p> 
-                </div>
-                </a>
-                <a href="#">
-                <div class="inbox-item">
-                <div class="inbox-item-img"><img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="rounded-circle" alt></div>
-                <p class="inbox-item-author">Company 7</p>
-                <p class="inbox-item-date">
-                    <button type="button" class="btn2 btn-icon btn-sm waves-effect waves-light btn-success">UnFollow</button>
-                    </p> 
-                </div>
-                </a>
-                </div>
-                </div>
-              
-            
-            </form>
-            </div>-->
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="descriptionExperience">descriptionExperience</label>
+                                                    <input type="text" class="form-control" id="descriptionExperience"
+                                                        formControlName="descriptionExperience"
+                                                        placeholder="Enter you experience">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="DateExperience">DateExperience</label>
+                                                    <input type="date" class="form-control" id="DateExperience"
+                                                        formControlName="DateExperience" placeholder="Enter the place">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="text-right">
+                                           
+
+                                        </div> -->
+
+                                        <div class="sub d-flex flex-row justify-content-between">
+                                            <a href="#about-me" data-toggle="tab" aria-expanded="true"
+                                                class="nav-link ml-0 active">
+                                                <i class="mdi mdi-arrow-left  mr-1"></i>Back
+                                            </a>
+
+                                            <button type="submit"
+                                                class="btn btn-success waves-effect waves-light mt-2"><i
+                                                    class="mdi mdi-content-save"></i> Save</button>
+
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="tab-pane" id="Project">
+                                    <form [formGroup]="profileForm" (ngSubmit)="AddProject()">
+
+                                        <h5 class="mb-3 text-uppercase bg-light p-2"><i
+                                                class="mdi mdi-account-circle mr-1"></i> Add New Project</h5>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="projectName">Titre Projet</label>
+                                                    <input type="text" class="form-control" id="projectName"
+                                                        formControlName="projectName"
+                                                        placeholder="Enter you project title">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="startDate">start Date</label>
+                                                    <input type="date" class="form-control" id="startDate"
+                                                        formControlName="startDate">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="finDate">End Date</label>
+                                                    <input type="date" class="form-control" id="finDate"
+                                                        formControlName="finDate">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="projectStatus">project Status</label>
+                                                    <input type="text" class="form-control" id="projectStatus"
+                                                        formControlName="projectStatus"
+                                                        placeholder="Enter the project Status">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="text-right">
+                                           
+
+                                        </div> -->
+
+                                        <div class="sub d-flex flex-row justify-content-between">
+                                            <a href="#about-me" data-toggle="tab" aria-expanded="true"
+                                                class="nav-link ml-0 active">
+                                                <i class="mdi mdi-arrow-left  mr-1"></i>Back
+                                            </a>
+
+                                            <button type="submit"
+                                                class="btn btn-success waves-effect waves-light mt-2"><i
+                                                    class="mdi mdi-content-save"></i> Save</button>
+
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="tab-pane" id="Skills">
+                                    <form [formGroup]="profileForm" (ngSubmit)="addSkill()">
+        
+                                        <h5 class="mb-3 text-uppercase bg-light p-2"><i class="mdi mdi-account-circle mr-1"></i>
+                                            Add New Skill</h5>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="skill">Your Skill</label>
+                                                    
+                                                        <select id="skill" formControlName="SkillId"  class="custom-select">
+                                                            <option value="">Select Skill</option>
+                                                            <option [value]="skill.id" *ngFor="let skill of skills">{{skill.nameskill}}</option>
+                                                         
+                                                        </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="percent">Pourcentage </label>
+                                                    <input type="number" max="100" class="form-control" id="percent"
+                                                        formControlName="percentage" placeholder="Enter Your rate for this skil">
+                                                </div>
+                                            </div>
+                                        </div>
+        
+        
+                                        <div class="sub d-flex flex-row justify-content-between">
+                                            <a href="#about-me" data-toggle="tab" aria-expanded="true"
+                                                class="nav-link ml-0 active">
+                                                <i class="mdi mdi-arrow-left  mr-1"></i>Back
+                                            </a>
+        
+                                            <button type="submit" class="btn btn-success waves-effect waves-light mt-2"><i
+                                                    class="mdi mdi-content-save"></i> Save</button>
+        
+                                        </div>
+                                    </form>
+        
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+

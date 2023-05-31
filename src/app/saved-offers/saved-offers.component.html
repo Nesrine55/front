@@ -1,0 +1,79 @@
+<div class="container-scroller">
+    <app-studentnavbar></app-studentnavbar>
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="text-center mb-5">
+                <h3>Your Saved List Of Internship Offers</h3>
+                <p class="lead">Here you can find all your saved offers that you can apply for </p>
+            </div>
+            <div class="row">
+
+                <div class="col-md-6 col-lg-3" *ngFor="let offer of offers ">
+                    <div class="job-item">
+                        <div class="item-overlay">
+                            <div class="job-info">
+                                <a routerLink="#" class="btn btn-primary">{{offer?.offer.type}} </a>
+                                <span class="tr-title">
+                                    <a routerLink="#"> {{offer?.offer.title}} </a>
+                                </span>
+                                <ul class="tr-list job-meta">
+                                    <li><i class="fa fa-map-signs" aria-hidden="true"></i>{{offer?.offer.location}}
+                                    </li>
+                                    <li><i class="mdi mdi-laptop-chromebook"
+                                            aria-hidden="true"></i>{{offer?.offer.technology}}</li>
+
+                                    <li><i class="fa fa-briefcase"
+                                            aria-hidden="true"></i>{{offer?.offer.internship_level}}
+                                    </li>
+                                    <li><i class="mdi mdi-timer" aria-hidden="true"></i>{{offer?.offer.duration}}</li>
+
+                                </ul>
+                                <ul class="job-social tr-list">
+                                  
+                                    <li><a routerLink="#"><i class="mdi mdi-file-outline" aria-hidden="true"></i></a>
+                                    </li>
+                                </ul>
+                             
+                            </div>
+                            <div class="view ">
+                                <a routerLink="/offerdetails" class="btnview btn ">View Details<i class="mdi mdi-arrow-right"
+                                    aria-hidden="true"></i></a>
+                            </div>
+                          
+                        </div>
+                        <div class="job-info">
+                            <ul class="saved tr-list">
+                                  
+                                <li><a routerLink="#"><i class="mdi mdi-file" aria-hidden="true"></i></a>
+                                </li>
+                            </ul>
+                            <div class="company-logo">
+                                <h4> {{offer?.offer.title }}</h4>
+
+                            </div>
+                            <span class="tr-title">
+                                <img src="../../assets/images/faces/microsoftCompany.png" alt="images" class="img-fluid"
+                                    height="50px" width="50px">
+                                <a class="company_name" routerLink="#"> {{offer?.offer.company_name}}</a>
+                            </span>
+                            <ul class="tr-list job-meta">
+                                <li><span><i class="fa fa-map-signs"
+                                            aria-hidden="true"></i></span>{{offer?.offer.location}}</li>
+                                <li><span><i class="mdi mdi-laptop-chromebook"
+                                            aria-hidden="true"></i></span>{{offer?.offer.technology}}</li>
+                                <li><span><i class="fa fa-briefcase"
+                                            aria-hidden="true"></i></span>{{offer?.offer.internship_level}}</li>
+                                <li><span><i class="mdi mdi-timer"
+                                            aria-hidden="true"></i></span>{{offer?.offer.duration}}</li>
+                            </ul>
+                            <div class="time">
+                                <a routerLink="#"><span>{{offer?.offer.type }}</span></a>
+                                <span class="pull-right">Posted 23 hours ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

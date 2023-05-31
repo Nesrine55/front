@@ -16,8 +16,8 @@
                     <span class="count bg-success"></span>
                   </div>
                   <div class="profile-name">
-                    <h5 class="mb-0 font-weight-normal">{{student.name}}</h5>
-                    <span>{{student.role}}</span>
+                    <h5 class="mb-0 font-weight-normal">{{student?.name}}</h5>
+                    <span>{{student?.role}}</span>
                   </div>
                 </div>
                 <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
@@ -51,7 +51,7 @@
               <span class="nav-link">Navigation</span>
             </li>
             <li class="nav-item menu-items">
-              <a class="nav-link" routerLink="/inbording">
+              <a class="nav-link" routerLink="/student">
                 <span class="menu-icon">
                   <i class="mdi mdi-home"></i>
                 </span>
@@ -63,40 +63,40 @@
                 <span class="menu-icon">
                   <i class="mdi mdi-compass-outline"></i>
                 </span>
-                <span class="menu-title">Explore</span>
+                <span class="menu-title">Explore Offers</span>
               </a>
              
             </li>
             <li class="nav-item menu-items">
-              <a class="nav-link" href="pages/forms/basic_elements.html">
+              <a class="nav-link" routerLink="/favoroffer">
                 <span class="menu-icon">
                   <i class="mdi mdi-heart-outline"></i>
                 </span>
-                <span class="menu-title">Favoris</span>
+                <span class="menu-title">Favorite Offers</span>
               </a>
             </li>
             <li class="nav-item menu-items">
-              <a class="nav-link" href="pages/tables/basic-table.html">
+              <a class="nav-link" routerLink="/saveoffer">
                 <span class="menu-icon">
                   <i class="mdi mdi-file-outline"></i>
                 </span>
-                <span class="menu-title">saved offers</span>
+                <span class="menu-title">Saved offers</span>
               </a>
             </li>
             <li class="nav-item menu-items">
-              <a class="nav-link" href="pages/charts/chartjs.html">
+              <a class="nav-link" routerLink="/applyoffer">
                 <span class="menu-icon">
                   <i class="mdi mdi-chart-bar"></i>
                 </span>
-                <span class="menu-title">Charts</span>
+                <span class="menu-title">Applied Offers</span>
               </a>
             </li>
             <li class="nav-item menu-items">
-              <a class="nav-link" href="pages/icons/mdi.html">
+              <a class="nav-link" routerLink="/studenthistory">
                 <span class="menu-icon">
                   <i class="mdi mdi-history"></i>
                 </span>
-                <span class="menu-title">History</span>
+                <span class="menu-title">My History</span>
               </a>
             </li>
             
@@ -114,13 +114,7 @@
               <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
                 <span class="mdi mdi-menu"></span>
               </button>
-              <ul class="navbar-nav w-100 ">
-                 
-                  <div class="search__container">
-
-                    <input class="search__input" type="text" placeholder="Search">
-                </div>
-              </ul>
+              
               <ul class="navbar-nav navbar-nav-right">
                   
                   <li class="nav-item dropdown border-left">
@@ -209,7 +203,7 @@
                     <a class="nav-link" id="profileDropdown"  data-toggle="dropdown">
                       <div class="navbar-profile">
                         <img class="img-xs rounded-circle" src="../../assets/mypic.jpg" alt="">
-                        <p class="mb-0 d-none d-sm-block navbar-profile-name">{{student.name}}</p>
+                        <p class="mb-0 d-none d-sm-block navbar-profile-name">{{student?.name}}</p>
                         <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                       </div>
                     </a>

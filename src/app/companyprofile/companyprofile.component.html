@@ -15,8 +15,8 @@
                     alt="profile-image" width="180px" height="180px">
                 </div>
                 <div class="">
-                  <h4 class="m-b-5">{{company.name}}</h4>
-                  <p class="text-muted">{{company.domain}}</p>
+                  <h4 class="m-b-5">{{company?.name}}</h4>
+                  <p class="text-muted">{{company?.domain}}</p>
                   <div class="d-flex align-items-center justify-content-center mb-3">
                     <i class="fas fa-star text-info"></i>
                     <i class="fas fa-star text-info"></i>
@@ -29,10 +29,10 @@
             <button type="button" class="btn btn-danger btn-sm w-sm waves-effect m-t-10 waves-light">Message</button>-->
                 <div class="text-left m-t-40">
 
-                  <p class="text-muted font-13"><strong>Mobile :</strong><span class="m-l-15">{{company.Mobile}}</span></p>
+                  <p class="text-muted font-13"><strong>Mobile :</strong><span class="m-l-15">{{company?.Mobile}}</span></p>
                   <p class="text-muted font-13"><strong>Email:</strong> <br><span class="m-l-15">
-                    <a class="__cf_email__" data-cfemail="81ebeee9efe5eee4c1e3eeeef5e5e4f8afe2eeec">{{company.email}}</a></span></p>
-                  <p class="text-muted font-13"><strong>Location :</strong> <span class="m-l-15">{{company.location}}</span></p>
+                    <a class="__cf_email__" data-cfemail="81ebeee9efe5eee4c1e3eeeef5e5e4f8afe2eeec">{{company?.email}}</a></span></p>
+                  <p class="text-muted font-13"><strong>Location :</strong> <span class="m-l-15">{{company?.location}}</span></p>
                 </div>
               
                 <ul class="social-list list-inline mt-3 mb-0">
@@ -85,14 +85,14 @@
                   <div class="tab-pane active" id="home">
                     <h4>About me</h4>
 
-                    <p class="m-b-5">{{company.description}}</p>
+                    <p class="m-b-5">{{company?.description}}</p>
                     <div class="m-t-30">
                       <h4>Services</h4>
                       <div class=" p-t-10">
-                        <h5 class="text-primary m-b-5">{{company.service1}}</h5>
-                        <h5 class="text-primary m-b-5">{{company.service2}}</h5>
-                        <h5 class="text-primary m-b-5">{{company.service3}}</h5>
-                        <h5 class="text-primary m-b-5">{{company.service4}}</h5>
+                        <h5 class="text-primary m-b-5">{{company?.service1}}</h5>
+                        <h5 class="text-primary m-b-5">{{company?.service2}}</h5>
+                        <h5 class="text-primary m-b-5">{{company?.service3}}</h5>
+                        <h5 class="text-primary m-b-5">{{company?.service4}}</h5>
                       </div>
                       <hr>
                       <div class="">
@@ -123,9 +123,9 @@
                             <i class="number">LD</i>
                           </div>
                           <div class="p-20px-l media-body">
-                            <span class="theme2nd-bg white-color p-0px-tb p-10px-lr font-small border-radius-15">{{ offer.type }}</span>
-                            <h6 class="m-5px-tb">{{ offer.title }}</h6>
-                            <p class="m-0px font-small">{{offer.location}}</p>
+                            <span class="theme2nd-bg white-color p-0px-tb p-10px-lr font-small border-radius-15">{{ offer?.type }}</span>
+                            <h6 class="m-5px-tb">{{ offer?.title }}</h6>
+                            <p class="m-0px font-small">{{offer?.location.name}}</p>
                           </div>
                         </div>
                       </div>
@@ -214,6 +214,7 @@
                       </div>
                       <button class="btn btn-primary waves-effect waves-light w-md" type="submit">Save</button>
                     </form>
+                    <!-- Map Container -->
                   </div>
                 </div>
               </div>

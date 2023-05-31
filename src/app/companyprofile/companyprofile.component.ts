@@ -6,6 +6,7 @@ import { UserSettingsServiceService } from '../services/user-settings-service.se
 import { user } from '../models/user';
 import { ToastrService } from 'ngx-toastr';
 import { GetoffersService } from '../services/getoffers.service';
+import { LocationService } from '../services/location.service';
 
 @Component({
   selector: 'app-companyprofile',
@@ -26,6 +27,8 @@ export class CompanyprofileComponent implements OnInit{
     private userService: UserSettingsServiceService,
     private toastr: ToastrService,
     private getOffer:GetoffersService,
+
+
     
 
   ) { }
@@ -45,19 +48,19 @@ export class CompanyprofileComponent implements OnInit{
       service4: ['', Validators.required],
       Mobile: ['', Validators.required],
       domain: ['', Validators.required],
-      location: ['', Validators.required]
+      location: ['', Validators.required],
+     
+
 
     });
 
-
-  
-
+   
 
     const data = JSON.parse(localStorage.getItem('data')!);
     this.id = data.userId;
 
     this.getCompany();
-    
+  
 
     
 }
@@ -89,6 +92,7 @@ onSubmit() {
     this.toastr.success('your informations has been updated successfully');
 
     this.getCompany()
+   
   }, (err) => {
     console.log(err)
   });

@@ -2,6 +2,12 @@
 .content-wrapper,.main-panel{
 background-color: rgb(223, 223, 229);
 }
+h3{
+    color: rgb(14, 14, 85);
+}
+.lead{
+    color: rgb(97, 96, 96);
+}   
 
 /* Tr Job Post */
 
@@ -77,20 +83,23 @@ z-index: 1;
 .job-item .btn.btn-primary {
 text-transform: capitalize;
 }
-
+.tab-content{
+    border: none;
+}
 .job-item .job-info {
 font-size: 14px;
 color: #000;
 overflow: hidden;
-padding: 40px 25px 20px;
+padding: 60px 25px 20px;
 }
 
 .job-info .company-logo {
-margin-bottom: 30px;
+margin-bottom: 10px;
 }
 
 .job-info .tr-title {
 margin-bottom: 15px;
+
 }
 
 .job-info .tr-title span {
@@ -221,7 +230,11 @@ margin-bottom: 10px;
 .item-overlay .job-info .tr-title a {
 color: #fff;
 }
+.item-overlay .job-info .tr-title a {
+    margin-left: 10px;
+    margin-bottom: 10px;
 
+}
 .job-social {
 margin-top: 35px;
 }
@@ -253,9 +266,6 @@ overflow: hidden;
 z-index: 1;
 }
 
-.job-social li:last-child a {
-background-color: #fff;
-}
 
 .job-social li:last-child a i {
 color: #008def;
@@ -285,11 +295,11 @@ transform: scale(1);
 padding: 5px;
 }
 
-.job-social li a:hover {
+.job-social li a {
 border-color: #fff;
 }
 
-.job-social li a:hover i {
+.job-social li a i {
 color: #fff;
 }
 
@@ -297,4 +307,27 @@ color: #fff;
 margin: 0;
 padding: 0;
 list-style: none;
+}
+.view{
+    margin-right: 20px;
+    float: right;
+    cursor: pointer;
+    margin-bottom: 20px;
+
+
+}
+.btnview{
+background-color: #8f90d7;
+
+}
+.pull-right{
+    margin-left: 10px;
+}
+.img-fluid{
+    margin-bottom: 10px;
+}
+
+.company_name{
+    font-size: 20px;
+    margin-left: 10px;
 }

@@ -30,6 +30,14 @@ import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.compone
 import { AuthguardService } from './guards/authguard.service';
 import { HomeuserComponent } from './homeuser/homeuser.component';
 import { ExploreforcompanyComponent } from './exploreforcompany/exploreforcompany.component';
+import { FavoriteOffersComponent } from './favorite-offers/favorite-offers.component';
+import { SavedOffersComponent } from './saved-offers/saved-offers.component';
+import { AppliedOffersComponent } from './applied-offers/applied-offers.component';
+import { StudentHistoryComponent } from './student-history/student-history.component';
+import { MyOffersCompanyComponent } from './my-offers-company/my-offers-company.component';
+import { FavoriteProfilesComponent } from './favorite-profiles/favorite-profiles.component';
+import { HistoryofferComponent } from './historyoffer/historyoffer.component';
+import { ProfileCompanyDetailsComponent } from './profile-company-details/profile-company-details.component';
 const routes: Routes = [
  
   {path:'menu' , component:MenuComponent},
@@ -61,6 +69,15 @@ const routes: Routes = [
   {path:'student' , component:InbordingComponent,canActivate:[AuthguardService], data: { role: 'student' }},
   {path:'userhome' , component:HomeuserComponent},
   {path:'companyexplore' , component:ExploreforcompanyComponent},
+  {path:'favoroffer' , component:FavoriteOffersComponent},
+  {path:'saveoffer' , component:SavedOffersComponent},
+  {path:'applyoffer' , component:AppliedOffersComponent},
+  {path:'studenthistory' , component:StudentHistoryComponent},
+  {path:'myoffers' , component:MyOffersCompanyComponent},
+  {path:'favorprofile' , component:FavoriteProfilesComponent},
+  {path:'historycompany' , component:HistoryofferComponent},
+  {path:'companydetails' , component:ProfileCompanyDetailsComponent},
+
   {path:'admin' , loadChildren:()=> import('./admin/admin.module').then((m)=>m.AdminModule)},
   
   

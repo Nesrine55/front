@@ -19,50 +19,44 @@
                             <li role="presentation"><a href="#popular-jobs" aria-controls="popular-jobs" role="tab"
                                     data-toggle="tab" class="" aria-selected="false">Popular internships</a></li>
                         </ul>
-                        <form class="filter-form mt-4">
+                        <form class="filter-form mt-4" [formGroup]="createofferform" >
                             <div class="row">
                                 <div class="col-md-4 mb-3">
                                     <div class="form-group">
-                                        <label for="jobPosition">Position :</label>
-                                        <select id="jobPosition" class="custom-select">
-                                            <option value="position1">Business</option>
-                                            <option value="position2">Design</option>
-                                            <option value="position3">Development</option>
-                                            <option value="position4">Engineering</option>
-                                            <option value="position5">Finance</option>
-                                            <option value="position6">Marketing</option>
+                                        <label for="jobPosition">Domain :</label>
+                                        <select formControlName="domainOfferId" id="jobPosition" class="custom-select">
+                                            <option value="">Select your domain</option>
+                                            <option [value]="domain.id" *ngFor="let domain of Domains">{{domain.name}}</option>
+                                          
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <div class="form-group">
                                         <label for="jobType">Type :</label>
-                                        <select id="jobType" class="custom-select">
-                                            <option value="type1">Full-time</option>
-                                            <option value="type3">Part-time</option>
-                                            <option value="type4">Remote</option>
+                                        <select id="jobType" class="custom-select" formControlName="type"  name="jobType">
+                                            <option value="">Select Internship type</option>
+                                            <option *ngFor="let type of jobTypes" [value]="type">{{ type }}</option>
+                                            
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <div class="form-group">
                                         <label for="jobLocation">Location : </label>
-                                        <select id="jobLocation" class="custom-select">
-                                            <option value="location1">Nabeul</option>
-                                            <option value="location3">Mahdia</option>
-                                            <option value="location2">Grand Tunis</option>
-                                            <option value="location4">Sousse</option>
-                                            <option value="location5">Monastir</option>
-                                            <option value="location6">Bizerte</option>
-                                            <option value="location7">Ariana</option>
+                                        <select id="jobLocation" formControlName="locationId" class="custom-select">
+                                            <option value="">Select location</option>
+                                            <option [value]="location.id" *ngFor="let location of Locations">{{location?.name}}</option>
+                                         
                                         </select>
                                     </div>
                                 </div>
+                                <button type="button" (click)="searchJobs()">Search</button>
                             </div>
                         </form>
-                        <div class="tab-content text-left">
+                        <div class=" tab-content text-left">
                             <div role="tabpanel" class="tab-pane fade active show" id="hot-jobs">
-                                <div class="row">
+                                <div class="row" *ngIf="offers">
                                     <div class="col-md-6 col-lg-3" *ngFor="let offer of offers">
                                         <div class="job-item">
                                             <div class="item-overlay">
@@ -70,40 +64,48 @@
                                                     <a routerLink="#" class="btn btn-primary">{{ offer.type }}</a>
                                                     <span class="tr-title">
                                                         <a routerLink="#">{{ offer.title }}</a>
-                                                        <span><a routerLink="#">{{offer.technology}}</a></span>
                                                     </span>
                                                     <ul class="tr-list job-meta">
-                                                        <li><i class="fa fa-map-signs" aria-hidden="true"></i>{{offer.location}}
+                                                        <li><i class="fa fa-map-signs" aria-hidden="true"></i>{{offer?.location.name}}
                                                         </li>
+                                                        <li><i class="mdi mdi-laptop-chromebook"
+                                                            aria-hidden="true"></i>{{offer?.domainOffer.name}}</li>
                                                         <li><i class="fa fa-briefcase" aria-hidden="true"></i>{{offer.internship_level}}
                                                         </li>
+                                                        
                                                         <li><i class="mdi mdi-timer" aria-hidden="true"></i>{{offer.duration}}</li>
                                                     </ul>
                                                     <ul class="job-social tr-list">
-                                                        <li><a routerLink="#"><i class="mdi mdi-heart-outline"
+                                                        <li><a (click)="likeOffer(offer.id)"><i class="mdi mdi-heart-outline"
                                                                     aria-hidden="true"></i></a></li>
                                                         <li><a routerLink="#"><i class="mdi mdi-arrow-expand"
                                                                     aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-file-outline"
+                                                        <li><a (click)="saveOffer(offer.id)"><i class="mdi mdi-file-outline"
                                                                     aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-right"
-                                                                    aria-hidden="true"></i></a></li>
+                                                        <!-- <li><a routerLink="#"><i class="mdi mdi-arrow-right"
+                                                                    aria-hidden="true"></i></a></li> -->
                                                     </ul>
+                                                </div>
+                                                <div class="view ">
+                                                    <a routerLink="/offerdetails" class="btnview btn ">View Details<i class="mdi mdi-arrow-right"
+                                                        aria-hidden="true"></i></a>
                                                 </div>
                                             </div>
                                             <div class="job-info">
                                                 <div class="company-logo">
-                                                    <h4>{{ offer.company_name }}</h4>
-                                                    <img src="../../assets/images/faces/microsoftCompany.png"
-                                                        alt="images" class="img-fluid" height="60px" width="60px">
+                                                    <h4> {{offer?.title }}</h4>
+                    
                                                 </div>
                                                 <span class="tr-title">
-                                                    <a routerLink="#">{{ offer.title }}</a>
-                                                    <span><a routerLink="#">{{offer.technology}}</a></span>
+                                                    <img src="../../assets/images/faces/microsoftCompany.png" alt="images" class="img-fluid"
+                                                        height="50px" width="50px">
+                                                    <a class="company_name" routerLink="#"> {{offer?.company_name}}</a>
                                                 </span>
                                                 <ul class="tr-list job-meta">
                                                     <li><span><i class="fa fa-map-signs"
-                                                                aria-hidden="true"></i></span>{{offer.location}}</li>
+                                                                aria-hidden="true"></i></span>{{offer?.location.name}}</li>
+                                                    <li><span><i class="mdi mdi-laptop-chromebook"
+                                                                aria-hidden="true"></i></span>{{offer?.domainOffer.name}}</li>
                                                     <li><span><i class="fa fa-briefcase"
                                                                 aria-hidden="true"></i></span>{{offer.internship_level}}</li>
                                                     <li><span><i class="mdi mdi-timer"
@@ -116,6 +118,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                  
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane fade in" id="recent-jobs">
@@ -127,40 +130,48 @@
                                                     <a routerLink="#" class="btn btn-primary">{{ offer.type }}</a>
                                                     <span class="tr-title">
                                                         <a routerLink="#">{{ offer.title }}</a>
-                                                        <span><a routerLink="#">{{offer.technology}}</a></span>
                                                     </span>
                                                     <ul class="tr-list job-meta">
                                                         <li><i class="fa fa-map-signs" aria-hidden="true"></i>{{offer.location}}
                                                         </li>
+                                                        <li><i class="mdi mdi-laptop-chromebook"
+                                                            aria-hidden="true"></i>{{offer?.technology}}</li>
                                                         <li><i class="fa fa-briefcase" aria-hidden="true"></i>{{offer.internship_level}}
                                                         </li>
+                                                        
                                                         <li><i class="mdi mdi-timer" aria-hidden="true"></i>{{offer.duration}}</li>
                                                     </ul>
                                                     <ul class="job-social tr-list">
-                                                        <li><a routerLink="#"><i class="mdi mdi-heart-outline"
+                                                        <li><a (click)="likeOffer(offer.id)"><i class="mdi mdi-heart-outline"
                                                                     aria-hidden="true"></i></a></li>
                                                         <li><a routerLink="#"><i class="mdi mdi-arrow-expand"
                                                                     aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-file-outline"
+                                                        <li><a (click)="saveOffer(offer.id)"><i class="mdi mdi-file-outline"
                                                                     aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-right"
-                                                                    aria-hidden="true"></i></a></li>
+                                                        <!-- <li><a routerLink="#"><i class="mdi mdi-arrow-right"
+                                                                    aria-hidden="true"></i></a></li> -->
                                                     </ul>
+                                                </div>
+                                                <div class="view ">
+                                                    <a routerLink="/offerdetails" class="btnview btn ">View Details<i class="mdi mdi-arrow-right"
+                                                        aria-hidden="true"></i></a>
                                                 </div>
                                             </div>
                                             <div class="job-info">
                                                 <div class="company-logo">
-                                                    <h4>{{ offer.company_name }}</h4>
-                                                    <img src="../../assets/images/faces/microsoftCompany.png"
-                                                        alt="images" class="img-fluid" height="60px" width="60px">
+                                                    <h4> {{offer?.title }}</h4>
+                    
                                                 </div>
                                                 <span class="tr-title">
-                                                    <a routerLink="#">{{ offer.title }}</a>
-                                                    <span><a routerLink="#">{{offer.technology}}</a></span>
+                                                    <img src="../../assets/images/faces/microsoftCompany.png" alt="images" class="img-fluid"
+                                                        height="50px" width="50px">
+                                                    <a class="company_name" routerLink="#"> {{offer?.company_name}}</a>
                                                 </span>
                                                 <ul class="tr-list job-meta">
                                                     <li><span><i class="fa fa-map-signs"
                                                                 aria-hidden="true"></i></span>{{offer.location}}</li>
+                                                    <li><span><i class="mdi mdi-laptop-chromebook"
+                                                                aria-hidden="true"></i></span>{{offer?.technology}}</li>
                                                     <li><span><i class="fa fa-briefcase"
                                                                 aria-hidden="true"></i></span>{{offer.internship_level}}</li>
                                                     <li><span><i class="mdi mdi-timer"
@@ -184,40 +195,48 @@
                                                     <a routerLink="#" class="btn btn-primary">{{ offer.type }}</a>
                                                     <span class="tr-title">
                                                         <a routerLink="#">{{ offer.title }}</a>
-                                                        <span><a routerLink="#">{{offer.technology}}</a></span>
                                                     </span>
                                                     <ul class="tr-list job-meta">
                                                         <li><i class="fa fa-map-signs" aria-hidden="true"></i>{{offer.location}}
                                                         </li>
+                                                        <li><i class="mdi mdi-laptop-chromebook"
+                                                            aria-hidden="true"></i>{{offer?.technology}}</li>
                                                         <li><i class="fa fa-briefcase" aria-hidden="true"></i>{{offer.internship_level}}
                                                         </li>
+                                                        
                                                         <li><i class="mdi mdi-timer" aria-hidden="true"></i>{{offer.duration}}</li>
                                                     </ul>
                                                     <ul class="job-social tr-list">
-                                                        <li><a routerLink="#"><i class="mdi mdi-heart-outline"
+                                                        <li><a (click)="likeOffer(offer.id)"><i class="mdi mdi-heart-outline"
                                                                     aria-hidden="true"></i></a></li>
                                                         <li><a routerLink="#"><i class="mdi mdi-arrow-expand"
                                                                     aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-file-outline"
+                                                        <li><a (click)="saveOffer(offer.id)"><i class="mdi mdi-file-outline"
                                                                     aria-hidden="true"></i></a></li>
-                                                        <li><a routerLink="#"><i class="mdi mdi-arrow-right"
-                                                                    aria-hidden="true"></i></a></li>
+                                                        <!-- <li><a routerLink="#"><i class="mdi mdi-arrow-right"
+                                                                    aria-hidden="true"></i></a></li> -->
                                                     </ul>
+                                                </div>
+                                                <div class="view ">
+                                                    <a routerLink="/offerdetails" class="btnview btn ">View Details<i class="mdi mdi-arrow-right"
+                                                        aria-hidden="true"></i></a>
                                                 </div>
                                             </div>
                                             <div class="job-info">
                                                 <div class="company-logo">
-                                                    <h4>{{ offer.company_name }}</h4>
-                                                    <img src="../../assets/images/faces/microsoftCompany.png"
-                                                        alt="images" class="img-fluid" height="60px" width="60px">
+                                                    <h4> {{offer?.title }}</h4>
+                    
                                                 </div>
                                                 <span class="tr-title">
-                                                    <a routerLink="#">{{ offer.title }}</a>
-                                                    <span><a routerLink="#">{{offer.technology}}</a></span>
+                                                    <img src="../../assets/images/faces/microsoftCompany.png" alt="images" class="img-fluid"
+                                                        height="50px" width="50px">
+                                                    <a class="company_name" routerLink="#"> {{offer?.company_name}}</a>
                                                 </span>
                                                 <ul class="tr-list job-meta">
                                                     <li><span><i class="fa fa-map-signs"
                                                                 aria-hidden="true"></i></span>{{offer.location}}</li>
+                                                    <li><span><i class="mdi mdi-laptop-chromebook"
+                                                                aria-hidden="true"></i></span>{{offer?.technology}}</li>
                                                     <li><span><i class="fa fa-briefcase"
                                                                 aria-hidden="true"></i></span>{{offer.internship_level}}</li>
                                                     <li><span><i class="mdi mdi-timer"

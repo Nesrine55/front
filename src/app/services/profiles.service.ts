@@ -7,11 +7,17 @@ import { Observable, Subject } from 'rxjs';
 export class ProfilesService {
   private getprofiles ='http://localhost:5000/entreprise/getprofiles';
   private getprofilesDetails ='http://localhost:5000/entreprise/getStudentprofilesID';
+  private urlAddFavoriteProfile ='http://localhost:5000/Profiles/favorisProfile';
+  private urlGetFavoriteProfile ='http://localhost:5000/Profiles/getFavorisProfileById';
 
 
 
-  private profileIdSource = new Subject<number>();
-  profileId$ = this.profileIdSource.asObservable();
+  id: any;
+
+
+
+  // private profileIdSource = new Subject<number>();
+  // profileId$ = this.profileIdSource.asObservable();
 
   constructor(private http: HttpClient) { }
 
@@ -19,10 +25,32 @@ export class ProfilesService {
     return this.http.get<any>(this.getprofiles);
   }
   getProfilesStudentDetails(id: number): Observable<any> {
-    return this.http.get<any>(this.getprofilesDetails);
-    this.profileIdSource.next(id);
+    return this.http.get<any>(`${this.getprofilesDetails}/${id}`);
 
   }
+
+  
+  // getUserById(id: string): Observable<user> {
+  //   return this.http.get<user>(`${this.getprofilesDetails}/${id}`);
+  // }
  
+
+//favorite profiles
+
+  likeStudentProfile(studentId:number,companyId:number):Observable<any> {
+    const body = {
+      studentId: studentId,
+      companyId: companyId
+    };
+  
+    return this.http.post(this.urlAddFavoriteProfile,body)
+  
+  
+  }
+
+  getlikeProfile(): Observable<any>  {
+    return this.http.get<any>(this.urlGetFavoriteProfile);
+  }
+
 
 }

@@ -216,7 +216,11 @@ main .insights .progress .number p{
     margin-right: 10px;
     line-height: 1.4;
 }
-
+.viewmore{
+    color: #2f3235;
+    text-decoration: none;
+    cursor: pointer;
+}
 .card .card-header+.card-block, .card .card-header+.card-block-big {
     padding-top: 0;
 }

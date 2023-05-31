@@ -15,8 +15,8 @@
                     <span class="count bg-success"></span>
                   </div>
                   <div class="profile-name">
-                    <h5 class="mb-0 font-weight-normal">{{company.name}}</h5>
-                    <span>{{company.domain}}</span>
+                    <h5 class="mb-0 font-weight-normal">{{company?.name}}</h5>
+                    <span>{{company?.domain}}</span>
                   </div>
                 </div>
                 <a routerLink="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
@@ -62,40 +62,40 @@
                 <span class="menu-icon">
                   <i class="mdi mdi-compass-outline"></i>
                 </span>
-                <span class="menu-title">Explore</span>
+                <span class="menu-title">Explore Profiles</span>
               </a>
            
             </li>
             <li class="nav-item menu-items">
-              <a class="nav-link" >
+              <a class="nav-link" routerLink="/favorprofile">
                 <span class="menu-icon">
                   <i class="mdi mdi-heart-outline"></i>
                 </span>
-                <span class="menu-title">Favoris</span>
+                <span class="menu-title">Favorite Profiles</span>
               </a>
             </li>
-            <li class="nav-item menu-items">
+            <!-- <li class="nav-item menu-items">
               <a class="nav-link" >
                 <span class="menu-icon">
                   <i class="mdi mdi-file-outline"></i>
                 </span>
-                <span class="menu-title">saved offers</span>
+                <span class="menu-title">Saved Profiles</span>
               </a>
-            </li>
+            </li> -->
             <li class="nav-item menu-items">
-              <a class="nav-link" routerLink="pages/charts/chartjs.html">
+              <a class="nav-link" routerLink="/myoffers">
                 <span class="menu-icon">
                   <i class="mdi mdi-chart-bar"></i>
                 </span>
-                <span class="menu-title">Charts</span>
+                <span class="menu-title">My Internships Offers</span>
               </a>
             </li>
             <li class="nav-item menu-items">
-              <a class="nav-link" routerLink="pages/icons/mdi.html">
+              <a class="nav-link" routerLink="/historycompany">
                 <span class="menu-icon">
                   <i class="mdi mdi-history"></i>
                 </span>
-                <span class="menu-title">History</span>
+                <span class="menu-title">My Completed Offers</span>
               </a>
             </li>
             
@@ -114,10 +114,7 @@
                 <span class="mdi mdi-menu"></span>
               </button>
               <ul class="navbar-nav w-100">
-                <div class="search__container">
-
-                  <input class="search__input" type="text" placeholder="Search">
-              </div>
+               
               </ul>
               <ul class="navbar-nav navbar-nav-right">
                 <li class="nav-item dropdown d-none d-lg-block">
@@ -210,7 +207,7 @@
                     <a class="nav-link" id="profileDropdown" routerLink="#" data-toggle="dropdown">
                       <div class="navbar-profile">
                         <img class="img-xs rounded-circle" src="../../assets/images/faces/microsoftCompany.png" alt="">
-                        <p class="mb-0 d-none d-sm-block navbar-profile-name">{{company.name}}</p>
+                        <p class="mb-0 d-none d-sm-block navbar-profile-name">{{company?.name}}</p>
                         <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                       </div>
                     </a>

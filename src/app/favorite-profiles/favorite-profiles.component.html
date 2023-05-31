@@ -1,0 +1,83 @@
+<div class="container-scroller">
+    <app-companynavbar></app-companynavbar>
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="container">
+
+                <!-- <div class="row align-items-center">
+
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <h5 class="card-title">Student Profiles List <span
+                                    class="text-muted fw-normal ms-2">(834)</span></h5>
+
+                        </div>
+                    </div>
+               
+                </div> -->
+                <div class="text-center mb-5">
+                    <h3>Your Favorite List Of Student Profiles</h3>
+                    <p class="lead">Here you can find all your favorites students profiles that you can recrute </p>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 " *ngFor="let profile of profiles">
+                        <div class="card">
+                            <div class="card-body">
+                                <li><a class="like"><i class="mdi mdi-heart" aria-hidden="true"></i></a>
+                                </li>
+                                <div class="d-flex align-items-center">
+                                    <div><img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt=""
+                                            class="avatar-md rounded-circle img-thumbnail" /></div>
+                                    <div class="flex-1 ms-3">
+                                        <h5 class="font-size-16 mb-1"><a href="#" class="text-dark">{{profile?.student.name}}</a>
+                                        </h5>
+                                        <span class="badge badge-soft-success mb-0">{{profile?.student.role}}</span>
+                                    </div>
+                                </div>
+                                <div class="mt-3 pt-1">
+                                    <p class="text-muted mb-0"><i
+                                            class="mdi mdi-phone font-size-15 align-middle pe-2 text-primary"></i> {{profile?.student.Number}}</p>
+                                    <p class="text-muted mb-0 mt-2"><i
+                                            class="mdi mdi-email font-size-15 align-middle pe-2 text-primary"></i> <a
+                                            href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                            data-cfemail="6e3e06170202071d290f1a0207002e1d1e17400d0103">{{profile?.student.email}}</a>
+                                    </p>
+                                    <p class="text-muted mb-0 mt-2"><i
+                                            class="mdi mdi-google-maps font-size-15 align-middle pe-2 text-primary"></i>
+                                        {{profile?.student.city}}</p>
+                                </div>
+                                <div class="d-flex gap-2 pt-4">
+                                    <button type="button" class="btn1 btn-soft-primary btn-sm w-50" (click)="viewProfile(profile.id)"
+                                        ><i class="bx bx-user "></i> Profile</button>
+                                    <button type="button" class="btn btn-primary btn-sm w-50"><i
+                                            class="bx bx-message-square-dots me-1"></i> Contact</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+  
+                <div class="row g-0 align-items-center pb-4">
+
+                    <div class="col-sm-6">
+                        <div class="float-sm-end">
+                            <ul class="pagination mb-sm-0">
+                                <li class="page-item disabled">
+                                    <a href="#" class="page-link"><i class="mdi mdi-chevron-left"></i></a>
+                                </li>
+                                <li class="page-item active"><a class="page-link">1</a></li>
+                                <li class="page-item"><a class="page-link pg">2</a></li>
+                                <li class="page-item"><a class="page-link pg">3</a></li>
+                                <li class="page-item"><a class="page-link pg">4</a></li>
+                                <li class="page-item"><a class="page-link pg">5</a></li>
+                                <li class="page-item">
+                                    <a href="#" class="page-link pg"><i class="mdi mdi-chevron-right"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>        </div>
+    </div>
+</div>
